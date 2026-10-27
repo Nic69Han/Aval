@@ -1,0 +1,8 @@
+# scenario: LCK-012
+module m
+pub fn a(x: Int) -> Int
+  ensures result > x
+  cost O(1)
+{
+  return x + 1
+}

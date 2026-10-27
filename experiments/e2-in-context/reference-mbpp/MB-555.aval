@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn difference(n: Int) -> Int
+  examples
+    3 => 30
+  cost O(1)
+{
+  let s: Int = n * (n + 1) / 2
+  return s * (s - 1)
+}
+```

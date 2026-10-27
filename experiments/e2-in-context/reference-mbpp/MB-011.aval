@@ -1,0 +1,16 @@
+```aval
+module solution
+
+pub fn remove_occ(s: String, ch: String) -> String
+  examples
+    "hello", "l" => "heo"
+  cost O(s.len())
+{
+  let cs: List<String> = s.chars()
+  let pos: List<Int> = (for i in 0..cs.len() { i }).filter(|i| cs[i] == ch)
+  let first: Int = if pos.is_empty() { 0 - 1 } else { pos[0] }
+  let last: Int = if pos.is_empty() { 0 - 1 } else { pos[pos.len() - 1] }
+  let kept: List<String> = for i in 0..cs.len() { if i == first or i == last { "" } else { cs[i] } }
+  return kept.join("")
+}
+```

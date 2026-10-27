@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn two_unique_nums(nums: List<Int>) -> List<Int>
+  ensures result.all(|x| nums.count(x) == 1)
+  examples
+    [1, 2, 3, 2, 3, 4, 5] => [1, 4, 5]
+  cost O(nums.len() * nums.len())
+{
+  return nums.filter(|x| nums.count(x) == 1)
+}
+```

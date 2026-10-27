@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn fizz_buzz(n: Int) -> Int
+  requires n >= 0
+  examples
+    50 => 0
+    78 => 2
+  cost O(n)
+{
+  let picked: List<String> = for i in 0..n { if i % 11 == 0 or i % 13 == 0 { i.to_string() } else { "" } }
+  return picked.join("").chars().count("7")
+}
+```

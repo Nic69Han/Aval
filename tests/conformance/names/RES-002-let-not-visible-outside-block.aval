@@ -1,0 +1,12 @@
+# scenario: RES-002
+# expect: {"code":"E101","name":"y","at":[10,5]}
+module t
+fn f(x: Int) -> Int
+{
+  return if x > 0 {
+    let y: Int = 1
+    y
+  } else {
+    y
+  }
+}

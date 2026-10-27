@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn is_product_even(arr: List<Int>) -> Bool
+  examples
+    [1, 2, 3] => true
+  cost O(arr.len())
+{
+  return arr.any(|x| x % 2 == 0)
+}
+```

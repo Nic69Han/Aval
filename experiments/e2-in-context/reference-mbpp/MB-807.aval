@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn first_odd(nums: List<Int>) -> Int
+  examples
+    [1, 3, 5] => 1
+  cost O(nums.len())
+{
+  let odds: List<Int> = nums.filter(|x| x % 2 != 0)
+  return if odds.is_empty() { 0 - 1 } else { odds[0] }
+}
+```

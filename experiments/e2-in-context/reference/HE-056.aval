@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn correct_bracketing(brackets: String) -> Bool
+  examples
+    "<>" => true
+    "><" => false
+  cost O(brackets.len() * brackets.len())
+{
+  let cs: List<String> = brackets.chars()
+  let depths: List<Int> = for i in 1..=cs.len() { cs.take(i).count("<") - cs.take(i).count(">") }
+  return depths.all(|d| d >= 0) and cs.count("<") == cs.count(">")
+}
+```

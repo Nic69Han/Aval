@@ -1,0 +1,48 @@
+{
+  "HE-002": {
+    "aval": [
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn truncate_number(number: Float) -> Float\n  requires number >= 0.0\n  ensures result >= 0.0 and result < 1.0\n  examples\n    3.5 => 0.5\n  cost O(1)\n{\n  return number - number.floor()\n}\n```\n"
+    ],
+    "rust": [
+      "Here is my solution.\n\n```rust\nfn truncate_number(number: f64) -> f64 {\n    number - number.floor()\n}\n```\n"
+    ]
+  },
+  "HE-003": {
+    "aval": [
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn below_zero(operations: List<Int>) -> Bool\n  examples\n    [] => false\n    [1, 2, -4, 5] => true\n  cost O(operations.len() * operations.len())\n{\n  let n: Int = operations.len()\n  let balances: List<Int> = for i in 0..n { operations.take(i + 1).sum() }\n  return balances.any(|b| b <= 0)\n}\n```\n",
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn below_zero(operations: List<Int>) -> Bool\n  examples\n    [] => false\n    [1, 2, -4, 5] => true\n  cost O(operations.len() * operations.len())\n{\n  let n: Int = operations.len()\n  let balances: List<Int> = for i in 0..n { operations.take(i + 1).sum() }\n  return balances.any(|b| b <= 0)\n}\n```\n",
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn below_zero(operations: List<Int>) -> Bool\n  examples\n    [] => false\n    [1, 2, -4, 5] => true\n  cost O(operations.len() * operations.len())\n{\n  let n: Int = operations.len()\n  let balances: List<Int> = for i in 0..n { operations.take(i + 1).sum() }\n  return balances.any(|b| b <= 0)\n}\n```\n",
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn below_zero(operations: List<Int>) -> Bool\n  examples\n    [] => false\n    [1, 2, -4, 5] => true\n  cost O(operations.len() * operations.len())\n{\n  let n: Int = operations.len()\n  let balances: List<Int> = for i in 0..n { operations.take(i + 1).sum() }\n  return balances.any(|b| b <= 0)\n}\n```\n"
+    ],
+    "rust": [
+      "Here is my solution.\n\n```rust\nfn below_zero(operations: Vec<i64>) -> bool {\n    let mut balance: i64 = 0;\n    for op in operations {\n        balance += op;\n        if balance < 0 {\n            return true;\n        }\n    }\n    false\n}\n```\n"
+    ]
+  },
+  "HE-013": {
+    "aval": [
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn greatest_common_divisor(a: Int, b: Int) -> Int\n  requires a > 0 and b > 0\n  ensures a % result == 0 and b % result == 0\n  examples\n    3, 5 => 1\n    25, 15 => 5\n  cost O(log(a + b))\n{\n  return if b == 0 { b } else { greatest_common_divisor(b, a % b) }\n}\n```\n",
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn greatest_common_divisor(a: Int, b: Int) -> Int\n  requires a > 0 and b > 0\n  ensures a % result == 0 and b % result == 0\n  examples\n    3, 5 => 1\n    25, 15 => 5\n  cost O(log(a + b))\n{\n  return if b == 0 { b } else { greatest_common_divisor(b, a % b) }\n}\n```\n",
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn greatest_common_divisor(a: Int, b: Int) -> Int\n  requires a > 0 and b > 0\n  ensures a % result == 0 and b % result == 0\n  examples\n    3, 5 => 1\n    25, 15 => 5\n  cost O(log(a + b))\n{\n  return if b == 0 { b } else { greatest_common_divisor(b, a % b) }\n}\n```\n",
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn greatest_common_divisor(a: Int, b: Int) -> Int\n  requires a > 0 and b > 0\n  ensures a % result == 0 and b % result == 0\n  examples\n    3, 5 => 1\n    25, 15 => 5\n  cost O(log(a + b))\n{\n  return if b == 0 { b } else { greatest_common_divisor(b, a % b) }\n}\n```\n"
+    ],
+    "rust": [
+      "Here is my solution.\n\n```rust\nfn greatest_common_divisor(a: i64, b: i64) -> i64 {\n    if b == 0 {\n        a\n    } else {\n        greatest_common_divisor(b, a % b)\n    }\n}\n```\n"
+    ]
+  },
+  "HE-015": {
+    "aval": [
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn string_sequence(n: Int) -> String\n  requires n >= 0\n  examples\n    0 => \"0\"\n    5 => \"0 1 2 3 4 5\"\n  cost O(n)\n{\n  let parts: List<String> = for i in 0..=n { i.to_string() }\n  return parts.join(\" \")\n}\n```\n"
+    ],
+    "rust": [
+      "Here is my solution.\n\n```rust\nfn string_sequence(n: i64) -> String {\n    (0..=n)\n        .map(|i| i.to_string())\n        .collect::<Vec<String>>()\n        .join(\" \")\n}\n```\n"
+    ]
+  },
+  "HE-048": {
+    "aval": [
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn is_palindrome(text: String) -> Bool\n  examples\n    \"\" => true\n    \"aba\" => true\n    \"abc\" => false\n  cost O(text.len())\n{\n  let cs: List<String> = text.chars()\n  return cs == cs.reverse()\n}\n```\n"
+    ],
+    "rust": [
+      "Here is my solution.\n\n```rust\nfn is_palindrome(text: String) -> bool {\n    let chars: Vec<char> = text.chars().collect();\n    let mut reversed = chars.clone();\n    reversed.reverse();\n    chars == reversed\n}\n```\n"
+    ]
+  }
+}

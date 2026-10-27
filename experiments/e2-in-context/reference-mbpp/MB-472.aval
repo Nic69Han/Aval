@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn check_consecutive(l: List<Int>) -> Bool
+  examples
+    [1, 2, 3, 4, 5] => true
+  cost O(l.len() * log(l.len()))
+{
+  let lo: Int = l.min()
+  let want: List<Int> = for i in 0..l.len() { lo + i }
+  return l.sort() == want
+}
+```

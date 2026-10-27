@@ -1,0 +1,19 @@
+```aval
+module solution
+
+fn gcd(a: Int, b: Int) -> Int
+{
+  return if b == 0 { a.abs() } else { gcd(b, a % b) }
+}
+
+pub fn sum(a: Int, b: Int) -> Float
+  examples
+    10, 15 => 6.0
+  cost O(1)
+{
+  let g: Int = gcd(a, b)
+  let limit: Int = g.float().sqrt().floor().int()
+  let divs: List<Int> = for i in 1..=limit { if g % i == 0 { i + (if g / i != i { g / i } else { 0 }) } else { 0 } }
+  return divs.sum().float()
+}
+```

@@ -1,0 +1,13 @@
+# scenario: TST-021
+# cmd: test
+# expect: {"code":"T200","fn":"len","counterexample":{"l":{"Cons":[0,{"Cons":[0,{"Cons":[0,"Nil"]}]}]}},"got":3}
+module t
+enum L { Cons(Int, L), Nil }
+fn len(l: L) -> Int
+  ensures result < 3
+{
+  return match l {
+    Cons(h, rest) => 1 + len(rest)
+    Nil => 0
+  }
+}

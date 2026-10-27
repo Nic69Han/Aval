@@ -1,0 +1,15 @@
+```aval
+module solution
+
+pub fn move_num(test_str: String) -> String
+  ensures result.len() == test_str.len()
+  examples
+    "I1love143you55three3000thousand" => "Iloveyouthreethousand1143553000"
+  cost O(test_str.len())
+{
+  let cs: List<String> = test_str.chars()
+  let letters: List<String> = cs.filter(|c| not (c >= "0" and c <= "9"))
+  let digits: List<String> = cs.filter(|c| c >= "0" and c <= "9")
+  return letters.concat(digits).join("")
+}
+```

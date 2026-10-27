@@ -1,0 +1,10 @@
+# scenario: STD-014
+# cmd: test
+module t
+fn f(n: Int) -> String
+  examples
+    0 - 12 => "-12"
+    0 => "0"
+{
+  return n.to_string()
+}

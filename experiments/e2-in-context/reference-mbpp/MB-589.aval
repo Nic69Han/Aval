@@ -1,0 +1,15 @@
+```aval
+module solution
+
+pub fn perfect_squares(a: Int, b: Int) -> List<Int>
+  examples
+    1, 30 => [1, 4, 9, 16, 25]
+  cost O(b.abs() + a.abs())
+{
+  let lo: Int = a.min(b)
+  let hi: Int = a.max(b)
+  let top: Int = if hi < 0 { 0 - 1 } else { hi.float().sqrt().int() + 1 }
+  let sq: List<Int> = for i in 0..=top { i * i }
+  return sq.filter(|x| x >= lo and x <= hi)
+}
+```

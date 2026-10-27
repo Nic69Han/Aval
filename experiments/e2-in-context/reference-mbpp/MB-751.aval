@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn check_min_heap(arr: List<Int>) -> Bool
+  examples
+    [1, 2, 3, 4, 5, 6] => true
+    [2, 1] => false
+  cost O(arr.len())
+{
+  let n: Int = arr.len()
+  return (for i in 0..n { i }).all(|i| (2 * i + 1 >= n or arr[i] <= arr[2 * i + 1]) and (2 * i + 2 >= n or arr[i] <= arr[2 * i + 2]))
+}
+```

@@ -1,0 +1,16 @@
+# scenario: TST-022
+# cmd: test
+# exit: 1
+# expect: {"code":"T210","fn":"f"}
+module t
+fn slow(x: Int) -> Bool
+{
+  let xs: List<Int> = for i in 0..1000000 { i + x }
+  return xs.len() > 0
+}
+fn f(x: Int) -> Int
+  requires slow(x) and x == 4242
+  ensures result == x
+{
+  return x + 1
+}

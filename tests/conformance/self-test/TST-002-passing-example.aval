@@ -1,0 +1,9 @@
+# scenario: TST-002
+# cmd: test
+module t
+fn double(x: Int) -> Int
+  examples
+    3 => 6
+{
+  return x * 2
+}

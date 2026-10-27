@@ -1,0 +1,16 @@
+```aval
+module solution
+
+fn lead(n: Int) -> Int
+{
+  return if n < 10 { n } else { lead(n / 10) }
+}
+
+pub fn first_digit(n: Int) -> Int
+  examples
+    123 => 1
+  cost O(log(n))
+{
+  return lead(n.abs())
+}
+```

@@ -1,0 +1,10 @@
+# scenario: SYN-021
+# cmd: check
+module t
+fn f(xs: List<Int>) -> Int
+  examples
+    [0] => 0
+    [1, 2] => 3
+{
+  return xs.sum()
+}

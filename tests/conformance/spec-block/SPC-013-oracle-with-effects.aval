@@ -1,0 +1,13 @@
+# scenario: SPC-013
+# expect: {"code":"E107"}
+module t
+fn f(x: Int) -> Int
+  oracle g
+{
+  return x
+}
+fn g(x: Int) -> Int
+  effects io.stdout
+{
+  return x
+}

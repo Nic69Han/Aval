@@ -1,0 +1,17 @@
+```aval
+module solution
+
+fn bit_len(m: Int) -> Int
+{
+  return if m <= 0 { 0 } else { 1 + bit_len(m / 2) }
+}
+
+pub fn is_polite(n: Int) -> Int
+  examples
+    7 => 11
+  cost O(log(n + 2))
+{
+  let cands: List<Int> = (for m in (n + 1)..(n + 70) { m }).filter(|m| m - bit_len(m) == n)
+  return cands[0]
+}
+```

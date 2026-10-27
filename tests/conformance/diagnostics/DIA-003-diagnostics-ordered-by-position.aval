@@ -1,0 +1,9 @@
+# scenario: DIA-003
+# expect: {"code":"E301","at":[7,16]}
+# expect: {"code":"E101","at":[8,10]}
+module t
+fn f(x: Int) -> Int
+{
+  let a: Int = 1.0
+  return y
+}

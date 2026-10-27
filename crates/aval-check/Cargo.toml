@@ -1,0 +1,12 @@
+[package]
+name = "aval-check"
+description = "Aval name resolution, type, effect and spec checker, and spec lock"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+license.workspace = true
+
+[dependencies]
+aval-syntax.workspace = true
+serde_json.workspace = true
+sha2.workspace = true

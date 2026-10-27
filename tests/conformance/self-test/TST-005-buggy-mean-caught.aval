@@ -1,0 +1,10 @@
+# scenario: TST-005
+# cmd: test
+# expect: {"code":"T200","fn":"mean","violated":"approx(result * xs.len().float(), xs.sum())"}
+module t
+fn mean(xs: List<Float>) -> Float
+  requires xs.len() > 0
+  ensures approx(result * xs.len().float(), xs.sum())
+{
+  return xs.sum() / 2.0
+}

@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn all_characters_same(s: String) -> Bool
+  examples
+    "python" => false
+    "aaa" => true
+  cost O(s.len())
+{
+  let cs: List<String> = s.chars()
+  return cs.all(|c| c == cs[0])
+}
+```

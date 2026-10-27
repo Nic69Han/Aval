@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn closest_num(n: Int) -> Int
+  examples
+    11 => 10
+  cost O(1)
+{
+  return n - 1
+}
+```

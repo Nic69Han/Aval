@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn merge_sorted_list(num1: List<Float>, num2: List<Float>, num3: List<Float>) -> List<Float>
+  examples
+    [25.0, 24.0, 15.0, 4.0, 5.0, 29.0, 110.0], [19.0, 20.0, 11.0, 56.0, 25.0, 233.0, 154.0], [24.0, 26.0, 54.0, 48.0] => [4.0, 5.0, 11.0, 15.0, 19.0, 20.0, 24.0, 24.0, 25.0, 25.0, 26.0, 29.0, 48.0, 54.0, 56.0, 110.0, 154.0, 233.0]
+  cost O((num1.len() + num2.len() + num3.len()) * log(num1.len() + num2.len() + num3.len() + 1))
+{
+  return num1.concat(num2).concat(num3).sort()
+}
+```

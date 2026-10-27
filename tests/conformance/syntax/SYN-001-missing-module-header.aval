@@ -1,0 +1,7 @@
+# scenario: SYN-001
+# expect: {"code":"E002","at":[4,1]}
+# stdout-contains: "module"
+fn f() -> Int
+{
+  return 1
+}

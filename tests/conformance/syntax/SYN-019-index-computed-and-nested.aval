@@ -1,0 +1,10 @@
+# scenario: SYN-019
+# cmd: test
+module t
+fn f(xs: List<Int>, i: Int) -> Int
+  examples
+    [5, 6, 7], 1 => 5
+{
+  let ys: List<Int> = xs.reverse()
+  return ys[i + 1]
+}

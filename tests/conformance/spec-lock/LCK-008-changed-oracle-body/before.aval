@@ -1,0 +1,13 @@
+# scenario: LCK-008
+module t
+pub fn a(x: Int) -> Int
+  ensures result >= x
+  oracle g
+  cost O(1)
+{
+  return x + 1
+}
+fn g(x: Int) -> Int
+{
+  return x + 1
+}

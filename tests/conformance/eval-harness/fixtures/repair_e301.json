@@ -1,0 +1,8 @@
+{
+  "HE-003": {
+    "aval": [
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn below_zero(operations: List<Int>) -> Bool\n  examples\n    [] => false\n    [1, 2, -4, 5] => true\n  cost O(operations.len() * operations.len())\n{\n  let n: Int = operations.len()\n  let balances: List<Int> = for i in 0..n { operations.take(i + 1).sum() }\n  return balances.any(|b| b < 0.0)\n}\n```\n",
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn below_zero(operations: List<Int>) -> Bool\n  examples\n    [] => false\n    [1, 2, -4, 5] => true\n  cost O(operations.len() * operations.len())\n{\n  let n: Int = operations.len()\n  let balances: List<Int> = for i in 0..n { operations.take(i + 1).sum() }\n  return balances.any(|b| b < 0)\n}\n```\n"
+    ]
+  }
+}

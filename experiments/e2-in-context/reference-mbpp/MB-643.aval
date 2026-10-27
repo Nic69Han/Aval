@@ -1,0 +1,18 @@
+```aval
+module solution
+
+fn is_word(c: String) -> Bool
+{
+  return (c >= "a" and c <= "z") or (c >= "A" and c <= "Z") or (c >= "0" and c <= "9") or c == "_"
+}
+
+pub fn text_match_wordz_middle(text: String) -> Bool
+  examples
+    "pythonzabc." => true
+  cost O(text.len())
+{
+  let cs: List<String> = text.chars()
+  let idx: List<Int> = for i in 1..cs.len() { i }
+  return idx.any(|i| i + 1 < cs.len() and cs[i] == "z" and is_word(cs[i - 1]) and is_word(cs[i + 1]))
+}
+```

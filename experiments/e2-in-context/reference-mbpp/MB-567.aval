@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn issort_list(list1: List<Int>) -> Bool
+  examples
+    [1, 2, 4, 6, 8, 10, 12, 14, 16, 17] => true
+  cost O(list1.len() * log(list1.len()))
+{
+  return list1.sort() == list1
+}
+```

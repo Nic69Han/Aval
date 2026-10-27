@@ -1,0 +1,9 @@
+# scenario: STD-014
+# cmd: test
+module t
+fn f(n: Int) -> String
+  examples
+    7 => "n=7"
+{
+  return "n=" + n.to_string()
+}

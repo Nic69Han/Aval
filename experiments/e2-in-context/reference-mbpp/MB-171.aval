@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn perimeter_pentagon(a: Float) -> Float
+  examples
+    5.0 => 25.0
+  cost O(1)
+{
+  return 5.0 * a
+}
+```

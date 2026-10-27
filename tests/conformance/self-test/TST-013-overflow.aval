@@ -1,0 +1,9 @@
+# scenario: TST-013
+# cmd: test
+# expect: {"code":"T700","fn":"sq","fault":"overflow"}
+module t
+fn sq(x: Int) -> Int
+  ensures result >= 0
+{
+  return x * x
+}

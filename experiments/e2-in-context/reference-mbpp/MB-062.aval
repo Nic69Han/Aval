@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn smallest_num(xs: List<Float>) -> Float
+  requires xs.len() > 0
+  examples
+    [10.0, 20.0, 1.0, 45.0, 99.0] => 1.0
+  cost O(xs.len())
+{
+  return xs.min()
+}
+```

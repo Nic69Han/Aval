@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn is_upper(string: String) -> String
+  ensures result == string.to_uppercase()
+  examples
+    "person" => "PERSON"
+  cost O(string.len())
+{
+  return string.to_uppercase()
+}
+```

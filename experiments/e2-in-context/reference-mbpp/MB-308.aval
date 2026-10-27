@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn large_product(nums1: List<Float>, nums2: List<Float>, n: Int) -> List<Float>
+  examples
+    [1.0, 2.0, 3.0, 4.0, 5.0, 6.0], [3.0, 6.0, 8.0, 9.0, 10.0, 6.0], 3 => [60.0, 54.0, 50.0]
+  cost O(nums1.len() * nums2.len())
+{
+  let empty: List<Float> = []
+  let products: List<Float> = nums1.fold(empty, |acc, x| acc.concat(nums2.map(|y| x * y)))
+  let ordered: List<Float> = products.sort().reverse()
+  return ordered.take(if n >= 0 { n } else { (ordered.len() + n).max(0) })
+}
+```

@@ -1,0 +1,10 @@
+[package]
+name = "aval-syntax"
+description = "Aval lexer, AST, parser and shared diagnostic type"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+license.workspace = true
+
+[dependencies]
+serde_json.workspace = true

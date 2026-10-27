@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn find_parity(x: Int) -> Bool
+  examples
+    12 => false
+  cost O(1)
+{
+  return x % 2 != 0
+}
+```

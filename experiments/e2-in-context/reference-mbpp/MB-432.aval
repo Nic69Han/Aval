@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn median_trapezium(base1: Float, base2: Float, height: Float) -> Float
+  examples
+    15.0, 25.0, 35.0 => 20.0
+  cost O(1)
+{
+  return (base1 + base2) / 2.0
+}
+```

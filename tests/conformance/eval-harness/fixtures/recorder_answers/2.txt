@@ -1,0 +1,29 @@
+Here is my solution.
+
+```aval
+module solution
+
+fn factors_from(n: Int, d: Int) -> List<Int>
+{
+  return if n < 2 {
+    []
+  } else if d * d > n {
+    [n]
+  } else if n % d == 0 {
+    [d].concat(factors_from(n / d, d))
+  } else {
+    factors_from(n, d + 1)
+  }
+}
+
+pub fn factorize(n: Int) -> List<Int>
+  requires n >= 2 and n < 100000
+  ensures result.product() == n
+  examples
+    8 => [2, 2, 2]
+    70 => [2, 5, 7]
+  cost O(n)
+{
+  return factors_from(n, 2)
+}
+```

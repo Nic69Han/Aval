@@ -1,0 +1,10 @@
+# scenario: TST-002
+# cmd: test
+# expect: {"code":"T100","fn":"double","input":{"x":3},"expected":6,"got":5}
+module t
+fn double(x: Int) -> Int
+  examples
+    3 => 6
+{
+  return x + 2
+}

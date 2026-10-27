@@ -1,0 +1,9 @@
+# scenario: SPC-008
+# expect: {"code":"E303"}
+module t
+fn f(x: Int, y: Int) -> Int
+  examples
+    1 => 2
+{
+  return x + y
+}

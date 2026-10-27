@@ -1,0 +1,7 @@
+# scenario: LEX-001
+# expect: {"code":"E002","at":[4,6]}
+module t
+fn f(for: Int) -> Int
+{
+  return 1
+}

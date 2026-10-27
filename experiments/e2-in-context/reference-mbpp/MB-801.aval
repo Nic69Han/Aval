@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn test_three_equal(x: Int, y: Int, z: Int) -> Int
+  ensures result == 0 or result == 2 or result == 3
+  examples
+    1, 1, 1 => 3
+    1, 1, 2 => 2
+    1, 2, 3 => 0
+  cost O(1)
+{
+  return if x == y and y == z { 3 } else if x == y or y == z or x == z { 2 } else { 0 }
+}
+```

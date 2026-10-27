@@ -1,0 +1,8 @@
+# scenario: SYN-010
+# expect: {"code":"E002"}
+# stdout-contains: "else"
+module t
+fn f(x: Int) -> Int
+{
+  return if x > 0 { 1 }
+}

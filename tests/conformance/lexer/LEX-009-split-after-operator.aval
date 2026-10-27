@@ -1,0 +1,10 @@
+# scenario: LEX-009
+# cmd: test
+module t
+fn f() -> Int
+  examples
+    => 3
+{
+  return 1 +
+    2
+}

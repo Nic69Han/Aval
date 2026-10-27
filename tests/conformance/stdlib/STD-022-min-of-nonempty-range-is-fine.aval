@@ -1,0 +1,11 @@
+# scenario: STD-022
+# cmd: test
+module t
+fn f(n: Int) -> Int
+  requires n >= 4 and n <= 5
+  examples
+    4 => 3
+    5 => 3
+{
+  return (3..n).min()
+}

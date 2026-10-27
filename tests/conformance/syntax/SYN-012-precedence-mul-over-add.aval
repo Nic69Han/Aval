@@ -1,0 +1,39 @@
+# scenario: SYN-012
+# cmd: test
+module t
+fn f() -> Int
+  examples
+    => 7
+{
+  return 1 + 2 * 3
+}
+fn g() -> Int
+  examples
+    => 9
+{
+  return (1 + 2) * 3
+}
+fn h() -> Int
+  examples
+    => 5
+{
+  return 10 - 2 - 3
+}
+fn k() -> Bool
+  examples
+    => true
+{
+  return true or false and false
+}
+fn m() -> Int
+  examples
+    => 1
+{
+  return 7 % 4 - 2 * 1
+}
+fn n() -> Int
+  examples
+    => 4
+{
+  return 6 - -2 * 1 - 4
+}

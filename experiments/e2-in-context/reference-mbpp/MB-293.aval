@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn otherside_rightangle(w: Float, h: Float) -> Float
+  examples
+    7.0, 8.0 => 10.63014581273465
+  cost O(1)
+{
+  return (w * w + h * h).sqrt()
+}
+```

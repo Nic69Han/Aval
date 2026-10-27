@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn find(n: Int, m: Int) -> Int
+  requires m != 0
+  examples
+    10, 3 => 3
+  cost O(1)
+{
+  let q: Int = n / m
+  return if n % m != 0 and (n < 0) != (m < 0) { q - 1 } else { q }
+}
+```

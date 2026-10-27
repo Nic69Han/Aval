@@ -1,0 +1,10 @@
+# scenario: TYP-006
+module t
+fn f(p: Byte) -> Byte
+{
+  return if p > 128 { 255 } else { 0 }
+}
+fn g() -> Int
+{
+  return 256
+}

@@ -1,0 +1,13 @@
+# scenario: TST-011
+# cmd: test
+# expect: {"code":"T600","fn":"f"}
+module t
+fn f(xs: List<Int>) -> Int
+  oracle g
+{
+  return xs.len()
+}
+fn g(xs: List<Int>) -> Int
+{
+  return xs.sum()
+}

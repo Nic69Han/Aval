@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn reverse_array_upto_k(input: List<Int>, k: Int) -> List<Int>
+  ensures result.len() == input.len()
+  examples
+    [1, 2, 3, 4, 5, 6], 4 => [4, 3, 2, 1, 5, 6]
+  cost O(input.len())
+{
+  return input.take(k).reverse().concat(input.skip(k))
+}
+```

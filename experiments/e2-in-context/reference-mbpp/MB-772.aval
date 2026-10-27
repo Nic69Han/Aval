@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn remove_length(test_str: String, k: Int) -> String
+  examples
+    "The person is most value tet", 3 => "person is most value"
+  cost O(test_str.len())
+{
+  return test_str.split(" ").filter(|w| not w.is_empty() and w.len() != k).join(" ")
+}
+```

@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn find_substring(str1: List<String>, sub_str: String) -> Bool
+  examples
+    ["red", "black", "white", "green", "orange"], "ack" => true
+  cost O(str1.len() * sub_str.len())
+{
+  return str1.any(|w| w.contains(sub_str))
+}
+```

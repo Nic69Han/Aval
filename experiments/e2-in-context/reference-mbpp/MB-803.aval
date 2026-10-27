@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn is_perfect_square(n: Int) -> Bool
+  examples
+    10 => false
+    16 => true
+  cost O(1)
+{
+  let r: Int = if n < 0 { 0 } else { n.float().sqrt().int() }
+  return n >= 0 and (r * r == n or (r + 1) * (r + 1) == n)
+}
+```

@@ -1,0 +1,6 @@
+# scenario: TYP-024
+module t
+fn f(x: Int) -> List<List<Int>>
+{
+  return [[]].push([x])
+}

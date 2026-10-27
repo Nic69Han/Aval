@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn check_element(list1: List<String>, element: String) -> Bool
+  examples
+    ["green", "orange", "black", "white"], "blue" => false
+  cost O(list1.len())
+{
+  return list1.all(|v| v == element)
+}
+```

@@ -1,0 +1,9 @@
+# scenario: TST-012
+# cmd: test
+# expect: {"code":"T700","fn":"inv","fault":"division_by_zero","counterexample":{"x":0}}
+module t
+fn inv(x: Int) -> Int
+  ensures true
+{
+  return 100 / x
+}

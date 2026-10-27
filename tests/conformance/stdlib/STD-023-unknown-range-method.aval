@@ -1,0 +1,12 @@
+# scenario: STD-023
+# cmd: check
+# expect: {"code":"E204","on":"Range<Int>"}
+# stdout-contains: "fold"
+# stdout-contains: "sum"
+# stdout-contains: "len"
+# stdout-contains: "map"
+module t
+fn f(n: Int) -> Int
+{
+  return (0..n).average()
+}

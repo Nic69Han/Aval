@@ -1,0 +1,9 @@
+# scenario: STD-007
+# cmd: test
+module t
+fn f(x: Float) -> Int
+  examples
+    10.0 => 13
+{
+  return x.sqrt().floor().int() + x.round().int()
+}

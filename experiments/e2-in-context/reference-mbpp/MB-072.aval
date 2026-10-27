@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn dif_square(n: Int) -> Bool
+  examples
+    5 => true
+  cost O(1)
+{
+  return (n % 4 + 4) % 4 != 2
+}
+```

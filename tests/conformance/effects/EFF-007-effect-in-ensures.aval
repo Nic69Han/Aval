@@ -1,0 +1,9 @@
+# scenario: EFF-007
+# expect: {"code":"E420"}
+module t
+fn f() -> Bool
+  ensures print("x")
+  effects io.stdout
+{
+  return true
+}

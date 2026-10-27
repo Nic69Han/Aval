@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn centered_hexagonal_number(n: Int) -> Int
+  examples
+    10 => 271
+  cost O(1)
+{
+  return 3 * n * (n - 1) + 1
+}
+```

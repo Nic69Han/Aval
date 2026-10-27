@@ -1,0 +1,10 @@
+# scenario: TST-026
+# cmd: test
+# exit: 1
+# expect: {"code":"T700","fn":"f","fault":"memory_limit"}
+module t
+fn f(xs: List<Int>) -> Int
+  ensures result >= 0
+{
+  return xs.fold([0], |acc, x| acc.concat(acc)).len()
+}

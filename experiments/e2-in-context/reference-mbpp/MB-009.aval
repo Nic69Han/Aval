@@ -1,0 +1,16 @@
+```aval
+module solution
+
+pub fn find_rotations(s: String) -> Int
+  examples
+    "aaaa" => 1
+  cost O(s.len() * s.len())
+{
+  let cs: List<String> = s.chars()
+  let n: Int = cs.len()
+  let twice: List<String> = cs.concat(cs)
+  let idx: List<Int> = for i in 1..=n { i }
+  let found: List<Int> = idx.filter(|i| twice.skip(i).take(n) == cs)
+  return if found.is_empty() { n } else { found[0] }
+}
+```

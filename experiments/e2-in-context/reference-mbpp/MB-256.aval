@@ -1,0 +1,16 @@
+```aval
+module solution
+
+fn has_divisor(n: Int, d: Int) -> Bool
+{
+  return if d * d > n { false } else if n % d == 0 { true } else { has_divisor(n, d + 1) }
+}
+
+pub fn count_primes_nums(n: Int) -> Int
+  examples
+    5 => 2
+  cost O(n * n)
+{
+  return (for i in 2..n { if has_divisor(i, 2) { 0 } else { 1 } }).sum()
+}
+```

@@ -1,0 +1,8 @@
+# scenario: SYN-011
+# expect: {"code":"E002"}
+module t
+fn f() -> Int
+{
+  let y = 1
+  return y
+}

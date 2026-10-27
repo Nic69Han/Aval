@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn validate(n: Int) -> Bool
+  examples
+    1234 => true
+  cost O(log(n + 1))
+{
+  let ds: List<String> = n.to_string().chars()
+  return ds.all(|d| d.parse_int().unwrap() >= ds.count(d))
+}
+```

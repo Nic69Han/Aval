@@ -1,0 +1,9 @@
+# scenario: SPC-003
+module t
+pub fn f(x: Int) -> Int
+  examples
+    1 => 1
+  cost O(1)
+{
+  return x
+}

@@ -1,0 +1,10 @@
+# scenario: SYN-024
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(a: Bool, b: Bool) -> Bool
+  examples
+    true, true => true
+{
+  return a == not b
+}

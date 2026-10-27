@@ -1,0 +1,18 @@
+```aval
+module solution
+
+fn highest_unset(n: Int, pos: Int, best: Int) -> Int
+{
+  return if n == 0 { best } else { highest_unset(n / 2, pos + 1, if n % 2 == 0 { pos } else { best }) }
+}
+
+pub fn set_left_most_unset_bit(n: Int) -> Int
+  examples
+    10 => 14
+  cost O(log(n + 1))
+{
+  let pos: Int = highest_unset(n, 0, 0 - 1)
+  let base: Int = 2
+  return if n <= 0 or pos < 0 { n } else { n + base.pow(pos) }
+}
+```

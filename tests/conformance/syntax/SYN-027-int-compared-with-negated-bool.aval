@@ -1,0 +1,8 @@
+# scenario: SYN-027
+# cmd: check
+# expect: {"code":"E301","fn":"g"}
+module t
+fn g(a: Int, b: Bool) -> Bool
+{
+  return a == not b
+}

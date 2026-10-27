@@ -1,0 +1,18 @@
+```aval
+module solution
+
+fn is_pal(k: Int) -> Bool
+{
+  let ds: List<String> = k.to_string().chars()
+  return ds == ds.reverse()
+}
+
+pub fn next_smallest_palindrome(num: Int) -> Int
+  examples
+    99 => 101
+  cost O(num)
+{
+  let cand: List<Int> = (for k in num + 1..=num + 12000 { k }).filter(|k| is_pal(k))
+  return cand[0]
+}
+```

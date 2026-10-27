@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn even_power_sum(n: Int) -> Int
+  examples
+    2 => 1056
+  cost O(n)
+{
+  return (for k in 1..=n { (2 * k).pow(5) }).sum()
+}
+```

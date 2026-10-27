@@ -1,0 +1,8 @@
+# scenario: TYP-002
+# expect: {"code":"E301"}
+module t
+fn f() -> Int
+{
+  let s: String = 3
+  return 1
+}

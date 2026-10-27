@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn is_woodall(x: Float) -> Bool
+  examples
+    383.0 => true
+  cost O(1)
+{
+  let pows: List<Int> = for k in 1..=40 { k }
+  let base: Int = 2
+  return x >= 1.0 and x < 1000000000000.0 and x == x.floor() and pows.any(|k| k * base.pow(k) == x.int() + 1)
+}
+```

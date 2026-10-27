@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn zero_count(nums: List<Int>) -> Float
+  examples
+    [0, 1, 2, (0 - 1), (0 - 5), 6, 0, (0 - 3), (0 - 2), 3, 4, 6, 8] => 0.18181818181818182
+  cost O(nums.len())
+{
+  let zeros: Int = nums.count(0)
+  return zeros.float() / (nums.len() - zeros).float()
+}
+```

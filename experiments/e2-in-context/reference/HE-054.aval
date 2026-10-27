@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn same_chars(s0: String, s1: String) -> Bool
+  examples
+    "abc", "cbaabc" => true
+    "abc", "abd" => false
+  cost O(s0.len() * log(s0.len()) + s1.len() * log(s1.len()))
+{
+  return s0.chars().sort().dedup() == s1.chars().sort().dedup()
+}
+```

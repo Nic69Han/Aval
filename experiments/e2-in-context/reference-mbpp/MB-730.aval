@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn consecutive_duplicates(nums: List<String>) -> List<String>
+  examples
+    ["a", "a", "b", "c", "d", "d"] => ["a", "b", "c", "d"]
+  cost O(nums.len())
+{
+  return nums.dedup()
+}
+```

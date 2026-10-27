@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn triangle_area(r: Float) -> Float
+  examples
+    0.0 => 0.0
+    2.0 => 4.0
+  cost O(1)
+{
+  return r * r
+}
+```

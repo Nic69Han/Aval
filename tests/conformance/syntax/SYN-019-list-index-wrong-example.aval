@@ -1,0 +1,10 @@
+# scenario: SYN-019
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(xs: List<Int>) -> Int
+  examples
+    [5, 6, 7] => 5
+{
+  return xs[1]
+}

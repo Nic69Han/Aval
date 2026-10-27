@@ -1,0 +1,18 @@
+```aval
+module solution
+
+fn insert_row(acc: List<List<Int>>, row: List<Int>) -> List<List<Int>>
+{
+  let p: Int = acc.filter(|r| r.sum() <= row.sum()).len()
+  return acc.take(p).push(row).concat(acc.skip(p))
+}
+
+pub fn sort_matrix(m: List<List<Int>>) -> List<List<Int>>
+  examples
+    [[1, 2, 3], [2, 4, 5], [1, 1, 1]] => [[1, 1, 1], [1, 2, 3], [2, 4, 5]]
+  cost O(m.len() * m.len())
+{
+  let start: List<List<Int>> = []
+  return m.fold(start, |acc, row| insert_row(acc, row))
+}
+```

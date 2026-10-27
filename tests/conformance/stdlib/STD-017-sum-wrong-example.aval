@@ -1,0 +1,11 @@
+# scenario: STD-017
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(n: Int) -> Int
+  requires n >= 0 and n <= 1000
+  examples
+    4 => 6
+{
+  return (1..=n).sum()
+}

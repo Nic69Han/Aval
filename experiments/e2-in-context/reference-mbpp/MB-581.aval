@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn surface_area(b: Int, s: Int) -> Int
+  examples
+    3, 4 => 33
+  cost O(1)
+{
+  return b * b + 2 * b * s
+}
+```

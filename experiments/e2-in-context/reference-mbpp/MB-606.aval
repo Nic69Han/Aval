@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn radian_degree(degree: Int) -> Float
+  examples
+    90 => 1.5707963267948966
+  cost O(1)
+{
+  return degree.float() * (3.141592653589793 / 180.0)
+}
+```

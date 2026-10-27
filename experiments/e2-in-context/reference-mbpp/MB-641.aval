@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn is_nonagonal(n: Int) -> Int
+  examples
+    10 => 325
+  cost O(1)
+{
+  return n * (7 * n - 5) / 2
+}
+```

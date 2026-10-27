@@ -1,0 +1,9 @@
+# scenario: STD-015
+# cmd: test
+module t
+fn f(b: Bool, y: Byte, x: Float) -> String
+  examples
+    false, 255, 2.0 => "false2552"
+{
+  return b.to_string() + y.to_string() + x.to_string()
+}

@@ -1,0 +1,17 @@
+[package]
+name = "aval-cli"
+description = "The `aval` command line tool"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "aval"
+path = "src/main.rs"
+
+[dependencies]
+aval-syntax.workspace = true
+aval-check.workspace = true
+aval-eval.workspace = true
+serde_json.workspace = true

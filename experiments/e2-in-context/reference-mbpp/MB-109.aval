@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn odd_equivalent(s: String, n: Int) -> Int
+  examples
+    "011001", 6 => 3
+  cost O(n)
+{
+  return s.chars().take(n.max(0)).count("1")
+}
+```

@@ -1,0 +1,7 @@
+# scenario: TYP-022
+# expect: {"code":"E301"}
+module t
+fn f(x: Int) -> List<String>
+{
+  return (if x > 0 { [] } else { [x] }).reverse()
+}

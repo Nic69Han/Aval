@@ -1,0 +1,19 @@
+```aval
+module solution
+
+pub fn is_simple_power(x: Int, n: Int) -> Bool
+  requires x >= 1 and n >= 1
+  examples
+    8, 2 => true
+    3, 2 => false
+  cost O(log(x))
+{
+  return if x == 1 {
+    true
+  } else if n < 2 or x % n != 0 {
+    false
+  } else {
+    is_simple_power(x / n, n)
+  }
+}
+```

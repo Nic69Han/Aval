@@ -1,0 +1,10 @@
+# scenario: SYN-015
+# cmd: test
+module t
+type Point { x: Int, y: Int }
+fn f() -> Int
+  examples
+    => 1
+{
+  return if (Point { x: 1, y: 2 }).x > 0 { 1 } else { 0 }
+}

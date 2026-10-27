@@ -1,0 +1,8 @@
+# scenario: SPC-003
+module t
+pub fn f(x: Int) -> Int
+  ensures result == x
+  cost O(1)
+{
+  return x
+}

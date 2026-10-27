@@ -1,0 +1,11 @@
+# scenario: TYP-009
+# expect: {"code":"E303","fn":"f"}
+module t
+fn g(x: Int) -> Int
+{
+  return x
+}
+fn f() -> Int
+{
+  return g(1, 2)
+}

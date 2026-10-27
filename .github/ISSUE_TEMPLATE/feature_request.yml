@@ -1,0 +1,54 @@
+name: Feature request
+description: Suggest a language, tooling, or documentation improvement.
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Language changes are decided through OpenSpec changes (see CONTRIBUTING.md and GOVERNANCE.md). An issue is a good first step; a proposal PR comes next if the idea is accepted for design.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What can you not do, or do badly, today? Show an example if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Including doing nothing, and how other languages solve it.
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact on agents
+      description: Effect on tokens (keywords should stay single-token), grammar for constrained decoding, diagnostics, and the size of `aval skill print`.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Language / spec
+        - Compiler / checker
+        - Diagnostics
+        - Self-test (aval test)
+        - Playground / docs
+        - Community / process
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and Discussions.
+          required: true
+        - label: I would be willing to help write the OpenSpec change.
+        - label: I agree to follow the Code of Conduct.
+          required: true

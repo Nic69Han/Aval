@@ -1,0 +1,8 @@
+# scenario: SPC-001
+# expect: {"code":"E510","fn":"f"}
+module t
+pub fn f(x: Int) -> Int
+  cost O(1)
+{
+  return x
+}

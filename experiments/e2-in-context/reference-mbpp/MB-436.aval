@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn neg_nos(list1: List<Int>) -> List<Int>
+  ensures result.all(|x| x < 0)
+  examples
+    [-1, 4, 5, -6] => [-1, -6]
+  cost O(list1.len())
+{
+  return list1.filter(|x| x < 0)
+}
+```

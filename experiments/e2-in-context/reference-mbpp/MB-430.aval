@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn parabola_directrix(a: Int, b: Int, c: Int) -> Int
+  examples
+    5, 3, 2 => -198
+  cost O(1)
+{
+  return c - (b * b + 1) * 4 * a
+}
+```

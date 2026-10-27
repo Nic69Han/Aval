@@ -1,0 +1,10 @@
+# scenario: TST-018
+# cmd: test
+# expect: {"code":"T700","fn":"f","fault":"empty_list"}
+module t
+fn f(xs: List<Int>) -> Int
+  examples
+    [1] => [].min()
+{
+  return xs.len()
+}

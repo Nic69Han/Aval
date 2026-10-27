@@ -1,0 +1,9 @@
+# scenario: SYN-005
+# expect: {"code":"E002","at":[6,3]}
+module t
+fn f(x: Int) -> Int
+  ensures result > 0
+  requires x > 0
+{
+  return x
+}

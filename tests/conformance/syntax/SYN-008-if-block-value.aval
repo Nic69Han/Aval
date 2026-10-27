@@ -1,0 +1,14 @@
+# scenario: SYN-008
+# cmd: test
+module t
+fn f(x: Int) -> Int
+  examples
+    3 => 6
+{
+  return if x > 0 {
+    let y: Int = x * 2
+    y
+  } else {
+    0
+  }
+}

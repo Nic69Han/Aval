@@ -1,0 +1,16 @@
+```aval
+module solution
+
+fn has_divisor(n: Int, d: Int) -> Bool
+{
+  return if d * d > n { false } else if n % d == 0 { true } else { has_divisor(n, d + 1) }
+}
+
+pub fn is_not_prime(n: Int) -> Bool
+  examples
+    1 => true
+  cost O(n)
+{
+  return n == 1 or has_divisor(n, 2)
+}
+```

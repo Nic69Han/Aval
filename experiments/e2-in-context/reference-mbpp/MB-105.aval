@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn count(lst: List<Bool>) -> Int
+  examples
+    [true, false, true] => 2
+  cost O(lst.len())
+{
+  return lst.filter(|b| b).len()
+}
+```

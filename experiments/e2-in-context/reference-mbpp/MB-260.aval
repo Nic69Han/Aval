@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn newman_prime(n: Int) -> Int
+  examples
+    3 => 7
+  cost O(n)
+{
+  let steps: List<Int> = for i in 2..=n { i }
+  let start: List<Int> = [1, 1]
+  return if n < 2 { 1 } else { steps.fold(start, |s, i| [s[1], 2 * s[1] + s[0]])[1] }
+}
+```

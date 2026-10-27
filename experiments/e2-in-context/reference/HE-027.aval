@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn flip_case(string: String) -> String
+  ensures result.len() == string.len()
+  examples
+    "Hello" => "hELLO"
+  cost O(string.len())
+{
+  let flipped: List<String> = string.chars().map(|c| if c == c.to_uppercase() { c.to_lowercase() } else { c.to_uppercase() })
+  return flipped.join("")
+}
+```

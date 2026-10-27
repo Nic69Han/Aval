@@ -1,0 +1,15 @@
+```aval
+module solution
+
+pub fn total_match(lst1: List<String>, lst2: List<String>) -> List<String>
+  ensures result == lst1 or result == lst2
+  examples
+    ["hi", "admin"], ["hi", "hi"] => ["hi", "hi"]
+    [], ["x"] => []
+  cost O(lst1.len() + lst2.len())
+{
+  let total1: Int = lst1.map(|s| s.len()).sum()
+  let total2: Int = lst2.map(|s| s.len()).sum()
+  return if total1 <= total2 { lst1 } else { lst2 }
+}
+```

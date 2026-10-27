@@ -1,0 +1,5 @@
+# Versions used for the E1 run (pinned to what pip resolved in the run venv)
+tiktoken==0.14.0
+tokenizers==0.23.3
+transformers==5.20.2
+huggingface_hub==2.3.0

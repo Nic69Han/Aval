@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn text_match_two_three(text: String) -> Bool
+  examples
+    "ac" => false
+  cost O(text.len())
+{
+  return text.contains("abb")
+}
+```

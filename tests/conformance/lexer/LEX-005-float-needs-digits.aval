@@ -1,0 +1,7 @@
+# scenario: LEX-005
+# expect: {"code":"E001"}
+module t
+fn f() -> Float
+{
+  return 2.
+}

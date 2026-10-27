@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn find_min_length(lst: List<List<Int>>) -> Int
+  requires lst.len() > 0
+  examples
+    [[1], [1, 2]] => 1
+  cost O(lst.len())
+{
+  return lst.map(|l| l.len()).min()
+}
+```

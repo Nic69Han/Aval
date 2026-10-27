@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn is_palindrome(text: String) -> Bool
+  examples
+    "" => true
+    "aba" => true
+    "abc" => false
+  cost O(text.len())
+{
+  let cs: List<String> = text.chars()
+  return cs == cs.reverse()
+}
+```

@@ -1,0 +1,8 @@
+# scenario: LEX-005
+module t
+fn f() -> Float
+{
+  let a: Float = 2.0
+  let b: Float = 1.5e3
+  return a + b
+}

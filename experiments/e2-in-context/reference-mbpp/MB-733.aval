@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn find_first_occurrence(a: List<Int>, x: Int) -> Int
+  examples
+    [2, 5, 5, 5, 6, 6, 8, 9, 9, 9], 5 => 1
+  cost O(a.len())
+{
+  let hits: List<Int> = (for i in 0..a.len() { i }).filter(|i| a[i] == x)
+  return if hits.is_empty() { 0 - 1 } else { hits[0] }
+}
+```

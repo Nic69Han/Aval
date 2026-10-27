@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn div_list(nums1: List<Int>, nums2: List<Int>) -> List<Float>
+  examples
+    [4, 5, 6], [1, 2, 3] => [4.0, 2.5, 2.0]
+  cost O(nums1.len())
+{
+  let m: Int = nums1.len().min(nums2.len())
+  return for i in 0..m { nums1[i].float() / nums2[i].float() }
+}
+```

@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn text_match_wordz(text: String) -> Bool
+  examples
+    "pythonz." => true
+  cost O(text.len())
+{
+  return text.contains("z")
+}
+```

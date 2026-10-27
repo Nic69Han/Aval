@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn odd_length_sum(arr: List<Int>) -> Int
+  examples
+    [1, 2, 4] => 14
+  cost O(arr.len())
+{
+  let n: Int = arr.len()
+  return (for i in 0..n { arr[i] * (((i + 1) * (n - i) + 1) / 2) }).sum()
+}
+```

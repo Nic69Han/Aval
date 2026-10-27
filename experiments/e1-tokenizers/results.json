@@ -1,0 +1,5611 @@
+{
+  "generated_utc": "2026-10-24T12:11:40+00:00",
+  "python": "3.13.17",
+  "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+  "keywords": [
+    "fn",
+    "let",
+    "return",
+    "type",
+    "enum",
+    "module",
+    "import",
+    "pub",
+    "if",
+    "else",
+    "match",
+    "for",
+    "in",
+    "par",
+    "requires",
+    "ensures",
+    "result",
+    "examples",
+    "oracle",
+    "effects",
+    "alloc",
+    "cost",
+    "latency",
+    "reuse",
+    "none",
+    "resource",
+    "using",
+    "unsafe",
+    "true",
+    "false",
+    "and",
+    "or",
+    "not",
+    "Int",
+    "Float",
+    "Bool",
+    "String",
+    "Byte",
+    "List",
+    "Set",
+    "Map",
+    "Queue",
+    "Image",
+    "Tensor",
+    "Result",
+    "Arena"
+  ],
+  "project_name": "Aval",
+  "contexts": [
+    "bare",
+    "leading_space",
+    "after_newline_raw",
+    "after_newline_delta"
+  ],
+  "max_two_token_criterion": 3,
+  "tokenizers": {
+    "tiktoken:o200k_base": {
+      "status": "ok",
+      "library": "tiktoken 0.14.0",
+      "encoding": "o200k_base",
+      "newline_token_count": 1,
+      "rows": {
+        "fn": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "fn"
+            ],
+            "leading_space": [
+              " fn"
+            ]
+          }
+        },
+        "let": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "let"
+            ],
+            "leading_space": [
+              " let"
+            ]
+          }
+        },
+        "return": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "return"
+            ],
+            "leading_space": [
+              " return"
+            ]
+          }
+        },
+        "type": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "type"
+            ],
+            "leading_space": [
+              " type"
+            ]
+          }
+        },
+        "enum": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "enum"
+            ],
+            "leading_space": [
+              " enum"
+            ]
+          }
+        },
+        "module": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "module"
+            ],
+            "leading_space": [
+              " module"
+            ]
+          }
+        },
+        "import": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "import"
+            ],
+            "leading_space": [
+              " import"
+            ]
+          }
+        },
+        "pub": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "pub"
+            ],
+            "leading_space": [
+              " pub"
+            ]
+          }
+        },
+        "if": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "if"
+            ],
+            "leading_space": [
+              " if"
+            ]
+          }
+        },
+        "else": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "else"
+            ],
+            "leading_space": [
+              " else"
+            ]
+          }
+        },
+        "match": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "match"
+            ],
+            "leading_space": [
+              " match"
+            ]
+          }
+        },
+        "for": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "for"
+            ],
+            "leading_space": [
+              " for"
+            ]
+          }
+        },
+        "in": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "in"
+            ],
+            "leading_space": [
+              " in"
+            ]
+          }
+        },
+        "par": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "par"
+            ],
+            "leading_space": [
+              " par"
+            ]
+          }
+        },
+        "requires": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "requires"
+            ],
+            "leading_space": [
+              " requires"
+            ]
+          }
+        },
+        "ensures": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "ens",
+              "ures"
+            ],
+            "leading_space": [
+              " ensures"
+            ]
+          }
+        },
+        "result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "result"
+            ],
+            "leading_space": [
+              " result"
+            ]
+          }
+        },
+        "examples": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "examples"
+            ],
+            "leading_space": [
+              " examples"
+            ]
+          }
+        },
+        "oracle": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "oracle"
+            ],
+            "leading_space": [
+              " oracle"
+            ]
+          }
+        },
+        "effects": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "effects"
+            ],
+            "leading_space": [
+              " effects"
+            ]
+          }
+        },
+        "alloc": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "alloc"
+            ],
+            "leading_space": [
+              " alloc"
+            ]
+          }
+        },
+        "cost": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "cost"
+            ],
+            "leading_space": [
+              " cost"
+            ]
+          }
+        },
+        "latency": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "lat",
+              "ency"
+            ],
+            "leading_space": [
+              " latency"
+            ]
+          }
+        },
+        "reuse": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "reuse"
+            ],
+            "leading_space": [
+              " reuse"
+            ]
+          }
+        },
+        "none": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "none"
+            ],
+            "leading_space": [
+              " none"
+            ]
+          }
+        },
+        "resource": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "resource"
+            ],
+            "leading_space": [
+              " resource"
+            ]
+          }
+        },
+        "using": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "using"
+            ],
+            "leading_space": [
+              " using"
+            ]
+          }
+        },
+        "unsafe": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "unsafe"
+            ],
+            "leading_space": [
+              " unsafe"
+            ]
+          }
+        },
+        "true": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "true"
+            ],
+            "leading_space": [
+              " true"
+            ]
+          }
+        },
+        "false": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "false"
+            ],
+            "leading_space": [
+              " false"
+            ]
+          }
+        },
+        "and": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "and"
+            ],
+            "leading_space": [
+              " and"
+            ]
+          }
+        },
+        "or": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "or"
+            ],
+            "leading_space": [
+              " or"
+            ]
+          }
+        },
+        "not": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "not"
+            ],
+            "leading_space": [
+              " not"
+            ]
+          }
+        },
+        "Int": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Int"
+            ],
+            "leading_space": [
+              " Int"
+            ]
+          }
+        },
+        "Float": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Float"
+            ],
+            "leading_space": [
+              " Float"
+            ]
+          }
+        },
+        "Bool": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Bool"
+            ],
+            "leading_space": [
+              " Bool"
+            ]
+          }
+        },
+        "String": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "String"
+            ],
+            "leading_space": [
+              " String"
+            ]
+          }
+        },
+        "Byte": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Byte"
+            ],
+            "leading_space": [
+              " Byte"
+            ]
+          }
+        },
+        "List": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "List"
+            ],
+            "leading_space": [
+              " List"
+            ]
+          }
+        },
+        "Set": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Set"
+            ],
+            "leading_space": [
+              " Set"
+            ]
+          }
+        },
+        "Map": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Map"
+            ],
+            "leading_space": [
+              " Map"
+            ]
+          }
+        },
+        "Queue": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Queue"
+            ],
+            "leading_space": [
+              " Queue"
+            ]
+          }
+        },
+        "Image": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Image"
+            ],
+            "leading_space": [
+              " Image"
+            ]
+          }
+        },
+        "Tensor": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Tensor"
+            ],
+            "leading_space": [
+              " Tensor"
+            ]
+          }
+        },
+        "Result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Result"
+            ],
+            "leading_space": [
+              " Result"
+            ]
+          }
+        },
+        "Arena": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Arena"
+            ],
+            "leading_space": [
+              " Arena"
+            ]
+          }
+        },
+        "Aval": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Aval"
+            ],
+            "leading_space": [
+              " Aval"
+            ]
+          }
+        }
+      },
+      "summary": {
+        "two_token_bare": [
+          "ensures",
+          "latency"
+        ],
+        "two_token_leading_space": [],
+        "over_two_tokens_bare": [],
+        "over_two_tokens_leading_space": [],
+        "over_one_token_any_context": [
+          "ensures",
+          "latency"
+        ],
+        "single_token_leading_space": 47,
+        "verdict": "PASS",
+        "verdict_bare": "PASS"
+      }
+    },
+    "tiktoken:cl100k_base": {
+      "status": "ok",
+      "library": "tiktoken 0.14.0",
+      "encoding": "cl100k_base",
+      "newline_token_count": 1,
+      "rows": {
+        "fn": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "fn"
+            ],
+            "leading_space": [
+              " fn"
+            ]
+          }
+        },
+        "let": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "let"
+            ],
+            "leading_space": [
+              " let"
+            ]
+          }
+        },
+        "return": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "return"
+            ],
+            "leading_space": [
+              " return"
+            ]
+          }
+        },
+        "type": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "type"
+            ],
+            "leading_space": [
+              " type"
+            ]
+          }
+        },
+        "enum": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "enum"
+            ],
+            "leading_space": [
+              " enum"
+            ]
+          }
+        },
+        "module": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "module"
+            ],
+            "leading_space": [
+              " module"
+            ]
+          }
+        },
+        "import": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "import"
+            ],
+            "leading_space": [
+              " import"
+            ]
+          }
+        },
+        "pub": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "pub"
+            ],
+            "leading_space": [
+              " pub"
+            ]
+          }
+        },
+        "if": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "if"
+            ],
+            "leading_space": [
+              " if"
+            ]
+          }
+        },
+        "else": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "else"
+            ],
+            "leading_space": [
+              " else"
+            ]
+          }
+        },
+        "match": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "match"
+            ],
+            "leading_space": [
+              " match"
+            ]
+          }
+        },
+        "for": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "for"
+            ],
+            "leading_space": [
+              " for"
+            ]
+          }
+        },
+        "in": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "in"
+            ],
+            "leading_space": [
+              " in"
+            ]
+          }
+        },
+        "par": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "par"
+            ],
+            "leading_space": [
+              " par"
+            ]
+          }
+        },
+        "requires": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "requires"
+            ],
+            "leading_space": [
+              " requires"
+            ]
+          }
+        },
+        "ensures": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "ens",
+              "ures"
+            ],
+            "leading_space": [
+              " ensures"
+            ]
+          }
+        },
+        "result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "result"
+            ],
+            "leading_space": [
+              " result"
+            ]
+          }
+        },
+        "examples": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "examples"
+            ],
+            "leading_space": [
+              " examples"
+            ]
+          }
+        },
+        "oracle": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "oracle"
+            ],
+            "leading_space": [
+              " oracle"
+            ]
+          }
+        },
+        "effects": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "effects"
+            ],
+            "leading_space": [
+              " effects"
+            ]
+          }
+        },
+        "alloc": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "alloc"
+            ],
+            "leading_space": [
+              " alloc"
+            ]
+          }
+        },
+        "cost": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "cost"
+            ],
+            "leading_space": [
+              " cost"
+            ]
+          }
+        },
+        "latency": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "lat",
+              "ency"
+            ],
+            "leading_space": [
+              " latency"
+            ]
+          }
+        },
+        "reuse": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "reuse"
+            ],
+            "leading_space": [
+              " reuse"
+            ]
+          }
+        },
+        "none": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "none"
+            ],
+            "leading_space": [
+              " none"
+            ]
+          }
+        },
+        "resource": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "resource"
+            ],
+            "leading_space": [
+              " resource"
+            ]
+          }
+        },
+        "using": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "using"
+            ],
+            "leading_space": [
+              " using"
+            ]
+          }
+        },
+        "unsafe": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "unsafe"
+            ],
+            "leading_space": [
+              " unsafe"
+            ]
+          }
+        },
+        "true": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "true"
+            ],
+            "leading_space": [
+              " true"
+            ]
+          }
+        },
+        "false": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "false"
+            ],
+            "leading_space": [
+              " false"
+            ]
+          }
+        },
+        "and": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "and"
+            ],
+            "leading_space": [
+              " and"
+            ]
+          }
+        },
+        "or": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "or"
+            ],
+            "leading_space": [
+              " or"
+            ]
+          }
+        },
+        "not": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "not"
+            ],
+            "leading_space": [
+              " not"
+            ]
+          }
+        },
+        "Int": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Int"
+            ],
+            "leading_space": [
+              " Int"
+            ]
+          }
+        },
+        "Float": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Float"
+            ],
+            "leading_space": [
+              " Float"
+            ]
+          }
+        },
+        "Bool": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Bool"
+            ],
+            "leading_space": [
+              " Bool"
+            ]
+          }
+        },
+        "String": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "String"
+            ],
+            "leading_space": [
+              " String"
+            ]
+          }
+        },
+        "Byte": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Byte"
+            ],
+            "leading_space": [
+              " Byte"
+            ]
+          }
+        },
+        "List": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "List"
+            ],
+            "leading_space": [
+              " List"
+            ]
+          }
+        },
+        "Set": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Set"
+            ],
+            "leading_space": [
+              " Set"
+            ]
+          }
+        },
+        "Map": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Map"
+            ],
+            "leading_space": [
+              " Map"
+            ]
+          }
+        },
+        "Queue": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Queue"
+            ],
+            "leading_space": [
+              " Queue"
+            ]
+          }
+        },
+        "Image": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Image"
+            ],
+            "leading_space": [
+              " Image"
+            ]
+          }
+        },
+        "Tensor": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Tensor"
+            ],
+            "leading_space": [
+              " Tensor"
+            ]
+          }
+        },
+        "Result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Result"
+            ],
+            "leading_space": [
+              " Result"
+            ]
+          }
+        },
+        "Arena": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Arena"
+            ],
+            "leading_space": [
+              " Arena"
+            ]
+          }
+        },
+        "Aval": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "A",
+              "val"
+            ],
+            "leading_space": [
+              " Aval"
+            ]
+          }
+        }
+      },
+      "summary": {
+        "two_token_bare": [
+          "ensures",
+          "latency",
+          "Aval"
+        ],
+        "two_token_leading_space": [],
+        "over_two_tokens_bare": [],
+        "over_two_tokens_leading_space": [],
+        "over_one_token_any_context": [
+          "ensures",
+          "latency",
+          "Aval"
+        ],
+        "single_token_leading_space": 47,
+        "verdict": "PASS",
+        "verdict_bare": "PASS"
+      }
+    },
+    "hf:unsloth/Llama-3.2-1B": {
+      "status": "ok",
+      "library": "transformers 5.20.2 / tokenizers 0.23.3",
+      "repo": "unsloth/Llama-3.2-1B",
+      "revision": "9535bd9b1d1dea6acafbdc4813b728796aeb28da",
+      "method": "transformers.AutoTokenizer",
+      "fallback_errors": [],
+      "newline_token_count": 1,
+      "rows": {
+        "fn": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "fn"
+            ],
+            "leading_space": [
+              "Ġfn"
+            ]
+          }
+        },
+        "let": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "let"
+            ],
+            "leading_space": [
+              "Ġlet"
+            ]
+          }
+        },
+        "return": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "return"
+            ],
+            "leading_space": [
+              "Ġreturn"
+            ]
+          }
+        },
+        "type": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "type"
+            ],
+            "leading_space": [
+              "Ġtype"
+            ]
+          }
+        },
+        "enum": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "enum"
+            ],
+            "leading_space": [
+              "Ġenum"
+            ]
+          }
+        },
+        "module": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "module"
+            ],
+            "leading_space": [
+              "Ġmodule"
+            ]
+          }
+        },
+        "import": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "import"
+            ],
+            "leading_space": [
+              "Ġimport"
+            ]
+          }
+        },
+        "pub": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "pub"
+            ],
+            "leading_space": [
+              "Ġpub"
+            ]
+          }
+        },
+        "if": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "if"
+            ],
+            "leading_space": [
+              "Ġif"
+            ]
+          }
+        },
+        "else": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "else"
+            ],
+            "leading_space": [
+              "Ġelse"
+            ]
+          }
+        },
+        "match": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "match"
+            ],
+            "leading_space": [
+              "Ġmatch"
+            ]
+          }
+        },
+        "for": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "for"
+            ],
+            "leading_space": [
+              "Ġfor"
+            ]
+          }
+        },
+        "in": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "in"
+            ],
+            "leading_space": [
+              "Ġin"
+            ]
+          }
+        },
+        "par": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "par"
+            ],
+            "leading_space": [
+              "Ġpar"
+            ]
+          }
+        },
+        "requires": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "requires"
+            ],
+            "leading_space": [
+              "Ġrequires"
+            ]
+          }
+        },
+        "ensures": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "ens",
+              "ures"
+            ],
+            "leading_space": [
+              "Ġensures"
+            ]
+          }
+        },
+        "result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "result"
+            ],
+            "leading_space": [
+              "Ġresult"
+            ]
+          }
+        },
+        "examples": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "examples"
+            ],
+            "leading_space": [
+              "Ġexamples"
+            ]
+          }
+        },
+        "oracle": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "oracle"
+            ],
+            "leading_space": [
+              "Ġoracle"
+            ]
+          }
+        },
+        "effects": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "effects"
+            ],
+            "leading_space": [
+              "Ġeffects"
+            ]
+          }
+        },
+        "alloc": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "alloc"
+            ],
+            "leading_space": [
+              "Ġalloc"
+            ]
+          }
+        },
+        "cost": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "cost"
+            ],
+            "leading_space": [
+              "Ġcost"
+            ]
+          }
+        },
+        "latency": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "lat",
+              "ency"
+            ],
+            "leading_space": [
+              "Ġlatency"
+            ]
+          }
+        },
+        "reuse": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "reuse"
+            ],
+            "leading_space": [
+              "Ġreuse"
+            ]
+          }
+        },
+        "none": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "none"
+            ],
+            "leading_space": [
+              "Ġnone"
+            ]
+          }
+        },
+        "resource": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "resource"
+            ],
+            "leading_space": [
+              "Ġresource"
+            ]
+          }
+        },
+        "using": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "using"
+            ],
+            "leading_space": [
+              "Ġusing"
+            ]
+          }
+        },
+        "unsafe": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "unsafe"
+            ],
+            "leading_space": [
+              "Ġunsafe"
+            ]
+          }
+        },
+        "true": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "true"
+            ],
+            "leading_space": [
+              "Ġtrue"
+            ]
+          }
+        },
+        "false": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "false"
+            ],
+            "leading_space": [
+              "Ġfalse"
+            ]
+          }
+        },
+        "and": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "and"
+            ],
+            "leading_space": [
+              "Ġand"
+            ]
+          }
+        },
+        "or": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "or"
+            ],
+            "leading_space": [
+              "Ġor"
+            ]
+          }
+        },
+        "not": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "not"
+            ],
+            "leading_space": [
+              "Ġnot"
+            ]
+          }
+        },
+        "Int": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Int"
+            ],
+            "leading_space": [
+              "ĠInt"
+            ]
+          }
+        },
+        "Float": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Float"
+            ],
+            "leading_space": [
+              "ĠFloat"
+            ]
+          }
+        },
+        "Bool": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Bool"
+            ],
+            "leading_space": [
+              "ĠBool"
+            ]
+          }
+        },
+        "String": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "String"
+            ],
+            "leading_space": [
+              "ĠString"
+            ]
+          }
+        },
+        "Byte": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Byte"
+            ],
+            "leading_space": [
+              "ĠByte"
+            ]
+          }
+        },
+        "List": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "List"
+            ],
+            "leading_space": [
+              "ĠList"
+            ]
+          }
+        },
+        "Set": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Set"
+            ],
+            "leading_space": [
+              "ĠSet"
+            ]
+          }
+        },
+        "Map": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Map"
+            ],
+            "leading_space": [
+              "ĠMap"
+            ]
+          }
+        },
+        "Queue": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Queue"
+            ],
+            "leading_space": [
+              "ĠQueue"
+            ]
+          }
+        },
+        "Image": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Image"
+            ],
+            "leading_space": [
+              "ĠImage"
+            ]
+          }
+        },
+        "Tensor": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Tensor"
+            ],
+            "leading_space": [
+              "ĠTensor"
+            ]
+          }
+        },
+        "Result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Result"
+            ],
+            "leading_space": [
+              "ĠResult"
+            ]
+          }
+        },
+        "Arena": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Arena"
+            ],
+            "leading_space": [
+              "ĠArena"
+            ]
+          }
+        },
+        "Aval": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "A",
+              "val"
+            ],
+            "leading_space": [
+              "ĠAval"
+            ]
+          }
+        }
+      },
+      "summary": {
+        "two_token_bare": [
+          "ensures",
+          "latency",
+          "Aval"
+        ],
+        "two_token_leading_space": [],
+        "over_two_tokens_bare": [],
+        "over_two_tokens_leading_space": [],
+        "over_one_token_any_context": [
+          "ensures",
+          "latency",
+          "Aval"
+        ],
+        "single_token_leading_space": 47,
+        "verdict": "PASS",
+        "verdict_bare": "PASS"
+      }
+    },
+    "hf:NousResearch/Meta-Llama-3-8B": {
+      "status": "ok",
+      "library": "transformers 5.20.2 / tokenizers 0.23.3",
+      "repo": "NousResearch/Meta-Llama-3-8B",
+      "revision": "315b20096dc791d381d514deb5f8bd9c8d6d3061",
+      "method": "transformers.AutoTokenizer",
+      "fallback_errors": [],
+      "newline_token_count": 1,
+      "rows": {
+        "fn": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "fn"
+            ],
+            "leading_space": [
+              "Ġfn"
+            ]
+          }
+        },
+        "let": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "let"
+            ],
+            "leading_space": [
+              "Ġlet"
+            ]
+          }
+        },
+        "return": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "return"
+            ],
+            "leading_space": [
+              "Ġreturn"
+            ]
+          }
+        },
+        "type": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "type"
+            ],
+            "leading_space": [
+              "Ġtype"
+            ]
+          }
+        },
+        "enum": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "enum"
+            ],
+            "leading_space": [
+              "Ġenum"
+            ]
+          }
+        },
+        "module": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "module"
+            ],
+            "leading_space": [
+              "Ġmodule"
+            ]
+          }
+        },
+        "import": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "import"
+            ],
+            "leading_space": [
+              "Ġimport"
+            ]
+          }
+        },
+        "pub": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "pub"
+            ],
+            "leading_space": [
+              "Ġpub"
+            ]
+          }
+        },
+        "if": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "if"
+            ],
+            "leading_space": [
+              "Ġif"
+            ]
+          }
+        },
+        "else": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "else"
+            ],
+            "leading_space": [
+              "Ġelse"
+            ]
+          }
+        },
+        "match": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "match"
+            ],
+            "leading_space": [
+              "Ġmatch"
+            ]
+          }
+        },
+        "for": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "for"
+            ],
+            "leading_space": [
+              "Ġfor"
+            ]
+          }
+        },
+        "in": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "in"
+            ],
+            "leading_space": [
+              "Ġin"
+            ]
+          }
+        },
+        "par": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "par"
+            ],
+            "leading_space": [
+              "Ġpar"
+            ]
+          }
+        },
+        "requires": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "requires"
+            ],
+            "leading_space": [
+              "Ġrequires"
+            ]
+          }
+        },
+        "ensures": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "ens",
+              "ures"
+            ],
+            "leading_space": [
+              "Ġensures"
+            ]
+          }
+        },
+        "result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "result"
+            ],
+            "leading_space": [
+              "Ġresult"
+            ]
+          }
+        },
+        "examples": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "examples"
+            ],
+            "leading_space": [
+              "Ġexamples"
+            ]
+          }
+        },
+        "oracle": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "oracle"
+            ],
+            "leading_space": [
+              "Ġoracle"
+            ]
+          }
+        },
+        "effects": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "effects"
+            ],
+            "leading_space": [
+              "Ġeffects"
+            ]
+          }
+        },
+        "alloc": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "alloc"
+            ],
+            "leading_space": [
+              "Ġalloc"
+            ]
+          }
+        },
+        "cost": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "cost"
+            ],
+            "leading_space": [
+              "Ġcost"
+            ]
+          }
+        },
+        "latency": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "lat",
+              "ency"
+            ],
+            "leading_space": [
+              "Ġlatency"
+            ]
+          }
+        },
+        "reuse": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "reuse"
+            ],
+            "leading_space": [
+              "Ġreuse"
+            ]
+          }
+        },
+        "none": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "none"
+            ],
+            "leading_space": [
+              "Ġnone"
+            ]
+          }
+        },
+        "resource": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "resource"
+            ],
+            "leading_space": [
+              "Ġresource"
+            ]
+          }
+        },
+        "using": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "using"
+            ],
+            "leading_space": [
+              "Ġusing"
+            ]
+          }
+        },
+        "unsafe": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "unsafe"
+            ],
+            "leading_space": [
+              "Ġunsafe"
+            ]
+          }
+        },
+        "true": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "true"
+            ],
+            "leading_space": [
+              "Ġtrue"
+            ]
+          }
+        },
+        "false": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "false"
+            ],
+            "leading_space": [
+              "Ġfalse"
+            ]
+          }
+        },
+        "and": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "and"
+            ],
+            "leading_space": [
+              "Ġand"
+            ]
+          }
+        },
+        "or": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "or"
+            ],
+            "leading_space": [
+              "Ġor"
+            ]
+          }
+        },
+        "not": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "not"
+            ],
+            "leading_space": [
+              "Ġnot"
+            ]
+          }
+        },
+        "Int": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Int"
+            ],
+            "leading_space": [
+              "ĠInt"
+            ]
+          }
+        },
+        "Float": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Float"
+            ],
+            "leading_space": [
+              "ĠFloat"
+            ]
+          }
+        },
+        "Bool": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Bool"
+            ],
+            "leading_space": [
+              "ĠBool"
+            ]
+          }
+        },
+        "String": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "String"
+            ],
+            "leading_space": [
+              "ĠString"
+            ]
+          }
+        },
+        "Byte": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Byte"
+            ],
+            "leading_space": [
+              "ĠByte"
+            ]
+          }
+        },
+        "List": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "List"
+            ],
+            "leading_space": [
+              "ĠList"
+            ]
+          }
+        },
+        "Set": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Set"
+            ],
+            "leading_space": [
+              "ĠSet"
+            ]
+          }
+        },
+        "Map": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Map"
+            ],
+            "leading_space": [
+              "ĠMap"
+            ]
+          }
+        },
+        "Queue": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Queue"
+            ],
+            "leading_space": [
+              "ĠQueue"
+            ]
+          }
+        },
+        "Image": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Image"
+            ],
+            "leading_space": [
+              "ĠImage"
+            ]
+          }
+        },
+        "Tensor": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Tensor"
+            ],
+            "leading_space": [
+              "ĠTensor"
+            ]
+          }
+        },
+        "Result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Result"
+            ],
+            "leading_space": [
+              "ĠResult"
+            ]
+          }
+        },
+        "Arena": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Arena"
+            ],
+            "leading_space": [
+              "ĠArena"
+            ]
+          }
+        },
+        "Aval": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "A",
+              "val"
+            ],
+            "leading_space": [
+              "ĠAval"
+            ]
+          }
+        }
+      },
+      "summary": {
+        "two_token_bare": [
+          "ensures",
+          "latency",
+          "Aval"
+        ],
+        "two_token_leading_space": [],
+        "over_two_tokens_bare": [],
+        "over_two_tokens_leading_space": [],
+        "over_one_token_any_context": [
+          "ensures",
+          "latency",
+          "Aval"
+        ],
+        "single_token_leading_space": 47,
+        "verdict": "PASS",
+        "verdict_bare": "PASS"
+      }
+    },
+    "hf:Qwen/Qwen2.5-7B-Instruct": {
+      "status": "ok",
+      "library": "transformers 5.20.2 / tokenizers 0.23.3",
+      "repo": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "method": "transformers.AutoTokenizer",
+      "fallback_errors": [],
+      "newline_token_count": 1,
+      "rows": {
+        "fn": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "fn"
+            ],
+            "leading_space": [
+              "Ġfn"
+            ]
+          }
+        },
+        "let": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "let"
+            ],
+            "leading_space": [
+              "Ġlet"
+            ]
+          }
+        },
+        "return": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "return"
+            ],
+            "leading_space": [
+              "Ġreturn"
+            ]
+          }
+        },
+        "type": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "type"
+            ],
+            "leading_space": [
+              "Ġtype"
+            ]
+          }
+        },
+        "enum": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "enum"
+            ],
+            "leading_space": [
+              "Ġenum"
+            ]
+          }
+        },
+        "module": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "module"
+            ],
+            "leading_space": [
+              "Ġmodule"
+            ]
+          }
+        },
+        "import": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "import"
+            ],
+            "leading_space": [
+              "Ġimport"
+            ]
+          }
+        },
+        "pub": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "pub"
+            ],
+            "leading_space": [
+              "Ġpub"
+            ]
+          }
+        },
+        "if": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "if"
+            ],
+            "leading_space": [
+              "Ġif"
+            ]
+          }
+        },
+        "else": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "else"
+            ],
+            "leading_space": [
+              "Ġelse"
+            ]
+          }
+        },
+        "match": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "match"
+            ],
+            "leading_space": [
+              "Ġmatch"
+            ]
+          }
+        },
+        "for": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "for"
+            ],
+            "leading_space": [
+              "Ġfor"
+            ]
+          }
+        },
+        "in": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "in"
+            ],
+            "leading_space": [
+              "Ġin"
+            ]
+          }
+        },
+        "par": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "par"
+            ],
+            "leading_space": [
+              "Ġpar"
+            ]
+          }
+        },
+        "requires": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "requires"
+            ],
+            "leading_space": [
+              "Ġrequires"
+            ]
+          }
+        },
+        "ensures": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "ens",
+              "ures"
+            ],
+            "leading_space": [
+              "Ġensures"
+            ]
+          }
+        },
+        "result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "result"
+            ],
+            "leading_space": [
+              "Ġresult"
+            ]
+          }
+        },
+        "examples": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "examples"
+            ],
+            "leading_space": [
+              "Ġexamples"
+            ]
+          }
+        },
+        "oracle": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "oracle"
+            ],
+            "leading_space": [
+              "Ġoracle"
+            ]
+          }
+        },
+        "effects": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "effects"
+            ],
+            "leading_space": [
+              "Ġeffects"
+            ]
+          }
+        },
+        "alloc": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "alloc"
+            ],
+            "leading_space": [
+              "Ġalloc"
+            ]
+          }
+        },
+        "cost": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "cost"
+            ],
+            "leading_space": [
+              "Ġcost"
+            ]
+          }
+        },
+        "latency": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "lat",
+              "ency"
+            ],
+            "leading_space": [
+              "Ġlatency"
+            ]
+          }
+        },
+        "reuse": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "reuse"
+            ],
+            "leading_space": [
+              "Ġreuse"
+            ]
+          }
+        },
+        "none": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "none"
+            ],
+            "leading_space": [
+              "Ġnone"
+            ]
+          }
+        },
+        "resource": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "resource"
+            ],
+            "leading_space": [
+              "Ġresource"
+            ]
+          }
+        },
+        "using": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "using"
+            ],
+            "leading_space": [
+              "Ġusing"
+            ]
+          }
+        },
+        "unsafe": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "unsafe"
+            ],
+            "leading_space": [
+              "Ġunsafe"
+            ]
+          }
+        },
+        "true": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "true"
+            ],
+            "leading_space": [
+              "Ġtrue"
+            ]
+          }
+        },
+        "false": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "false"
+            ],
+            "leading_space": [
+              "Ġfalse"
+            ]
+          }
+        },
+        "and": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "and"
+            ],
+            "leading_space": [
+              "Ġand"
+            ]
+          }
+        },
+        "or": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "or"
+            ],
+            "leading_space": [
+              "Ġor"
+            ]
+          }
+        },
+        "not": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "not"
+            ],
+            "leading_space": [
+              "Ġnot"
+            ]
+          }
+        },
+        "Int": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Int"
+            ],
+            "leading_space": [
+              "ĠInt"
+            ]
+          }
+        },
+        "Float": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Float"
+            ],
+            "leading_space": [
+              "ĠFloat"
+            ]
+          }
+        },
+        "Bool": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Bool"
+            ],
+            "leading_space": [
+              "ĠBool"
+            ]
+          }
+        },
+        "String": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "String"
+            ],
+            "leading_space": [
+              "ĠString"
+            ]
+          }
+        },
+        "Byte": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Byte"
+            ],
+            "leading_space": [
+              "ĠByte"
+            ]
+          }
+        },
+        "List": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "List"
+            ],
+            "leading_space": [
+              "ĠList"
+            ]
+          }
+        },
+        "Set": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Set"
+            ],
+            "leading_space": [
+              "ĠSet"
+            ]
+          }
+        },
+        "Map": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Map"
+            ],
+            "leading_space": [
+              "ĠMap"
+            ]
+          }
+        },
+        "Queue": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Queue"
+            ],
+            "leading_space": [
+              "ĠQueue"
+            ]
+          }
+        },
+        "Image": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Image"
+            ],
+            "leading_space": [
+              "ĠImage"
+            ]
+          }
+        },
+        "Tensor": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Tensor"
+            ],
+            "leading_space": [
+              "ĠTensor"
+            ]
+          }
+        },
+        "Result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Result"
+            ],
+            "leading_space": [
+              "ĠResult"
+            ]
+          }
+        },
+        "Arena": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Arena"
+            ],
+            "leading_space": [
+              "ĠArena"
+            ]
+          }
+        },
+        "Aval": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "A",
+              "val"
+            ],
+            "leading_space": [
+              "ĠAval"
+            ]
+          }
+        }
+      },
+      "summary": {
+        "two_token_bare": [
+          "ensures",
+          "latency",
+          "Aval"
+        ],
+        "two_token_leading_space": [],
+        "over_two_tokens_bare": [],
+        "over_two_tokens_leading_space": [],
+        "over_one_token_any_context": [
+          "ensures",
+          "latency",
+          "Aval"
+        ],
+        "single_token_leading_space": 47,
+        "verdict": "PASS",
+        "verdict_bare": "PASS"
+      }
+    },
+    "hf:Qwen/Qwen3-8B": {
+      "status": "ok",
+      "library": "transformers 5.20.2 / tokenizers 0.23.3",
+      "repo": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "method": "transformers.AutoTokenizer",
+      "fallback_errors": [],
+      "newline_token_count": 1,
+      "rows": {
+        "fn": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "fn"
+            ],
+            "leading_space": [
+              "Ġfn"
+            ]
+          }
+        },
+        "let": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "let"
+            ],
+            "leading_space": [
+              "Ġlet"
+            ]
+          }
+        },
+        "return": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "return"
+            ],
+            "leading_space": [
+              "Ġreturn"
+            ]
+          }
+        },
+        "type": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "type"
+            ],
+            "leading_space": [
+              "Ġtype"
+            ]
+          }
+        },
+        "enum": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "enum"
+            ],
+            "leading_space": [
+              "Ġenum"
+            ]
+          }
+        },
+        "module": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "module"
+            ],
+            "leading_space": [
+              "Ġmodule"
+            ]
+          }
+        },
+        "import": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "import"
+            ],
+            "leading_space": [
+              "Ġimport"
+            ]
+          }
+        },
+        "pub": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "pub"
+            ],
+            "leading_space": [
+              "Ġpub"
+            ]
+          }
+        },
+        "if": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "if"
+            ],
+            "leading_space": [
+              "Ġif"
+            ]
+          }
+        },
+        "else": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "else"
+            ],
+            "leading_space": [
+              "Ġelse"
+            ]
+          }
+        },
+        "match": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "match"
+            ],
+            "leading_space": [
+              "Ġmatch"
+            ]
+          }
+        },
+        "for": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "for"
+            ],
+            "leading_space": [
+              "Ġfor"
+            ]
+          }
+        },
+        "in": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "in"
+            ],
+            "leading_space": [
+              "Ġin"
+            ]
+          }
+        },
+        "par": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "par"
+            ],
+            "leading_space": [
+              "Ġpar"
+            ]
+          }
+        },
+        "requires": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "requires"
+            ],
+            "leading_space": [
+              "Ġrequires"
+            ]
+          }
+        },
+        "ensures": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "ens",
+              "ures"
+            ],
+            "leading_space": [
+              "Ġensures"
+            ]
+          }
+        },
+        "result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "result"
+            ],
+            "leading_space": [
+              "Ġresult"
+            ]
+          }
+        },
+        "examples": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "examples"
+            ],
+            "leading_space": [
+              "Ġexamples"
+            ]
+          }
+        },
+        "oracle": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "oracle"
+            ],
+            "leading_space": [
+              "Ġoracle"
+            ]
+          }
+        },
+        "effects": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "effects"
+            ],
+            "leading_space": [
+              "Ġeffects"
+            ]
+          }
+        },
+        "alloc": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "alloc"
+            ],
+            "leading_space": [
+              "Ġalloc"
+            ]
+          }
+        },
+        "cost": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "cost"
+            ],
+            "leading_space": [
+              "Ġcost"
+            ]
+          }
+        },
+        "latency": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "lat",
+              "ency"
+            ],
+            "leading_space": [
+              "Ġlatency"
+            ]
+          }
+        },
+        "reuse": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "reuse"
+            ],
+            "leading_space": [
+              "Ġreuse"
+            ]
+          }
+        },
+        "none": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "none"
+            ],
+            "leading_space": [
+              "Ġnone"
+            ]
+          }
+        },
+        "resource": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "resource"
+            ],
+            "leading_space": [
+              "Ġresource"
+            ]
+          }
+        },
+        "using": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "using"
+            ],
+            "leading_space": [
+              "Ġusing"
+            ]
+          }
+        },
+        "unsafe": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "unsafe"
+            ],
+            "leading_space": [
+              "Ġunsafe"
+            ]
+          }
+        },
+        "true": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "true"
+            ],
+            "leading_space": [
+              "Ġtrue"
+            ]
+          }
+        },
+        "false": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "false"
+            ],
+            "leading_space": [
+              "Ġfalse"
+            ]
+          }
+        },
+        "and": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "and"
+            ],
+            "leading_space": [
+              "Ġand"
+            ]
+          }
+        },
+        "or": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "or"
+            ],
+            "leading_space": [
+              "Ġor"
+            ]
+          }
+        },
+        "not": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "not"
+            ],
+            "leading_space": [
+              "Ġnot"
+            ]
+          }
+        },
+        "Int": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Int"
+            ],
+            "leading_space": [
+              "ĠInt"
+            ]
+          }
+        },
+        "Float": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Float"
+            ],
+            "leading_space": [
+              "ĠFloat"
+            ]
+          }
+        },
+        "Bool": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Bool"
+            ],
+            "leading_space": [
+              "ĠBool"
+            ]
+          }
+        },
+        "String": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "String"
+            ],
+            "leading_space": [
+              "ĠString"
+            ]
+          }
+        },
+        "Byte": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Byte"
+            ],
+            "leading_space": [
+              "ĠByte"
+            ]
+          }
+        },
+        "List": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "List"
+            ],
+            "leading_space": [
+              "ĠList"
+            ]
+          }
+        },
+        "Set": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Set"
+            ],
+            "leading_space": [
+              "ĠSet"
+            ]
+          }
+        },
+        "Map": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Map"
+            ],
+            "leading_space": [
+              "ĠMap"
+            ]
+          }
+        },
+        "Queue": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Queue"
+            ],
+            "leading_space": [
+              "ĠQueue"
+            ]
+          }
+        },
+        "Image": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Image"
+            ],
+            "leading_space": [
+              "ĠImage"
+            ]
+          }
+        },
+        "Tensor": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Tensor"
+            ],
+            "leading_space": [
+              "ĠTensor"
+            ]
+          }
+        },
+        "Result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Result"
+            ],
+            "leading_space": [
+              "ĠResult"
+            ]
+          }
+        },
+        "Arena": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Arena"
+            ],
+            "leading_space": [
+              "ĠArena"
+            ]
+          }
+        },
+        "Aval": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "A",
+              "val"
+            ],
+            "leading_space": [
+              "ĠAval"
+            ]
+          }
+        }
+      },
+      "summary": {
+        "two_token_bare": [
+          "ensures",
+          "latency",
+          "Aval"
+        ],
+        "two_token_leading_space": [],
+        "over_two_tokens_bare": [],
+        "over_two_tokens_leading_space": [],
+        "over_one_token_any_context": [
+          "ensures",
+          "latency",
+          "Aval"
+        ],
+        "single_token_leading_space": 47,
+        "verdict": "PASS",
+        "verdict_bare": "PASS"
+      }
+    },
+    "hf:deepseek-ai/DeepSeek-V3": {
+      "status": "ok",
+      "library": "transformers 5.20.2 / tokenizers 0.23.3",
+      "repo": "deepseek-ai/DeepSeek-V3",
+      "revision": "e815299b0bcbac849fa540c768ef21845365c9eb",
+      "method": "transformers.AutoTokenizer",
+      "fallback_errors": [],
+      "newline_token_count": 1,
+      "rows": {
+        "fn": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "fn"
+            ],
+            "leading_space": [
+              "Ġfn"
+            ]
+          }
+        },
+        "let": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "let"
+            ],
+            "leading_space": [
+              "Ġlet"
+            ]
+          }
+        },
+        "return": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "return"
+            ],
+            "leading_space": [
+              "Ġreturn"
+            ]
+          }
+        },
+        "type": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "type"
+            ],
+            "leading_space": [
+              "Ġtype"
+            ]
+          }
+        },
+        "enum": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "enum"
+            ],
+            "leading_space": [
+              "Ġenum"
+            ]
+          }
+        },
+        "module": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "module"
+            ],
+            "leading_space": [
+              "Ġmodule"
+            ]
+          }
+        },
+        "import": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "import"
+            ],
+            "leading_space": [
+              "Ġimport"
+            ]
+          }
+        },
+        "pub": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "pub"
+            ],
+            "leading_space": [
+              "Ġpub"
+            ]
+          }
+        },
+        "if": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "if"
+            ],
+            "leading_space": [
+              "Ġif"
+            ]
+          }
+        },
+        "else": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "else"
+            ],
+            "leading_space": [
+              "Ġelse"
+            ]
+          }
+        },
+        "match": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "match"
+            ],
+            "leading_space": [
+              "Ġmatch"
+            ]
+          }
+        },
+        "for": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "for"
+            ],
+            "leading_space": [
+              "Ġfor"
+            ]
+          }
+        },
+        "in": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "in"
+            ],
+            "leading_space": [
+              "Ġin"
+            ]
+          }
+        },
+        "par": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "par"
+            ],
+            "leading_space": [
+              "Ġpar"
+            ]
+          }
+        },
+        "requires": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "requires"
+            ],
+            "leading_space": [
+              "Ġrequires"
+            ]
+          }
+        },
+        "ensures": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "ens",
+              "ures"
+            ],
+            "leading_space": [
+              "Ġensures"
+            ]
+          }
+        },
+        "result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "result"
+            ],
+            "leading_space": [
+              "Ġresult"
+            ]
+          }
+        },
+        "examples": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "examples"
+            ],
+            "leading_space": [
+              "Ġexamples"
+            ]
+          }
+        },
+        "oracle": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "or",
+              "acle"
+            ],
+            "leading_space": [
+              "Ġoracle"
+            ]
+          }
+        },
+        "effects": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "effects"
+            ],
+            "leading_space": [
+              "Ġeffects"
+            ]
+          }
+        },
+        "alloc": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "alloc"
+            ],
+            "leading_space": [
+              "Ġalloc"
+            ]
+          }
+        },
+        "cost": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "cost"
+            ],
+            "leading_space": [
+              "Ġcost"
+            ]
+          }
+        },
+        "latency": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "lat",
+              "ency"
+            ],
+            "leading_space": [
+              "Ġlatency"
+            ]
+          }
+        },
+        "reuse": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "re",
+              "use"
+            ],
+            "leading_space": [
+              "Ġreuse"
+            ]
+          }
+        },
+        "none": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "none"
+            ],
+            "leading_space": [
+              "Ġnone"
+            ]
+          }
+        },
+        "resource": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "resource"
+            ],
+            "leading_space": [
+              "Ġresource"
+            ]
+          }
+        },
+        "using": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "using"
+            ],
+            "leading_space": [
+              "Ġusing"
+            ]
+          }
+        },
+        "unsafe": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "uns",
+              "afe"
+            ],
+            "leading_space": [
+              "Ġunsafe"
+            ]
+          }
+        },
+        "true": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "true"
+            ],
+            "leading_space": [
+              "Ġtrue"
+            ]
+          }
+        },
+        "false": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "false"
+            ],
+            "leading_space": [
+              "Ġfalse"
+            ]
+          }
+        },
+        "and": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "and"
+            ],
+            "leading_space": [
+              "Ġand"
+            ]
+          }
+        },
+        "or": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "or"
+            ],
+            "leading_space": [
+              "Ġor"
+            ]
+          }
+        },
+        "not": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "not"
+            ],
+            "leading_space": [
+              "Ġnot"
+            ]
+          }
+        },
+        "Int": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Int"
+            ],
+            "leading_space": [
+              "ĠInt"
+            ]
+          }
+        },
+        "Float": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Float"
+            ],
+            "leading_space": [
+              "ĠFloat"
+            ]
+          }
+        },
+        "Bool": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Bool"
+            ],
+            "leading_space": [
+              "ĠBool"
+            ]
+          }
+        },
+        "String": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "String"
+            ],
+            "leading_space": [
+              "ĠString"
+            ]
+          }
+        },
+        "Byte": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Byte"
+            ],
+            "leading_space": [
+              "ĠByte"
+            ]
+          }
+        },
+        "List": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "List"
+            ],
+            "leading_space": [
+              "ĠList"
+            ]
+          }
+        },
+        "Set": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Set"
+            ],
+            "leading_space": [
+              "ĠSet"
+            ]
+          }
+        },
+        "Map": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Map"
+            ],
+            "leading_space": [
+              "ĠMap"
+            ]
+          }
+        },
+        "Queue": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Queue"
+            ],
+            "leading_space": [
+              "ĠQueue"
+            ]
+          }
+        },
+        "Image": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Image"
+            ],
+            "leading_space": [
+              "ĠImage"
+            ]
+          }
+        },
+        "Tensor": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Tensor"
+            ],
+            "leading_space": [
+              "ĠTensor"
+            ]
+          }
+        },
+        "Result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 2,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "Result"
+            ],
+            "leading_space": [
+              "ĠResult"
+            ]
+          }
+        },
+        "Arena": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "A",
+              "rena"
+            ],
+            "leading_space": [
+              "ĠArena"
+            ]
+          }
+        },
+        "Aval": {
+          "bare": 2,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "A",
+              "val"
+            ],
+            "leading_space": [
+              "ĠAval"
+            ]
+          }
+        }
+      },
+      "summary": {
+        "two_token_bare": [
+          "ensures",
+          "oracle",
+          "latency",
+          "reuse",
+          "unsafe",
+          "Arena",
+          "Aval"
+        ],
+        "two_token_leading_space": [],
+        "over_two_tokens_bare": [],
+        "over_two_tokens_leading_space": [],
+        "over_one_token_any_context": [
+          "ensures",
+          "oracle",
+          "latency",
+          "reuse",
+          "unsafe",
+          "Arena",
+          "Aval"
+        ],
+        "single_token_leading_space": 47,
+        "verdict": "PASS",
+        "verdict_bare": "FAIL"
+      }
+    },
+    "hf:mistralai/Mistral-7B-v0.3": {
+      "status": "ok",
+      "library": "transformers 5.20.2 / tokenizers 0.23.3",
+      "repo": "mistralai/Mistral-7B-v0.3",
+      "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+      "method": "transformers.AutoTokenizer",
+      "fallback_errors": [],
+      "newline_token_count": 2,
+      "rows": {
+        "fn": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁fn"
+            ],
+            "leading_space": [
+              "▁fn"
+            ]
+          }
+        },
+        "let": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁let"
+            ],
+            "leading_space": [
+              "▁let"
+            ]
+          }
+        },
+        "return": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁return"
+            ],
+            "leading_space": [
+              "▁return"
+            ]
+          }
+        },
+        "type": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁type"
+            ],
+            "leading_space": [
+              "▁type"
+            ]
+          }
+        },
+        "enum": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁enum"
+            ],
+            "leading_space": [
+              "▁enum"
+            ]
+          }
+        },
+        "module": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁module"
+            ],
+            "leading_space": [
+              "▁module"
+            ]
+          }
+        },
+        "import": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁import"
+            ],
+            "leading_space": [
+              "▁import"
+            ]
+          }
+        },
+        "pub": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁pub"
+            ],
+            "leading_space": [
+              "▁pub"
+            ]
+          }
+        },
+        "if": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁if"
+            ],
+            "leading_space": [
+              "▁if"
+            ]
+          }
+        },
+        "else": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁else"
+            ],
+            "leading_space": [
+              "▁else"
+            ]
+          }
+        },
+        "match": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁match"
+            ],
+            "leading_space": [
+              "▁match"
+            ]
+          }
+        },
+        "for": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁for"
+            ],
+            "leading_space": [
+              "▁for"
+            ]
+          }
+        },
+        "in": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁in"
+            ],
+            "leading_space": [
+              "▁in"
+            ]
+          }
+        },
+        "par": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁par"
+            ],
+            "leading_space": [
+              "▁par"
+            ]
+          }
+        },
+        "requires": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 4,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "▁requires"
+            ],
+            "leading_space": [
+              "▁requires"
+            ]
+          }
+        },
+        "ensures": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 4,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "▁ensures"
+            ],
+            "leading_space": [
+              "▁ensures"
+            ]
+          }
+        },
+        "result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁result"
+            ],
+            "leading_space": [
+              "▁result"
+            ]
+          }
+        },
+        "examples": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 4,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "▁examples"
+            ],
+            "leading_space": [
+              "▁examples"
+            ]
+          }
+        },
+        "oracle": {
+          "bare": 2,
+          "leading_space": 2,
+          "after_newline_raw": 4,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "▁or",
+              "acle"
+            ],
+            "leading_space": [
+              "▁or",
+              "acle"
+            ]
+          }
+        },
+        "effects": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 4,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "▁effects"
+            ],
+            "leading_space": [
+              "▁effects"
+            ]
+          }
+        },
+        "alloc": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁alloc"
+            ],
+            "leading_space": [
+              "▁alloc"
+            ]
+          }
+        },
+        "cost": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁cost"
+            ],
+            "leading_space": [
+              "▁cost"
+            ]
+          }
+        },
+        "latency": {
+          "bare": 2,
+          "leading_space": 2,
+          "after_newline_raw": 4,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "▁lat",
+              "ency"
+            ],
+            "leading_space": [
+              "▁lat",
+              "ency"
+            ]
+          }
+        },
+        "reuse": {
+          "bare": 2,
+          "leading_space": 2,
+          "after_newline_raw": 4,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "▁re",
+              "use"
+            ],
+            "leading_space": [
+              "▁re",
+              "use"
+            ]
+          }
+        },
+        "none": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁none"
+            ],
+            "leading_space": [
+              "▁none"
+            ]
+          }
+        },
+        "resource": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁resource"
+            ],
+            "leading_space": [
+              "▁resource"
+            ]
+          }
+        },
+        "using": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁using"
+            ],
+            "leading_space": [
+              "▁using"
+            ]
+          }
+        },
+        "unsafe": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 4,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "▁unsafe"
+            ],
+            "leading_space": [
+              "▁unsafe"
+            ]
+          }
+        },
+        "true": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁true"
+            ],
+            "leading_space": [
+              "▁true"
+            ]
+          }
+        },
+        "false": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁false"
+            ],
+            "leading_space": [
+              "▁false"
+            ]
+          }
+        },
+        "and": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁and"
+            ],
+            "leading_space": [
+              "▁and"
+            ]
+          }
+        },
+        "or": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁or"
+            ],
+            "leading_space": [
+              "▁or"
+            ]
+          }
+        },
+        "not": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁not"
+            ],
+            "leading_space": [
+              "▁not"
+            ]
+          }
+        },
+        "Int": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁Int"
+            ],
+            "leading_space": [
+              "▁Int"
+            ]
+          }
+        },
+        "Float": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁Float"
+            ],
+            "leading_space": [
+              "▁Float"
+            ]
+          }
+        },
+        "Bool": {
+          "bare": 2,
+          "leading_space": 2,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁B",
+              "ool"
+            ],
+            "leading_space": [
+              "▁B",
+              "ool"
+            ]
+          }
+        },
+        "String": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁String"
+            ],
+            "leading_space": [
+              "▁String"
+            ]
+          }
+        },
+        "Byte": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁Byte"
+            ],
+            "leading_space": [
+              "▁Byte"
+            ]
+          }
+        },
+        "List": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁List"
+            ],
+            "leading_space": [
+              "▁List"
+            ]
+          }
+        },
+        "Set": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁Set"
+            ],
+            "leading_space": [
+              "▁Set"
+            ]
+          }
+        },
+        "Map": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁Map"
+            ],
+            "leading_space": [
+              "▁Map"
+            ]
+          }
+        },
+        "Queue": {
+          "bare": 2,
+          "leading_space": 2,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁Que",
+              "ue"
+            ],
+            "leading_space": [
+              "▁Que",
+              "ue"
+            ]
+          }
+        },
+        "Image": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁Image"
+            ],
+            "leading_space": [
+              "▁Image"
+            ]
+          }
+        },
+        "Tensor": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁Tensor"
+            ],
+            "leading_space": [
+              "▁Tensor"
+            ]
+          }
+        },
+        "Result": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 3,
+          "after_newline_delta": 1,
+          "pieces": {
+            "bare": [
+              "▁Result"
+            ],
+            "leading_space": [
+              "▁Result"
+            ]
+          }
+        },
+        "Arena": {
+          "bare": 1,
+          "leading_space": 1,
+          "after_newline_raw": 4,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "▁Arena"
+            ],
+            "leading_space": [
+              "▁Arena"
+            ]
+          }
+        },
+        "Aval": {
+          "bare": 2,
+          "leading_space": 2,
+          "after_newline_raw": 4,
+          "after_newline_delta": 2,
+          "pieces": {
+            "bare": [
+              "▁A",
+              "val"
+            ],
+            "leading_space": [
+              "▁A",
+              "val"
+            ]
+          }
+        }
+      },
+      "summary": {
+        "two_token_bare": [
+          "oracle",
+          "latency",
+          "reuse",
+          "Bool",
+          "Queue",
+          "Aval"
+        ],
+        "two_token_leading_space": [
+          "oracle",
+          "latency",
+          "reuse",
+          "Bool",
+          "Queue",
+          "Aval"
+        ],
+        "over_two_tokens_bare": [],
+        "over_two_tokens_leading_space": [],
+        "over_one_token_any_context": [
+          "oracle",
+          "latency",
+          "reuse",
+          "Bool",
+          "Queue",
+          "Aval"
+        ],
+        "single_token_leading_space": 41,
+        "verdict": "FAIL",
+        "verdict_bare": "FAIL"
+      }
+    },
+    "claude:count_tokens": {
+      "status": "not measured (no API key)"
+    }
+  }
+}

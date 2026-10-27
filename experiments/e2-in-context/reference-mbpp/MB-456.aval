@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn reverse_string_list(stringlist: List<String>) -> List<String>
+  ensures result.len() == stringlist.len()
+  examples
+    ["Red", "Green"] => ["deR", "neerG"]
+  cost O(stringlist.len())
+{
+  return stringlist.map(|s| s.chars().reverse().join(""))
+}
+```

@@ -1,0 +1,8 @@
+# scenario: SYN-027
+# cmd: check
+# expect: {"code":"E002"}
+module t
+fn f(a: Int) -> Int
+{
+  return a + not true
+}

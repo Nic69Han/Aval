@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn will_it_fly(q: List<Int>, w: Int) -> Bool
+  examples
+    [3, 2, 3], 9 => true
+    [1, 2], 5 => false
+  cost O(q.len())
+{
+  return q == q.reverse() and q.sum() <= w
+}
+```

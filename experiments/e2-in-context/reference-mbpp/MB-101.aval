@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn kth_element(arr: List<Int>, k: Int) -> Int
+  examples
+    [12, 3, 5, 7, 19], 2 => 3
+  cost O(1)
+{
+  return if k >= 1 { arr[k - 1] } else { arr[arr.len() + k - 1] }
+}
+```

@@ -1,0 +1,10 @@
+# scenario: STD-021
+# cmd: test
+module t
+fn f(a: Int, b: Int) -> Int
+  requires a >= b
+  examples
+    3, 3 => 7
+{
+  return (a..=b).sum() + (a..=b).product() + (a..=b).len()
+}

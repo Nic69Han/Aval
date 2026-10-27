@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn remove_odd(l: List<Int>) -> List<Int>
+  examples
+    [1, 2, 3] => [2]
+  cost O(l.len())
+{
+  return l.filter(|x| x % 2 == 0)
+}
+```

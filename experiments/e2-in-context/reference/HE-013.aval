@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn greatest_common_divisor(a: Int, b: Int) -> Int
+  requires a > 0 and b > 0
+  ensures a % result == 0 and b % result == 0
+  examples
+    3, 5 => 1
+    25, 15 => 5
+  cost O(log(a + b))
+{
+  return if b == 0 { a } else { greatest_common_divisor(b, a % b) }
+}
+```

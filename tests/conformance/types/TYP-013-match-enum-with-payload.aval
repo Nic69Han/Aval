@@ -1,0 +1,14 @@
+# scenario: TYP-013
+# cmd: test
+module t
+enum Shape { Circle(Float), Square(Float) }
+fn area(s: Shape) -> Float
+  examples
+    Square(2.0) => 4.0
+    Circle(1.0) => 3.0
+{
+  return match s {
+    Circle(r) => 3.0 * r * r
+    Square(a) => a * a
+  }
+}

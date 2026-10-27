@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn common(first: List<Int>, second: List<Int>) -> List<Int>
+  ensures result == result.sort().dedup()
+  examples
+    [5, 3, 2, 8], [3, 2] => [2, 3]
+  cost O(first.len() * second.len())
+{
+  return first.filter(|x| second.contains(x)).sort().dedup()
+}
+```

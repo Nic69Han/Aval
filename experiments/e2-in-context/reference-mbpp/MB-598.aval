@@ -1,0 +1,21 @@
+```aval
+module solution
+
+fn digit_pow_sum(n: Int, p: Int) -> Int
+{
+  return if n < 10 { n.pow(p) } else { (n % 10).pow(p) + digit_pow_sum(n / 10, p) }
+}
+
+fn digit_count(n: Int) -> Int
+{
+  return if n < 10 { 1 } else { 1 + digit_count(n / 10) }
+}
+
+pub fn armstrong_number(number: Int) -> Bool
+  examples
+    153 => true
+  cost O(log(number + 1))
+{
+  return number >= 0 and digit_pow_sum(number, digit_count(number)) == number
+}
+```

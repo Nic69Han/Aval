@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn median_numbers(a: Int, b: Int, c: Int) -> Int
+  examples
+    25, 55, 65 => 55
+  cost O(1)
+{
+  return a.min(b).max(a.max(b).min(c))
+}
+```

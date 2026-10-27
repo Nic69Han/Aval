@@ -1,0 +1,7 @@
+# scenario: TYP-014
+# expect: {"code":"E301"}
+module t
+fn f() -> List<Int>
+{
+  return [1, 2.0]
+}

@@ -1,0 +1,10 @@
+# scenario: STD-005
+# cmd: test
+# expect: {"code":"T700","fn":"f","fault":"overflow"}
+module t
+fn f(xs: List<Int>) -> Int
+  examples
+    [4611686018427387904, 2] => 0
+{
+  return xs.product()
+}

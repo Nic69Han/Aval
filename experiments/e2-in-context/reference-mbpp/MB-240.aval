@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn replace_list(list1: List<Int>, list2: List<Int>) -> List<Int>
+  examples
+    [1, 3, 5, 7, 9, 10], [2, 4, 6, 8] => [1, 3, 5, 7, 9, 2, 4, 6, 8]
+  cost O(list1.len() + list2.len())
+{
+  return list1.take((list1.len() - 1).max(0)).concat(list2)
+}
+```

@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn toggle_string(string: String) -> String
+  examples
+    "Python" => "pYTHON"
+  cost O(string.len())
+{
+  let out: List<String> = string.chars().map(|c| if c == c.to_uppercase() { c.to_lowercase() } else { c.to_uppercase() })
+  return out.join("")
+}
+```

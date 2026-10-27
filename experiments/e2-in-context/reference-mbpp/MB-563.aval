@@ -1,0 +1,15 @@
+```aval
+module solution
+
+pub fn extract_values(text: String) -> List<String>
+  examples
+    "\"Python\", \"PHP\", \"Java\"" => ["Python", "PHP", "Java"]
+  cost O(text.len())
+{
+  let parts: List<String> = text.split("\"")
+  let n: Int = parts.len()
+  let picked: List<List<String>> = for i in 0..n { if i % 2 == 1 and i + 1 < n { [parts[i]] } else { [] } }
+  let start: List<String> = []
+  return picked.fold(start, |acc, p| acc.concat(p))
+}
+```

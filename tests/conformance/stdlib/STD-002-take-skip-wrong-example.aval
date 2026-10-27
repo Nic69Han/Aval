@@ -1,0 +1,10 @@
+# scenario: STD-002
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(xs: List<Int>) -> List<Int>
+  examples
+    [1, 2, 3] => [3]
+{
+  return xs.take(10).skip(1)
+}

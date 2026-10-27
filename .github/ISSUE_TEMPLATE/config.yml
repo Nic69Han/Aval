@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or idea (Discussions)
+    url: https://github.com/Nic69Han/Aval/discussions
+    about: Ask questions and float ideas here before opening an issue or an OpenSpec change.
+  - name: Report a security vulnerability (private)
+    url: https://github.com/Nic69Han/Aval/security/advisories/new
+    about: Do not open a public issue for vulnerabilities. See SECURITY.md.

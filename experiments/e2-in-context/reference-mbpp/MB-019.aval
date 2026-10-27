@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn test_duplicate(arraynums: List<Int>) -> Bool
+  examples
+    [1, 2, 3, 4, 5] => false
+  cost O(arraynums.len() * log(arraynums.len()))
+{
+  return arraynums.sort().dedup().len() < arraynums.len()
+}
+```

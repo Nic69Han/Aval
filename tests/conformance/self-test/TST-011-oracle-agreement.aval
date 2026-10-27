@@ -1,0 +1,13 @@
+# scenario: TST-011
+# cmd: test
+# exit: 0
+module t
+fn f(xs: List<Int>) -> Int
+  oracle g
+{
+  return xs.len()
+}
+fn g(xs: List<Int>) -> Int
+{
+  return xs.fold(0, |acc, x| acc + 1)
+}

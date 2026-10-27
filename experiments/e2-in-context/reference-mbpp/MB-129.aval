@@ -1,0 +1,28 @@
+```aval
+module solution
+
+pub fn magic_square_test(my_matrix: List<List<Int>>) -> Bool
+  examples
+    [[7, 12, 1, 14], [2, 13, 8, 11], [16, 3, 10, 5], [9, 6, 15, 4]] => true
+  cost O(my_matrix.len() * my_matrix.len())
+{
+  let n: Int = my_matrix.len()
+  let s: Int = my_matrix[0].sum()
+  return if not my_matrix.all(|row| row.sum() == s) {
+    false
+  } else {
+    let cols: List<Int> = for i in 0..my_matrix[0].len() { my_matrix.map(|row| row[i]).sum() }
+    if not cols.all(|c| c == s) {
+      false
+    } else {
+      let diag: Int = (for i in 0..n { my_matrix[i][i] }).sum()
+      if diag != s {
+        false
+      } else {
+        let anti: Int = (for i in 0..n { my_matrix[i][n - i - 1] }).sum()
+        anti == s
+      }
+    }
+  }
+}
+```

@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn replace_char(str1: String, ch: String, newch: String) -> String
+  examples
+    "polygon", "y", "l" => "pollgon"
+  cost O(str1.len())
+{
+  let out: List<String> = str1.chars().map(|c| if c == ch { newch } else { c })
+  return out.join("")
+}
+```

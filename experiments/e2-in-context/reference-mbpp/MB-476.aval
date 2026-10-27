@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn big_sum(nums: List<Int>) -> Int
+  examples
+    [1, 2, 3] => 4
+  cost O(nums.len())
+{
+  return nums.max() + nums.min()
+}
+```

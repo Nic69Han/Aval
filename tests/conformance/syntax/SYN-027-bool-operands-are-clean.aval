@@ -1,0 +1,7 @@
+# scenario: SYN-027
+# cmd: check
+module t
+fn g(a: Bool, b: Bool) -> Bool
+{
+  return a == not b
+}

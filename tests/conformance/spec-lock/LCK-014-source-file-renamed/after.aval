@@ -1,0 +1,13 @@
+# scenario: LCK-014
+# rename: main2.aval
+# cmd: check
+# exit: 1
+# expect: {"code":"E900","reason":"missing"}
+# expect: {"code":"W901","fn":"a"}
+module t
+pub fn a(x: Int) -> Int
+  ensures true
+  cost O(1)
+{
+  return x + 1
+}

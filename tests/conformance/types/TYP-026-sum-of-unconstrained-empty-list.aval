@@ -1,0 +1,7 @@
+# scenario: TYP-026
+# expect: {"code":"E313","fn":"f"}
+module t
+fn f() -> Bool
+{
+  return [].sum() == [].sum()
+}

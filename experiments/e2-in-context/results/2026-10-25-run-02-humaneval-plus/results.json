@@ -1,0 +1,2484 @@
+{
+  "generated_at": "2026-10-25T11:05:14Z",
+  "languages": [
+    "aval",
+    "rust"
+  ],
+  "metrics": {
+    "aval": {
+      "compile_at_1": 1.0,
+      "pass_at_1": 0.975,
+      "pass_at_1_count": 39,
+      "pass_at_r": 1.0,
+      "provider_errors": 0,
+      "resource_failures": 0,
+      "solved": 40,
+      "tasks": 40,
+      "token_sources": [
+        "tiktoken"
+      ],
+      "tokens_in": 105856,
+      "tokens_out": 7261,
+      "tokens_per_solved": 2827.925,
+      "tokens_per_solved_without_system": 309.5,
+      "unsolved_reasons": {}
+    },
+    "rust": {
+      "compile_at_1": 1.0,
+      "pass_at_1": 1.0,
+      "pass_at_1_count": 40,
+      "pass_at_r": 1.0,
+      "provider_errors": 0,
+      "resource_failures": 0,
+      "solved": 40,
+      "tasks": 40,
+      "token_sources": [
+        "tiktoken"
+      ],
+      "tokens_in": 5076,
+      "tokens_out": 3855,
+      "tokens_per_solved": 223.275,
+      "tokens_per_solved_without_system": 196.275,
+      "unsolved_reasons": {}
+    }
+  },
+  "model": null,
+  "provider": "command",
+  "repairs": 3,
+  "schema": 1,
+  "skill_sha256": "3b75d2f3c9bc9c0530d3b60541d20457e9028e81975993e8896bc296f97d99a7",
+  "task_count": 40,
+  "tasks": {
+    "HE-000": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn has_close_elements(numbers: List<Float>, threshold: Float) -> Bool\n  ensures not (threshold <= 0.0) or not result\n  ensures not (numbers.len() < 2) or not result\n  examples\n    [1.0, 2.0, 3.0], 0.5 => false\n    [1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3 => true\n    [1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.05 => false\n    [1.0, 2.0, 3.0], 0.0 => false\n    [], 1.0 => false\n  cost O(numbers.len() * numbers.len())\n{\n  let n: Int = numbers.len()\n  let flags: List<Bool> = for i in 0..n {\n    numbers.skip(i + 1).any(|y| (numbers[i] - y).abs() < threshold)\n  }\n  return flags.any(|b| b)\n}\n```\n\nI haven't run `aval check` or `aval test` on this.\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1006,
+            "outcome": "solved",
+            "prompt": "Given a list of floating-point numbers and a threshold, decide whether any two different elements of the list (two different positions) are closer to each other than the threshold, that is, their absolute difference is strictly smaller than the threshold.\n\nRequired signature:\n\n```\nfn has_close_elements(numbers: List<Float>, threshold: Float) -> Bool\n```\n\nWrite one `pub fn has_close_elements` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2586,
+            "tokens_out": 277,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn has_close_elements(numbers: Vec<f64>, threshold: f64) -> bool {\n    for i in 0..numbers.len() {\n        for j in (i + 1)..numbers.len() {\n            if (numbers[i] - numbers[j]).abs() < threshold {\n                return true;\n            }\n        }\n    }\n    false\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1006,
+            "outcome": "solved",
+            "prompt": "Given a list of floating-point numbers and a threshold, decide whether any two different elements of the list (two different positions) are closer to each other than the threshold, that is, their absolute difference is strictly smaller than the threshold.\n\nRequired signature:\n\n```\nfn has_close_elements(numbers: Vec<f64>, threshold: f64) -> bool\n```\n\nWrite the function `has_close_elements` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 139,
+            "tokens_out": 77,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-002": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn truncate_number(number: Float) -> Float\n  requires number >= 0.0\n  ensures result >= 0.0 and result < 1.0\n  ensures approx(result + number.floor(), number)\n  examples\n    3.5 => 0.5\n    1.25 => 0.25\n    0.0 => 0.0\n  cost O(1)\n{\n  return number - number.floor()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 974,
+            "outcome": "solved",
+            "prompt": "Given a non-negative floating-point number, return its fractional part: the number minus the largest whole number that does not exceed it. The result is always at least 0 and below 1.\n\nRequired signature:\n\n```\nfn truncate_number(number: Float) -> Float\n```\n\nWrite one `pub fn truncate_number` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2571,
+            "tokens_out": 105,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn truncate_number(number: f64) -> f64 {\n    let r = number - number.floor();\n    if r < 0.0 {\n        0.0\n    } else if r >= 1.0 {\n        // Guard against any rounding edge case\n        0.0\n    } else {\n        r\n    }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 974,
+            "outcome": "solved",
+            "prompt": "Given a non-negative floating-point number, return its fractional part: the number minus the largest whole number that does not exceed it. The result is always at least 0 and below 1.\n\nRequired signature:\n\n```\nfn truncate_number(number: f64) -> f64\n```\n\nWrite the function `truncate_number` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 124,
+            "tokens_out": 77,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-003": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn below_zero(operations: List<Int>) -> Bool\n  ensures (not operations.all(|x| x >= 0)) or (not result)\n  examples\n    [] => false\n    [1, 2, 3] => false\n    [1, 2, -4, 5] => true\n    [-1] => true\n    [5, -5] => false\n  cost O(operations.len() * operations.len())\n{\n  let balances: List<Int> = for i in 0..operations.len() { operations[0..=i].sum() }\n  return balances.any(|b| b < 0)\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 1,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 903,
+            "outcome": "solved",
+            "prompt": "A bank account starts with a balance of zero. Given the list of deposit (positive) and withdrawal (negative) amounts applied in order, decide whether the balance falls below zero at any point.\n\nRequired signature:\n\n```\nfn below_zero(operations: List<Int>) -> Bool\n```\n\nWrite one `pub fn below_zero` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2573,
+            "tokens_out": 147,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn below_zero(operations: Vec<i64>) -> bool {\n    let mut balance: i64 = 0;\n    for op in operations {\n        balance = balance.saturating_add(op);\n        if balance < 0 {\n            return true;\n        }\n    }\n    false\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 903,
+            "outcome": "solved",
+            "prompt": "A bank account starts with a balance of zero. Given the list of deposit (positive) and withdrawal (negative) amounts applied in order, decide whether the balance falls below zero at any point.\n\nRequired signature:\n\n```\nfn below_zero(operations: Vec<i64>) -> bool\n```\n\nWrite the function `below_zero` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 125,
+            "tokens_out": 64,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-004": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn mean_absolute_deviation(numbers: List<Float>) -> Float\n  requires numbers.len() > 0\n  ensures result >= 0.0\n  examples\n    [1.0, 2.0, 3.0, 4.0] => 1.0\n  cost O(numbers.len())\n{\n  let n: Float = numbers.len().float()\n  let m: Float = numbers.sum() / n\n  let devs: List<Float> = numbers.map(|x| (x - m).abs())\n  return devs.sum() / n\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 788,
+            "outcome": "solved",
+            "prompt": "Given a non-empty list of floating-point numbers, compute the mean absolute deviation around the mean: the average of the absolute differences between each element and the arithmetic mean of the list.\n\nRequired signature:\n\n```\nfn mean_absolute_deviation(numbers: List<Float>) -> Float\n```\n\nWrite one `pub fn mean_absolute_deviation` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2573,
+            "tokens_out": 131,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn mean_absolute_deviation(numbers: Vec<f64>) -> f64 {\n    let n = numbers.len() as f64;\n    let mean = numbers.iter().sum::<f64>() / n;\n    numbers.iter().map(|x| (x - mean).abs()).sum::<f64>() / n\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 788,
+            "outcome": "solved",
+            "prompt": "Given a non-empty list of floating-point numbers, compute the mean absolute deviation around the mean: the average of the absolute differences between each element and the arithmetic mean of the list.\n\nRequired signature:\n\n```\nfn mean_absolute_deviation(numbers: Vec<f64>) -> f64\n```\n\nWrite the function `mean_absolute_deviation` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 126,
+            "tokens_out": 70,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-007": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn filter_by_substring(strings: List<String>, substring: String) -> List<String>\n  ensures result.len() <= strings.len()\n  ensures result.all(|s| s.contains(substring))\n  examples\n    [], \"a\" => []\n    [\"abc\", \"bacd\", \"cde\", \"array\"], \"a\" => [\"abc\", \"bacd\", \"array\"]\n  cost O(strings.len())\n{\n  return strings.filter(|s| s.contains(substring))\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 182,
+            "outcome": "solved",
+            "prompt": "Given a list of strings and a substring, return the strings of the list that contain the substring, in their original order.\n\nRequired signature:\n\n```\nfn filter_by_substring(strings: List<String>, substring: String) -> List<String>\n```\n\nWrite one `pub fn filter_by_substring` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2567,
+            "tokens_out": 107,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn filter_by_substring(strings: Vec<String>, substring: String) -> Vec<String> {\n    strings\n        .into_iter()\n        .filter(|s| s.contains(substring.as_str()))\n        .collect()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 182,
+            "outcome": "solved",
+            "prompt": "Given a list of strings and a substring, return the strings of the list that contain the substring, in their original order.\n\nRequired signature:\n\n```\nfn filter_by_substring(strings: Vec<String>, substring: String) -> Vec<String>\n```\n\nWrite the function `filter_by_substring` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 118,
+            "tokens_out": 50,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-013": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\nfn gcd_helper(a: Int, b: Int) -> Int\n{\n  return if b == 0 { a } else { gcd_helper(b, a % b) }\n}\n\npub fn greatest_common_divisor(a: Int, b: Int) -> Int\n  requires a > 0 and b > 0\n  ensures result >= 1\n  ensures a % result == 0 and b % result == 0\n  examples\n    12, 18 => 6\n    7, 13 => 1\n    100, 25 => 25\n  cost O(a + b)\n{\n  return gcd_helper(a, b)\n}\n```\n\nI haven't run `aval check` or `aval test` on this.\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 990,
+            "outcome": "solved",
+            "prompt": "Given two positive integers, return their greatest common divisor, the largest integer that divides both of them exactly.\n\nRequired signature:\n\n```\nfn greatest_common_divisor(a: Int, b: Int) -> Int\n```\n\nWrite one `pub fn greatest_common_divisor` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2561,
+            "tokens_out": 162,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn greatest_common_divisor(a: i64, b: i64) -> i64 {\n    let mut a = a.abs();\n    let mut b = b.abs();\n    while b != 0 {\n        let t = a % b;\n        a = b;\n        b = t;\n    }\n    a\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 990,
+            "outcome": "solved",
+            "prompt": "Given two positive integers, return their greatest common divisor, the largest integer that divides both of them exactly.\n\nRequired signature:\n\n```\nfn greatest_common_divisor(a: i64, b: i64) -> i64\n```\n\nWrite the function `greatest_common_divisor` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 116,
+            "tokens_out": 71,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-014": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn all_prefixes(string: String) -> List<String>\n  ensures result.len() == string.chars().len()\n  examples\n    \"abc\" => [\"a\", \"ab\", \"abc\"]\n    \"x\" => [\"x\"]\n  cost O(string.len() * string.len())\n{\n  let cs: List<String> = string.chars()\n  let n: Int = cs.len()\n  return for i in 1..=n { cs.take(i).join(\"\") }\n}\n```\n\nI haven't run `aval check` or `aval test` on this. One risk is that the empty string relies on `1..=0` producing an empty range, and I left out an empty-string example because of the `[]` inference rule (E313).\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 755,
+            "outcome": "solved",
+            "prompt": "Given a string, return the list of all its non-empty prefixes, from the shortest to the longest. The empty string has no non-empty prefix.\n\nRequired signature:\n\n```\nfn all_prefixes(string: String) -> List<String>\n```\n\nWrite one `pub fn all_prefixes` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2565,
+            "tokens_out": 164,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn all_prefixes(string: String) -> Vec<String> {\n    string\n        .char_indices()\n        .map(|(i, c)| string[..i + c.len_utf8()].to_string())\n        .collect()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 755,
+            "outcome": "solved",
+            "prompt": "Given a string, return the list of all its non-empty prefixes, from the shortest to the longest. The empty string has no non-empty prefix.\n\nRequired signature:\n\n```\nfn all_prefixes(string: String) -> Vec<String>\n```\n\nWrite the function `all_prefixes` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 116,
+            "tokens_out": 52,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-015": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn string_sequence(n: Int) -> String\n  requires n >= 0\n  ensures result.starts_with(\"0\")\n  ensures result.split(\" \").len() == n + 1\n  examples\n    0 => \"0\"\n    5 => \"0 1 2 3 4 5\"\n  cost O(n)\n{\n  let parts: List<String> = for i in 0..=n { i.to_string() }\n  return parts.join(\" \")\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 1,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 99,
+            "outcome": "solved",
+            "prompt": "Given a non-negative integer n, return a string containing the integers from 0 up to and including n written in decimal and separated by single spaces.\n\nRequired signature:\n\n```\nfn string_sequence(n: Int) -> String\n```\n\nWrite one `pub fn string_sequence` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2562,
+            "tokens_out": 110,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn string_sequence(n: i64) -> String {\n    (0..=n)\n        .map(|i| i.to_string())\n        .collect::<Vec<String>>()\n        .join(\" \")\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 99,
+            "outcome": "solved",
+            "prompt": "Given a non-negative integer n, return a string containing the integers from 0 up to and including n written in decimal and separated by single spaces.\n\nRequired signature:\n\n```\nfn string_sequence(n: i64) -> String\n```\n\nWrite the function `string_sequence` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 114,
+            "tokens_out": 47,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-016": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn count_distinct_characters(string: String) -> Int\n  ensures result >= 0\n  examples\n    \"\" => 0\n    \"abcde\" => 5\n    \"abcdecadeCADE\" => 5\n    \"aaaaAAAAaaaa\" => 1\n    \"Jerry jERRY JeRRRY\" => 5\n  cost O(string.len() * string.len())\n{\n  let lower: String = string.to_lowercase()\n  let cs: List<String> = lower.chars()\n  let uniq: List<String> = cs.sort().dedup()\n  return uniq.len()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 961,
+            "outcome": "solved",
+            "prompt": "Given a string, count how many distinct characters it contains, ignoring case (an upper-case letter and its lower-case form are the same character).\n\nRequired signature:\n\n```\nfn count_distinct_characters(string: String) -> Int\n```\n\nWrite one `pub fn count_distinct_characters` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2567,
+            "tokens_out": 135,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nuse std::collections::HashSet;\n\nfn count_distinct_characters(string: String) -> i64 {\n    let mut set: HashSet<char> = HashSet::new();\n    for c in string.chars() {\n        for l in c.to_lowercase() {\n            set.insert(l);\n        }\n    }\n    set.len() as i64\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 961,
+            "outcome": "solved",
+            "prompt": "Given a string, count how many distinct characters it contains, ignoring case (an upper-case letter and its lower-case form are the same character).\n\nRequired signature:\n\n```\nfn count_distinct_characters(string: String) -> i64\n```\n\nWrite the function `count_distinct_characters` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 119,
+            "tokens_out": 79,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-018": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn how_many_times(string: String, substring: String) -> Int\n  requires not substring.is_empty()\n  ensures result >= 0\n  ensures result <= string.len()\n  examples\n    \"\", \"x\" => 0\n    \"xyxyxyx\", \"x\" => 4\n    \"aaa\", \"a\" => 3\n    \"aaaa\", \"aa\" => 3\n    \"abc\", \"d\" => 0\n    \"ab\", \"abc\" => 0\n  cost O(string.len() * substring.len())\n{\n  let cs: List<String> = string.chars()\n  let ts: List<String> = substring.chars()\n  let n: Int = cs.len()\n  let k: Int = ts.len()\n  let cnt: Int = if n >= k { n - k + 1 } else { 0 }\n  let hits: List<Int> = for i in 0..cnt { if cs[i..i + k].join(\"\") == substring { 1 } else { 0 } }\n  return hits.sum()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1004,
+            "outcome": "solved",
+            "prompt": "Count how many times a non-empty substring occurs in a string, counting overlapping occurrences. For example, a substring made of two identical letters occurs twice in a string made of three of that letter.\n\nRequired signature:\n\n```\nfn how_many_times(string: String, substring: String) -> Int\n```\n\nWrite one `pub fn how_many_times` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2577,
+            "tokens_out": 235,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn how_many_times(string: String, substring: String) -> i64 {\n    let s = string.as_bytes();\n    let t = substring.as_bytes();\n    if t.is_empty() || t.len() > s.len() {\n        return 0;\n    }\n    let mut count = 0i64;\n    for i in 0..=(s.len() - t.len()) {\n        if &s[i..i + t.len()] == t {\n            count += 1;\n        }\n    }\n    count\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1004,
+            "outcome": "solved",
+            "prompt": "Count how many times a non-empty substring occurs in a string, counting overlapping occurrences. For example, a substring made of two identical letters occurs twice in a string made of three of that letter.\n\nRequired signature:\n\n```\nfn how_many_times(string: String, substring: String) -> i64\n```\n\nWrite the function `how_many_times` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 129,
+            "tokens_out": 113,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-024": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn largest_divisor(n: Int) -> Int\n  requires n >= 2\n  ensures result >= 1 and result < n and n % result == 0\n  examples\n    15 => 5\n    2 => 1\n    12 => 6\n    13 => 1\n  cost O(n)\n{\n  let limit: Int = n.float().sqrt().int() + 1\n  let xs: List<Int> = for d in 2..limit { if n % d == 0 { n / d } else { 1 } }\n  return xs.push(1).max()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 1,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 136,
+            "outcome": "solved",
+            "prompt": "For a given integer n that is at least 2, find the largest integer smaller than n that divides n exactly.\n\nRequired signature:\n\n```\nfn largest_divisor(n: Int) -> Int\n```\n\nWrite one `pub fn largest_divisor` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2558,
+            "tokens_out": 143,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn largest_divisor(n: i64) -> i64 {\n    if n % 2 == 0 {\n        return n / 2;\n    }\n    let mut i: i64 = 3;\n    while i * i <= n {\n        if n % i == 0 {\n            return n / i;\n        }\n        i += 2;\n    }\n    1\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 136,
+            "outcome": "solved",
+            "prompt": "For a given integer n that is at least 2, find the largest integer smaller than n that divides n exactly.\n\nRequired signature:\n\n```\nfn largest_divisor(n: i64) -> i64\n```\n\nWrite the function `largest_divisor` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 111,
+            "tokens_out": 86,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-025": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\nfn trial(n: Int, d: Int) -> List<Int>\n{\n  return if d * d > n {\n    [n]\n  } else if n % d == 0 {\n    [d].concat(trial(n / d, d))\n  } else {\n    trial(n, if d == 2 { 3 } else { d + 2 })\n  }\n}\n\npub fn factorize(n: Int) -> List<Int>\n  requires n >= 2\n  ensures result.product() == n\n  ensures result.all(|p| p >= 2)\n  ensures result.sort() == result\n  examples\n    2 => [2]\n    12 => [2, 2, 3]\n    97 => [97]\n    360 => [2, 2, 2, 3, 3, 5]\n  cost O(n)\n{\n  return trial(n, 2)\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 1,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 129,
+            "outcome": "solved",
+            "prompt": "Return the list of prime factors of an integer n that is at least 2, from the smallest to the largest. Each prime factor appears as many times as it divides n, so the product of the list equals n.\n\nRequired signature:\n\n```\nfn factorize(n: Int) -> List<Int>\n```\n\nWrite one `pub fn factorize` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2578,
+            "tokens_out": 201,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn factorize(n: i64) -> Vec<i64> {\n    let mut n = n;\n    let mut factors = Vec::new();\n    let mut d: i64 = 2;\n    while d <= n / d {\n        while n % d == 0 {\n            factors.push(d);\n            n /= d;\n        }\n        d += if d == 2 { 1 } else { 2 };\n    }\n    if n > 1 {\n        factors.push(n);\n    }\n    factors\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 129,
+            "outcome": "solved",
+            "prompt": "Return the list of prime factors of an integer n that is at least 2, from the smallest to the largest. Each prime factor appears as many times as it divides n, so the product of the list equals n.\n\nRequired signature:\n\n```\nfn factorize(n: i64) -> Vec<i64>\n```\n\nWrite the function `factorize` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 131,
+            "tokens_out": 112,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-026": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn remove_duplicates(numbers: List<Int>) -> List<Int>\n  ensures result.len() <= numbers.len()\n  ensures result.all(|x| numbers.count(x) == 1)\n  examples\n    [1, 2, 2, 3] => [1, 3]\n    [1, 1, 1] => []\n    [4, 5, 6] => [4, 5, 6]\n    [3, 1, 3, 2, 1, 5] => [2, 5]\n  cost O(numbers.len() * numbers.len())\n{\n  return numbers.filter(|x| numbers.count(x) == 1)\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 865,
+            "outcome": "solved",
+            "prompt": "From a list of integers, remove every element that occurs more than once in the list (all its copies are removed, not just the extra ones). Keep the remaining elements in their original order.\n\nRequired signature:\n\n```\nfn remove_duplicates(numbers: List<Int>) -> List<Int>\n```\n\nWrite one `pub fn remove_duplicates` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2573,
+            "tokens_out": 153,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nuse std::collections::HashMap;\n\nfn remove_duplicates(numbers: Vec<i64>) -> Vec<i64> {\n    let mut counts: HashMap<i64, usize> = HashMap::new();\n    for &n in &numbers {\n        *counts.entry(n).or_insert(0) += 1;\n    }\n    numbers\n        .into_iter()\n        .filter(|n| counts.get(n).copied().unwrap_or(0) == 1)\n        .collect()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 865,
+            "outcome": "solved",
+            "prompt": "From a list of integers, remove every element that occurs more than once in the list (all its copies are removed, not just the extra ones). Keep the remaining elements in their original order.\n\nRequired signature:\n\n```\nfn remove_duplicates(numbers: Vec<i64>) -> Vec<i64>\n```\n\nWrite the function `remove_duplicates` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 126,
+            "tokens_out": 106,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-027": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn flip_case(string: String) -> String\n  examples\n    \"Hello\" => \"hELLO\"\n    \"\" => \"\"\n    \"aB3 dE!\" => \"Ab3 De!\"\n  cost O(string.len())\n{\n  let parts: List<String> = for c in string.chars() {\n    if c.to_uppercase() != c { c.to_uppercase() } else if c.to_lowercase() != c { c.to_lowercase() } else { c }\n  }\n  return parts.join(\"\")\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 257,
+            "outcome": "solved",
+            "prompt": "For a given string, turn every lower-case letter into upper case and every upper-case letter into lower case. Characters that are not letters stay unchanged.\n\nRequired signature:\n\n```\nfn flip_case(string: String) -> String\n```\n\nWrite one `pub fn flip_case` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2562,
+            "tokens_out": 117,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn flip_case(string: String) -> String {\n    let mut result = String::with_capacity(string.len());\n    for c in string.chars() {\n        if c.is_lowercase() {\n            result.extend(c.to_uppercase());\n        } else if c.is_uppercase() {\n            result.extend(c.to_lowercase());\n        } else {\n            result.push(c);\n        }\n    }\n    result\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 257,
+            "outcome": "solved",
+            "prompt": "For a given string, turn every lower-case letter into upper case and every upper-case letter into lower case. Characters that are not letters stay unchanged.\n\nRequired signature:\n\n```\nfn flip_case(string: String) -> String\n```\n\nWrite the function `flip_case` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 113,
+            "tokens_out": 87,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-031": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn is_prime(n: Int) -> Bool\n  ensures not result or n > 1\n  ensures not result or n == 2 or n % 2 != 0\n  examples\n    -7 => false\n    0 => false\n    1 => false\n    2 => true\n    3 => true\n    4 => false\n    9 => false\n    17 => true\n    25 => false\n    97 => true\n  cost O(n)\n{\n  return if n < 2 {\n    false\n  } else {\n    let lim: Int = n.float().sqrt().int()\n    let flags: List<Bool> = for d in 2..=lim { n % d != 0 }\n    flags.all(|b| b)\n  }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 1,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 158,
+            "outcome": "solved",
+            "prompt": "Decide whether a given integer is a prime number, that is, it is greater than 1 and has no divisors other than 1 and itself.\n\nRequired signature:\n\n```\nfn is_prime(n: Int) -> Bool\n```\n\nWrite one `pub fn is_prime` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2564,
+            "tokens_out": 180,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn is_prime(n: i64) -> bool {\n    if n < 2 {\n        return false;\n    }\n    if n < 4 {\n        return true;\n    }\n    if n % 2 == 0 || n % 3 == 0 {\n        return false;\n    }\n    let mut i: i64 = 5;\n    while i <= n / i {\n        if n % i == 0 || n % (i + 2) == 0 {\n            return false;\n        }\n        i += 6;\n    }\n    true\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 158,
+            "outcome": "solved",
+            "prompt": "Decide whether a given integer is a prime number, that is, it is greater than 1 and has no divisors other than 1 and itself.\n\nRequired signature:\n\n```\nfn is_prime(n: i64) -> bool\n```\n\nWrite the function `is_prime` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 116,
+            "tokens_out": 124,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-036": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\nfn sevens(x: Int) -> Int\n{\n  return if x <= 0 { 0 } else { (if x % 10 == 7 { 1 } else { 0 }) + sevens(x / 10) }\n}\n\npub fn fizz_buzz(n: Int) -> Int\n  ensures result >= 0\n  examples\n    50 => 0\n    78 => 2\n    79 => 3\n  cost O(n)\n{\n  let counts: List<Int> = for i in 0..n { if i % 11 == 0 or i % 13 == 0 { sevens(i) } else { 0 } }\n  return counts.sum()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 1,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 106,
+            "outcome": "solved",
+            "prompt": "Count how many times the digit 7 appears in the decimal representation of the non-negative integers smaller than n that are divisible by 11 or by 13.\n\nRequired signature:\n\n```\nfn fizz_buzz(n: Int) -> Int\n```\n\nWrite one `pub fn fizz_buzz` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2566,
+            "tokens_out": 159,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn fizz_buzz(n: i64) -> i64 {\n    let mut count = 0;\n    let mut i = 0;\n    while i < n {\n        if i % 11 == 0 || i % 13 == 0 {\n            let mut x = i;\n            while x > 0 {\n                if x % 10 == 7 {\n                    count += 1;\n                }\n                x /= 10;\n            }\n        }\n        i += 1;\n    }\n    count\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 106,
+            "outcome": "solved",
+            "prompt": "Count how many times the digit 7 appears in the decimal representation of the non-negative integers smaller than n that are divisible by 11 or by 13.\n\nRequired signature:\n\n```\nfn fizz_buzz(n: i64) -> i64\n```\n\nWrite the function `fizz_buzz` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 120,
+            "tokens_out": 112,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-040": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn triples_sum_to_zero(numbers: List<Int>) -> Bool\n  examples\n    [1, 3, 5, 0] => false\n    [1, 3, -2, 1] => true\n    [1, 2, 3, 7] => false\n    [2, 4, -5, 3, 9, 7] => true\n    [1] => false\n  cost O(numbers.len().pow(3))\n{\n  let n: Int = numbers.len()\n  let idx: List<Int> = for p in 0..n { p }\n  return idx.any(|a| idx.any(|b| idx.any(|c| a < b and b < c and numbers[a] + numbers[b] + numbers[c] == 0)))\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 987,
+            "outcome": "solved",
+            "prompt": "Decide whether a list of integers contains three elements at three different positions whose sum is zero.\n\nRequired signature:\n\n```\nfn triples_sum_to_zero(numbers: List<Int>) -> Bool\n```\n\nWrite one `pub fn triples_sum_to_zero` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2556,
+            "tokens_out": 181,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn triples_sum_to_zero(numbers: Vec<i64>) -> bool {\n    let mut v = numbers;\n    let n = v.len();\n    if n < 3 {\n        return false;\n    }\n    v.sort();\n    for i in 0..n - 2 {\n        let mut l = i + 1;\n        let mut r = n - 1;\n        while l < r {\n            let s = v[i] as i128 + v[l] as i128 + v[r] as i128;\n            if s == 0 {\n                return true;\n            } else if s < 0 {\n                l += 1;\n            } else {\n                r -= 1;\n            }\n        }\n    }\n    false\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 987,
+            "outcome": "solved",
+            "prompt": "Decide whether a list of integers contains three elements at three different positions whose sum is zero.\n\nRequired signature:\n\n```\nfn triples_sum_to_zero(numbers: Vec<i64>) -> bool\n```\n\nWrite the function `triples_sum_to_zero` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 109,
+            "tokens_out": 159,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-043": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn pairs_sum_to_zero(numbers: List<Int>) -> Bool\n  ensures not result or numbers.len() >= 2\n  examples\n    [1, 3, 5, 0] => false\n    [1, 3, -2, 1] => false\n    [2, 4, -5, 3, 5, 7] => true\n    [0] => false\n    [0, 0] => true\n  cost O(numbers.len() * numbers.len())\n{\n  let n: Int = numbers.len()\n  let flags: List<Bool> = for i in 0..n { numbers.skip(i + 1).contains(-numbers[i]) }\n  return flags.any(|b| b)\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 1,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 978,
+            "outcome": "solved",
+            "prompt": "Decide whether a list of integers contains two elements at two different positions whose sum is zero.\n\nRequired signature:\n\n```\nfn pairs_sum_to_zero(numbers: List<Int>) -> Bool\n```\n\nWrite one `pub fn pairs_sum_to_zero` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2556,
+            "tokens_out": 168,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nuse std::collections::HashSet;\n\nfn pairs_sum_to_zero(numbers: Vec<i64>) -> bool {\n    let mut seen: HashSet<i64> = HashSet::new();\n    for &n in numbers.iter() {\n        if let Some(neg) = n.checked_neg() {\n            if seen.contains(&neg) {\n                return true;\n            }\n        }\n        seen.insert(n);\n    }\n    false\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 978,
+            "outcome": "solved",
+            "prompt": "Decide whether a list of integers contains two elements at two different positions whose sum is zero.\n\nRequired signature:\n\n```\nfn pairs_sum_to_zero(numbers: Vec<i64>) -> bool\n```\n\nWrite the function `pairs_sum_to_zero` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 108,
+            "tokens_out": 92,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-044": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn change_base(x: Int, base: Int) -> String\n  requires x >= 0\n  requires base >= 2\n  requires base < 10\n  ensures not result.is_empty()\n  examples\n    8, 3 => \"22\"\n    8, 2 => \"1000\"\n    7, 2 => \"111\"\n    0, 2 => \"0\"\n  cost O(x)\n{\n  return if x < base { x.to_string() } else { change_base(x / base, base) + (x % base).to_string() }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 459,
+            "outcome": "solved",
+            "prompt": "Write a non-negative integer x in a numerical base smaller than 10 and return the digits as a string, most significant digit first, without leading zeros (zero is written as a single digit).\n\nRequired signature:\n\n```\nfn change_base(x: Int, base: Int) -> String\n```\n\nWrite one `pub fn change_base` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2575,
+            "tokens_out": 134,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn change_base(x: i64, base: i64) -> String {\n    if x == 0 {\n        return \"0\".to_string();\n    }\n    let mut n = x;\n    let mut digits: Vec<char> = Vec::new();\n    while n > 0 {\n        let d = (n % base) as u8;\n        digits.push((b'0' + d) as char);\n        n /= base;\n    }\n    digits.iter().rev().collect()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 459,
+            "outcome": "solved",
+            "prompt": "Write a non-negative integer x in a numerical base smaller than 10 and return the digits as a string, most significant digit first, without leading zeros (zero is written as a single digit).\n\nRequired signature:\n\n```\nfn change_base(x: i64, base: i64) -> String\n```\n\nWrite the function `change_base` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 128,
+            "tokens_out": 108,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-046": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn fib4(n: Int) -> Int\n  requires n >= 0\n  requires n <= 55\n  ensures result >= 0\n  examples\n    0 => 0\n    1 => 0\n    2 => 2\n    3 => 0\n    4 => 2\n    5 => 4\n    6 => 8\n    7 => 14\n  cost O(n)\n{\n  let idx: List<Int> = for i in 0..n { i }\n  let init: List<Int> = [0, 0, 2, 0]\n  let state: List<Int> = idx.fold(init, |acc, x| [acc[1], acc[2], acc[3], acc[0] + acc[1] + acc[2] + acc[3]])\n  return state[0]\n}\n```\n\nI haven't run `aval check` or `aval test` on this. I added a `requires n <= 55` bound so the lookahead term can't overflow `Int`, which narrows the stated \"non-negative n\" domain.\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [
+              55,
+              56
+            ],
+            "fault_kinds": [
+              "overflow"
+            ],
+            "hidden_total": 64,
+            "outcome": "failed",
+            "prompt": "The Fib4 sequence is defined as follows: the terms at positions 0, 1, 2 and 3 are 0, 0, 2 and 0, and every later term is the sum of the four terms that immediately precede it. Compute the term at position n of the sequence, for a non-negative n.\n\nRequired signature:\n\n```\nfn fib4(n: Int) -> Int\n```\n\nWrite one `pub fn fib4` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": "hidden_failed",
+            "tokens_in": 2602,
+            "tokens_out": 247,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          },
+          {
+            "answer": "```aval\nmodule solution\n\npub fn fib4(n: Int) -> Int\n  requires n >= 0\n  ensures result >= 0\n  examples\n    0 => 0\n    1 => 0\n    2 => 2\n    3 => 0\n    4 => 2\n    5 => 4\n    6 => 8\n    7 => 14\n  cost O(n)\n{\n  let k: Int = if n > 3 { n - 3 } else { 0 }\n  let idx: List<Int> = for i in 0..k { i }\n  let init: List<Int> = [0, 0, 2, 0]\n  let state: List<Int> = idx.fold(init, |acc, x| [acc[1], acc[2], acc[3], acc[0] + acc[1] + acc[2] + acc[3]])\n  return if n == 2 { 2 } else { state[3] }\n}\n```\n\nI removed the `n <= 55` bound I had added, and I haven't run `aval check` or `aval test` on this version. The earlier version computed three terms past `n`, which could overflow `Int` for large `n` even when `fib4(n)` itself fits. The fold now stops at exactly `f(n)`. For `n` below 4 it runs zero steps and returns the initial window, with `n == 2` handled separately.\n",
+            "attempt": 2,
+            "compile_ok": true,
+            "diagnostics": 1,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 64,
+            "outcome": "solved",
+            "prompt": "Hidden tests: 2 of 64 cases failed.\n\nFix the problem and reply with the complete corrected module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2882,
+            "tokens_out": 326,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": false,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 2
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn fib4(n: i64) -> i64 {\n    if n < 0 {\n        return 0;\n    }\n    let mut a: i64 = 0;\n    let mut b: i64 = 0;\n    let mut c: i64 = 2;\n    let mut d: i64 = 0;\n    if n == 0 {\n        return a;\n    }\n    if n == 1 {\n        return b;\n    }\n    if n == 2 {\n        return c;\n    }\n    if n == 3 {\n        return d;\n    }\n    for _ in 4..=n {\n        let next = a + b + c + d;\n        a = b;\n        b = c;\n        c = d;\n        d = next;\n    }\n    d\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 64,
+            "outcome": "solved",
+            "prompt": "The Fib4 sequence is defined as follows: the terms at positions 0, 1, 2 and 3 are 0, 0, 2 and 0, and every later term is the sum of the four terms that immediately precede it. Compute the term at position n of the sequence, for a non-negative n.\n\nRequired signature:\n\n```\nfn fib4(n: i64) -> i64\n```\n\nWrite the function `fib4` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 155,
+            "tokens_out": 175,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-047": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn median(numbers: List<Int>) -> Float\n  requires numbers.len() > 0\n  ensures result >= numbers.min().float() and result <= numbers.max().float()\n  examples\n    [1, 2, 3] => 2.0\n    [4, 1, 3, 2] => 2.5\n    [7] => 7.0\n  cost O(numbers.len() * numbers.len())\n{\n  let sorted: List<Int> = numbers.sort()\n  let n: Int = sorted.len()\n  let mid: Int = n / 2\n  return if n % 2 == 1 { sorted[mid].float() } else { (sorted[mid - 1].float() + sorted[mid].float()) / 2.0 }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 851,
+            "outcome": "solved",
+            "prompt": "Return the median of a non-empty list of integers as a floating-point number: the middle element once the list is sorted, or the average of the two middle elements when the list has an even length.\n\nRequired signature:\n\n```\nfn median(numbers: List<Int>) -> Float\n```\n\nWrite one `pub fn median` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2572,
+            "tokens_out": 176,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn median(numbers: Vec<i64>) -> f64 {\n    let mut v = numbers;\n    v.sort_unstable();\n    let n = v.len();\n    if n % 2 == 1 {\n        v[n / 2] as f64\n    } else {\n        let a = v[n / 2 - 1];\n        let b = v[n / 2];\n        // Avoid overflow: a + (b - a)/2 computed in i128\n        let sum = a as i128 + b as i128;\n        sum as f64 / 2.0\n    }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 851,
+            "outcome": "solved",
+            "prompt": "Return the median of a non-empty list of integers as a floating-point number: the middle element once the list is sorted, or the average of the two middle elements when the list has an even length.\n\nRequired signature:\n\n```\nfn median(numbers: Vec<i64>) -> f64\n```\n\nWrite the function `median` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 125,
+            "tokens_out": 131,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-048": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn is_palindrome(text: String) -> Bool\n  ensures not text.is_empty() or result\n  examples\n    \"\" => true\n    \"a\" => true\n    \"abba\" => true\n    \"abcba\" => true\n    \"abc\" => false\n    \"ab\" => false\n  cost O(text.len())\n{\n  let cs: List<String> = text.chars()\n  let rs: List<String> = cs.reverse()\n  let n: Int = cs.len()\n  let flags: List<Bool> = for i in 0..n { cs[i] == rs[i] }\n  return flags.all(|b| b)\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 994,
+            "outcome": "solved",
+            "prompt": "Decide whether a string is a palindrome, that is, it reads the same from left to right and from right to left. The empty string is a palindrome.\n\nRequired signature:\n\n```\nfn is_palindrome(text: String) -> Bool\n```\n\nWrite one `pub fn is_palindrome` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2567,
+            "tokens_out": 148,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn is_palindrome(text: String) -> bool {\n    let chars: Vec<char> = text.chars().collect();\n    let n = chars.len();\n    for i in 0..n / 2 {\n        if chars[i] != chars[n - 1 - i] {\n            return false;\n        }\n    }\n    true\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 994,
+            "outcome": "solved",
+            "prompt": "Decide whether a string is a palindrome, that is, it reads the same from left to right and from right to left. The empty string is a palindrome.\n\nRequired signature:\n\n```\nfn is_palindrome(text: String) -> bool\n```\n\nWrite the function `is_palindrome` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 118,
+            "tokens_out": 76,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-049": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn modp(n: Int, p: Int) -> Int\n  requires n >= 0\n  requires p > 1\n  ensures result >= 0 and result < p\n  examples\n    0, 5 => 1\n    3, 5 => 3\n    10, 1000 => 24\n    10, 2 => 0\n  cost O(n)\n{\n  return if n == 0 {\n    1 % p\n  } else {\n    let h: Int = modp(n / 2, p)\n    let sq: Int = h * h % p\n    if n % 2 == 0 { sq } else { sq * 2 % p }\n  }\n}\n```\n\nThis uses square-and-multiply: it halves the exponent at each step, so the recursion depth is about log₂ n and the full power is never computed. The `cost O(n)` is a loose upper bound, since the actual work is O(log n). Intermediate products can overflow `Int` if `p` is larger than about 3×10⁹. I haven't run `aval check` or `aval test` on it.\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 1,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 566,
+            "outcome": "solved",
+            "prompt": "Compute 2 raised to the power n, modulo p, for a non-negative n and an integer p greater than 1. The exponent n may be large, so the full power must not be computed first.\n\nRequired signature:\n\n```\nfn modp(n: Int, p: Int) -> Int\n```\n\nWrite one `pub fn modp` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2579,
+            "tokens_out": 257,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn modp(n: i64, p: i64) -> i64 {\n    let m = p as i128;\n    let mut result: i128 = 1 % m;\n    let mut base: i128 = 2 % m;\n    let mut e = n;\n    while e > 0 {\n        if e & 1 == 1 {\n            result = result * base % m;\n        }\n        base = base * base % m;\n        e >>= 1;\n    }\n    result as i64\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 566,
+            "outcome": "solved",
+            "prompt": "Compute 2 raised to the power n, modulo p, for a non-negative n and an integer p greater than 1. The exponent n may be large, so the full power must not be computed first.\n\nRequired signature:\n\n```\nfn modp(n: i64, p: i64) -> i64\n```\n\nWrite the function `modp` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 133,
+            "tokens_out": 116,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-051": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn remove_vowels(text: String) -> String\n  ensures result.len() <= text.len()\n  ensures not result.contains(\"a\") and not result.contains(\"e\") and not result.contains(\"i\") and not result.contains(\"o\") and not result.contains(\"u\")\n  ensures not result.contains(\"A\") and not result.contains(\"E\") and not result.contains(\"I\") and not result.contains(\"O\") and not result.contains(\"U\")\n  examples\n    \"Hello World\" => \"Hll Wrld\"\n    \"AEIOUaeiou\" => \"\"\n    \"\" => \"\"\n    \"xyz\" => \"xyz\"\n  cost O(text.len())\n{\n  let vowels: List<String> = [\"a\", \"e\", \"i\", \"o\", \"u\", \"A\", \"E\", \"I\", \"O\", \"U\"]\n  let kept: List<String> = text.chars().filter(|c| not vowels.contains(c))\n  return kept.join(\"\")\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1002,
+            "outcome": "solved",
+            "prompt": "Remove all vowels (the letters a, e, i, o, u in lower case or upper case) from a string and return the remaining characters in their original order.\n\nRequired signature:\n\n```\nfn remove_vowels(text: String) -> String\n```\n\nWrite one `pub fn remove_vowels` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2569,
+            "tokens_out": 210,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn remove_vowels(text: String) -> String {\n    text.chars()\n        .filter(|c| !matches!(c, 'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U'))\n        .collect()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1002,
+            "outcome": "solved",
+            "prompt": "Remove all vowels (the letters a, e, i, o, u in lower case or upper case) from a string and return the remaining characters in their original order.\n\nRequired signature:\n\n```\nfn remove_vowels(text: String) -> String\n```\n\nWrite the function `remove_vowels` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 120,
+            "tokens_out": 76,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-054": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn same_chars(s0: String, s1: String) -> Bool\n  examples\n    \"abc\", \"cba\" => true\n    \"aabbb\", \"ab\" => true\n    \"abc\", \"ab\" => false\n    \"\", \"\" => true\n    \"a\", \"\" => false\n  cost O(s0.len() * s1.len())\n{\n  let a: List<String> = s0.chars()\n  let b: List<String> = s1.chars()\n  return a.all(|c| b.contains(c)) and b.all(|d| a.contains(d))\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1006,
+            "outcome": "solved",
+            "prompt": "Decide whether two strings are made of exactly the same set of characters, ignoring how many times each character occurs and in which order.\n\nRequired signature:\n\n```\nfn same_chars(s0: String, s1: String) -> Bool\n```\n\nWrite one `pub fn same_chars` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2565,
+            "tokens_out": 136,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nuse std::collections::HashSet;\n\nfn same_chars(s0: String, s1: String) -> bool {\n    let a: HashSet<char> = s0.chars().collect();\n    let b: HashSet<char> = s1.chars().collect();\n    a == b\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1006,
+            "outcome": "solved",
+            "prompt": "Decide whether two strings are made of exactly the same set of characters, ignoring how many times each character occurs and in which order.\n\nRequired signature:\n\n```\nfn same_chars(s0: String, s1: String) -> bool\n```\n\nWrite the function `same_chars` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 116,
+            "tokens_out": 67,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-056": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn correct_bracketing(brackets: String) -> Bool\n  ensures not result or brackets.len() % 2 == 0\n  examples\n    \"\" => true\n    \"<>\" => true\n    \"<<><>>\" => true\n    \"><<>\" => false\n    \"<\" => false\n    \"<<<<\" => false\n    \">\" => false\n    \"<>>>\" => false\n  cost O(brackets.len())\n{\n  let n: Int = brackets.chars().fold(0, |acc, c| if acc < 0 { acc } else if c == \"<\" { acc + 1 } else if acc == 0 { -1 } else { acc - 1 })\n  return n == 0\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1010,
+            "outcome": "solved",
+            "prompt": "Given a string made only of the characters less-than and greater-than, decide whether every opening bracket (less-than) has a corresponding closing bracket (greater-than) that comes after it, so that the brackets are correctly nested.\n\nRequired signature:\n\n```\nfn correct_bracketing(brackets: String) -> Bool\n```\n\nWrite one `pub fn correct_bracketing` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2582,
+            "tokens_out": 164,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn correct_bracketing(brackets: String) -> bool {\n    let mut depth: i64 = 0;\n    for c in brackets.chars() {\n        match c {\n            '<' => depth += 1,\n            '>' => {\n                depth -= 1;\n                if depth < 0 {\n                    return false;\n                }\n            }\n            _ => {}\n        }\n    }\n    depth == 0\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1010,
+            "outcome": "solved",
+            "prompt": "Given a string made only of the characters less-than and greater-than, decide whether every opening bracket (less-than) has a corresponding closing bracket (greater-than) that comes after it, so that the brackets are correctly nested.\n\nRequired signature:\n\n```\nfn correct_bracketing(brackets: String) -> bool\n```\n\nWrite the function `correct_bracketing` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 133,
+            "tokens_out": 92,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-057": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn monotonic(numbers: List<Int>) -> Bool\n  examples\n    [1, 2, 4, 20] => true\n    [1, 20, 4, 10] => false\n    [4, 1, 0, -10] => true\n    [1, 1, 1, 1] => true\n    [] => true\n    [5] => true\n  cost O(numbers.len())\n{\n  let n: Int = numbers.len()\n  let inc: List<Bool> = for i in 1..n { numbers[i - 1] <= numbers[i] }\n  let dec: List<Bool> = for j in 1..n { numbers[j - 1] >= numbers[j] }\n  return inc.all(|b| b) or dec.all(|b| b)\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 951,
+            "outcome": "solved",
+            "prompt": "Decide whether the elements of a list of integers are monotonically increasing or monotonically decreasing (each element is at least as large as the previous one throughout, or each element is at most as large as the previous one throughout).\n\nRequired signature:\n\n```\nfn monotonic(numbers: List<Int>) -> Bool\n```\n\nWrite one `pub fn monotonic` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2579,
+            "tokens_out": 189,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn monotonic(numbers: Vec<i64>) -> bool {\n    let inc = numbers.windows(2).all(|w| w[0] <= w[1]);\n    let dec = numbers.windows(2).all(|w| w[0] >= w[1]);\n    inc || dec\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 951,
+            "outcome": "solved",
+            "prompt": "Decide whether the elements of a list of integers are monotonically increasing or monotonically decreasing (each element is at least as large as the previous one throughout, or each element is at most as large as the previous one throughout).\n\nRequired signature:\n\n```\nfn monotonic(numbers: Vec<i64>) -> bool\n```\n\nWrite the function `monotonic` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 132,
+            "tokens_out": 67,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-058": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn common(first: List<Int>, second: List<Int>) -> List<Int>\n  ensures result.all(|x| first.contains(x) and second.contains(x))\n  ensures result == result.sort()\n  ensures result == result.dedup()\n  examples\n    [1, 2, 2, 3], [2, 3, 3, 4] => [2, 3]\n    [5, 1, 3], [3, 5, 5, 9] => [3, 5]\n    [1, 2], [3, 4] => []\n  cost O(first.len() * (first.len() + second.len()))\n{\n  return first.filter(|x| second.contains(x)).sort().dedup()\n}\n```\n\nI haven't run `aval check` or `aval test` on this. The body keeps the elements of `first` that also appear in `second`, sorts them, then removes the adjacent duplicates. The `ensures` clauses require every result value to be in both lists and the result to be sorted and free of duplicates. The `cost` clause is my own estimate and may not be tight.\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 950,
+            "outcome": "solved",
+            "prompt": "Return the sorted list of the distinct values that occur in both of two lists of integers. Each common value appears once in the result, in ascending order.\n\nRequired signature:\n\n```\nfn common(first: List<Int>, second: List<Int>) -> List<Int>\n```\n\nWrite one `pub fn common` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2568,
+            "tokens_out": 250,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nuse std::collections::BTreeSet;\n\nfn common(first: Vec<i64>, second: Vec<i64>) -> Vec<i64> {\n    let a: BTreeSet<i64> = first.into_iter().collect();\n    let b: BTreeSet<i64> = second.into_iter().collect();\n    a.intersection(&b).copied().collect()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 950,
+            "outcome": "solved",
+            "prompt": "Return the sorted list of the distinct values that occur in both of two lists of integers. Each common value appears once in the result, in ascending order.\n\nRequired signature:\n\n```\nfn common(first: Vec<i64>, second: Vec<i64>) -> Vec<i64>\n```\n\nWrite the function `common` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 122,
+            "tokens_out": 81,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-062": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn derivative(xs: List<Int>) -> List<Int>\n  ensures xs.is_empty() or result.len() + 1 == xs.len()\n  ensures result.len() <= xs.len()\n  examples\n    [3, 1, 2, 4, 5] => [1, 4, 12, 20]\n    [1, 2, 3] => [2, 6]\n  cost O(xs.len())\n{\n  let n: Int = xs.len()\n  return if n == 0 { xs } else { for i in 1..n { xs[i] * i } }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 1,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 780,
+            "outcome": "solved",
+            "prompt": "A list of integers holds the coefficients of a polynomial, lowest degree first: the first element is the constant term, the second is the coefficient of x, the third the coefficient of x squared, and so on. Return the coefficients of the derivative of this polynomial in the same form.\n\nRequired signature:\n\n```\nfn derivative(xs: List<Int>) -> List<Int>\n```\n\nWrite one `pub fn derivative` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2589,
+            "tokens_out": 139,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn derivative(xs: Vec<i64>) -> Vec<i64> {\n    xs.iter()\n        .enumerate()\n        .skip(1)\n        .map(|(i, &c)| c * i as i64)\n        .collect()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 780,
+            "outcome": "solved",
+            "prompt": "A list of integers holds the coefficients of a polynomial, lowest degree first: the first element is the constant term, the second is the coefficient of x, the third the coefficient of x squared, and so on. Return the coefficients of the derivative of this polynomial in the same form.\n\nRequired signature:\n\n```\nfn derivative(xs: Vec<i64>) -> Vec<i64>\n```\n\nWrite the function `derivative` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 143,
+            "tokens_out": 56,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-064": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn vowels_count(s: String) -> Int\n  ensures result >= 0\n  examples\n    \"abcde\" => 2\n    \"ACEDY\" => 3\n    \"yay\" => 2\n    \"\" => 0\n    \"sky\" => 1\n  cost O(s.len())\n{\n  let lower: String = s.to_lowercase()\n  let cs: List<String> = lower.chars()\n  let n: Int = cs.len()\n  let base: Int = cs.filter(|c| \"aeiou\".contains(c)).len()\n  let extra: Int = if n > 0 { if cs[n - 1] == \"y\" { 1 } else { 0 } } else { 0 }\n  return base + extra\n}\n```\n\nI haven't run `aval check` or `aval test` on this.\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 998,
+            "outcome": "solved",
+            "prompt": "Count the vowels in a word. The vowels are a, e, i, o, u in lower or upper case, and also the letter y, but only when it is the last letter of the word.\n\nRequired signature:\n\n```\nfn vowels_count(s: String) -> Int\n```\n\nWrite one `pub fn vowels_count` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2575,
+            "tokens_out": 189,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn vowels_count(s: String) -> i64 {\n    let chars: Vec<char> = s.chars().collect();\n    let n = chars.len();\n    let mut count = 0i64;\n    for (i, c) in chars.iter().enumerate() {\n        match c.to_ascii_lowercase() {\n            'a' | 'e' | 'i' | 'o' | 'u' => count += 1,\n            'y' if i == n - 1 => count += 1,\n            _ => {}\n        }\n    }\n    count\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 998,
+            "outcome": "solved",
+            "prompt": "Count the vowels in a word. The vowels are a, e, i, o, u in lower or upper case, and also the letter y, but only when it is the last letter of the word.\n\nRequired signature:\n\n```\nfn vowels_count(s: String) -> i64\n```\n\nWrite the function `vowels_count` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 128,
+            "tokens_out": 126,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-065": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn circular_shift(x: Int, shift: Int) -> String\n  requires x >= 0\n  requires shift >= 0\n  ensures result.len() == x.to_string().len()\n  examples\n    12, 1 => \"21\"\n    12, 2 => \"12\"\n    12, 3 => \"21\"\n    100, 2 => \"001\"\n    123, 0 => \"123\"\n  cost O(1)\n{\n  let cs: List<String> = x.to_string().chars()\n  let n: Int = cs.len()\n  return if shift > n { cs.reverse().join(\"\") } else { cs.skip(n - shift).concat(cs.take(n - shift)).join(\"\") }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 840,
+            "outcome": "solved",
+            "prompt": "Circularly shift the decimal digits of a non-negative integer x to the right by the given number of positions (digits that leave on the right come back on the left) and return the result as a string. If the shift is larger than the number of digits, return the digits reversed instead.\n\nRequired signature:\n\n```\nfn circular_shift(x: Int, shift: Int) -> String\n```\n\nWrite one `pub fn circular_shift` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2595,
+            "tokens_out": 164,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn circular_shift(x: i64, shift: i64) -> String {\n    let s = x.to_string();\n    let n = s.len() as i64;\n    if shift > n {\n        return s.chars().rev().collect();\n    }\n    if n == 0 || shift <= 0 {\n        return s;\n    }\n    let k = (shift % n) as usize;\n    let split = s.len() - k;\n    format!(\"{}{}\", &s[split..], &s[..split])\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 840,
+            "outcome": "solved",
+            "prompt": "Circularly shift the decimal digits of a non-negative integer x to the right by the given number of positions (digits that leave on the right come back on the left) and return the result as a string. If the shift is larger than the number of digits, return the digits reversed instead.\n\nRequired signature:\n\n```\nfn circular_shift(x: i64, shift: i64) -> String\n```\n\nWrite the function `circular_shift` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 149,
+            "tokens_out": 115,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-067": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn fruit_distribution(s: String, n: Int) -> Int\n  examples\n    \"5 apples and 6 oranges\", 19 => 8\n    \"0 apples and 1 oranges\", 3 => 2\n    \"2 apples and 3 oranges\", 100 => 95\n    \"100 apples and 1 oranges\", 120 => 19\n  cost O(s.len())\n{\n  let parts: List<String> = s.split(\" \")\n  let ok: Bool = parts.len() > 3\n  let a: Int = if ok {\n    match parts[0].parse_int() {\n      Ok(v) => v\n      Err(_) => 0\n    }\n  } else {\n    0\n  }\n  let b: Int = if ok {\n    match parts[3].parse_int() {\n      Ok(v) => v\n      Err(_) => 0\n    }\n  } else {\n    0\n  }\n  return n - a - b\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 347,
+            "outcome": "solved",
+            "prompt": "A basket contains apples, oranges and mangoes. You are given a string of the exact form \"A apples and B oranges\", where A and B are non-negative integers written in decimal, and an integer n, the total number of fruits in the basket. Return the number of mangoes, which is n minus A minus B.\n\nRequired signature:\n\n```\nfn fruit_distribution(s: String, n: Int) -> Int\n```\n\nWrite one `pub fn fruit_distribution` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2603,
+            "tokens_out": 217,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn fruit_distribution(s: String, n: i64) -> i64 {\n    let nums: Vec<i64> = s\n        .split_whitespace()\n        .filter_map(|w| w.parse::<i64>().ok())\n        .collect();\n    let a = nums.get(0).copied().unwrap_or(0);\n    let b = nums.get(1).copied().unwrap_or(0);\n    n - a - b\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 347,
+            "outcome": "solved",
+            "prompt": "A basket contains apples, oranges and mangoes. You are given a string of the exact form \"A apples and B oranges\", where A and B are non-negative integers written in decimal, and an integer n, the total number of fruits in the basket. Return the number of mangoes, which is n minus A minus B.\n\nRequired signature:\n\n```\nfn fruit_distribution(s: String, n: i64) -> i64\n```\n\nWrite the function `fruit_distribution` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 156,
+            "tokens_out": 99,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-068": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn pluck(arr: List<Int>) -> List<Int>\n  ensures result.len() == 0 or result.len() == 2\n  examples\n    [4, 2, 3] => [2, 1]\n    [1, 2, 3] => [2, 1]\n    [5, 0, 3, 0, 4, 2] => [0, 1]\n    [1, 3] => []\n  cost O(arr.len())\n{\n  let n: Int = arr.len()\n  let e: List<Int> = []\n  let evens: List<Int> = arr.filter(|x| x % 2 == 0)\n  return if evens.is_empty() {\n    e\n  } else {\n    let m: Int = evens.min()\n    let idxs: List<Int> = for i in 0..n { if arr[i] == m { i } else { n } }\n    let idx: Int = idxs.min()\n    [m, idx]\n  }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1006,
+            "outcome": "solved",
+            "prompt": "Given a list of non-negative integers, find the smallest even value. Return a list with two elements: that value and the index of its first occurrence. If the list has no even value or is empty, return an empty list.\n\nRequired signature:\n\n```\nfn pluck(arr: List<Int>) -> List<Int>\n```\n\nWrite one `pub fn pluck` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2581,
+            "tokens_out": 232,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn pluck(arr: Vec<i64>) -> Vec<i64> {\n    let mut best: Option<(i64, usize)> = None;\n    for (i, &v) in arr.iter().enumerate() {\n        if v % 2 == 0 {\n            match best {\n                Some((b, _)) if b <= v => {}\n                _ => best = Some((v, i)),\n            }\n        }\n    }\n    match best {\n        Some((v, i)) => vec![v, i as i64],\n        None => vec![],\n    }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1006,
+            "outcome": "solved",
+            "prompt": "Given a list of non-negative integers, find the smallest even value. Return a list with two elements: that value and the index of its first occurrence. If the list has no even value or is empty, return an empty list.\n\nRequired signature:\n\n```\nfn pluck(arr: Vec<i64>) -> Vec<i64>\n```\n\nWrite the function `pluck` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 133,
+            "tokens_out": 125,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-070": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn strange_sort_list(lst: List<Int>) -> List<Int>\n  ensures result.len() == lst.len()\n  ensures result.sort() == lst.sort()\n  examples\n    [1, 2, 3, 4] => [1, 4, 2, 3]\n    [5, 5, 5, 5] => [5, 5, 5, 5]\n    [3, 1, 2] => [1, 3, 2]\n  cost O(lst.len() * lst.len())\n{\n  let s: List<Int> = lst.sort()\n  let n: Int = s.len()\n  return for i in 0..n { if i % 2 == 0 { s[i / 2] } else { s[n - 1 - i / 2] } }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 983,
+            "outcome": "solved",
+            "prompt": "Sort a list of integers in a strange order: first the minimum, then the maximum of the remaining elements, then the minimum of the remaining ones, then the maximum, and so on until every element has been used.\n\nRequired signature:\n\n```\nfn strange_sort_list(lst: List<Int>) -> List<Int>\n```\n\nWrite one `pub fn strange_sort_list` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2580,
+            "tokens_out": 188,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn strange_sort_list(lst: Vec<i64>) -> Vec<i64> {\n    let mut v = lst;\n    v.sort();\n    let mut res = Vec::with_capacity(v.len());\n    if v.is_empty() {\n        return res;\n    }\n    let mut i = 0usize;\n    let mut j = v.len() - 1;\n    let mut take_min = true;\n    loop {\n        if take_min {\n            res.push(v[i]);\n            i += 1;\n        } else {\n            res.push(v[j]);\n            if j == 0 {\n                break;\n            }\n            j -= 1;\n        }\n        take_min = !take_min;\n        if res.len() == v.len() {\n            break;\n        }\n    }\n    res\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 983,
+            "outcome": "solved",
+            "prompt": "Sort a list of integers in a strange order: first the minimum, then the maximum of the remaining elements, then the minimum of the remaining ones, then the maximum, and so on until every element has been used.\n\nRequired signature:\n\n```\nfn strange_sort_list(lst: Vec<i64>) -> Vec<i64>\n```\n\nWrite the function `strange_sort_list` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 134,
+            "tokens_out": 165,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-072": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn will_it_fly(q: List<Int>, w: Int) -> Bool\n  ensures not result or q.sum() <= w\n  examples\n    [1, 2], 5 => false\n    [3, 2, 3], 1 => false\n    [3, 2, 3], 9 => true\n    [3], 5 => true\n  cost O(q.len())\n{\n  let n: Int = q.len()\n  let flags: List<Bool> = for i in 0..n { q[i] == q[n - 1 - i] }\n  let balanced: Bool = flags.all(|b| b)\n  return balanced and q.sum() <= w\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 695,
+            "outcome": "solved",
+            "prompt": "An object, described by the list q of the weights of its parts, will fly if the list is balanced (it reads the same forwards and backwards) and the sum of its elements is at most the maximum possible weight w. Decide whether the object will fly.\n\nRequired signature:\n\n```\nfn will_it_fly(q: List<Int>, w: Int) -> Bool\n```\n\nWrite one `pub fn will_it_fly` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2594,
+            "tokens_out": 161,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn will_it_fly(q: Vec<i64>, w: i64) -> bool {\n    let n = q.len();\n    for i in 0..n / 2 {\n        if q[i] != q[n - 1 - i] {\n            return false;\n        }\n    }\n    let sum: i128 = q.iter().map(|&x| x as i128).sum();\n    sum <= w as i128\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 695,
+            "outcome": "solved",
+            "prompt": "An object, described by the list q of the weights of its parts, will fly if the list is balanced (it reads the same forwards and backwards) and the sum of its elements is at most the maximum possible weight w. Decide whether the object will fly.\n\nRequired signature:\n\n```\nfn will_it_fly(q: Vec<i64>, w: i64) -> bool\n```\n\nWrite the function `will_it_fly` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 147,
+            "tokens_out": 97,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-074": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn total_match(lst1: List<String>, lst2: List<String>) -> List<String>\n  ensures result == lst1 or result == lst2\n  examples\n    [\"hi\", \"admin\"], [\"hI\", \"Hi\"] => [\"hI\", \"Hi\"]\n    [\"4\"], [\"1\", \"2\", \"3\", \"4\", \"5\"] => [\"4\"]\n    [\"ab\"], [\"cd\"] => [\"ab\"]\n  cost O(lst1.len() + lst2.len())\n{\n  let a: Int = lst1.map(|s| s.chars().len()).sum()\n  let b: Int = lst2.map(|s| s.chars().len()).sum()\n  return if a <= b { lst1 } else { lst2 }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 984,
+            "outcome": "solved",
+            "prompt": "Given two lists of strings, return the list whose strings have the smaller total number of characters (summed over all its strings). If both lists have the same total, return the first list.\n\nRequired signature:\n\n```\nfn total_match(lst1: List<String>, lst2: List<String>) -> List<String>\n```\n\nWrite one `pub fn total_match` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2580,
+            "tokens_out": 168,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn total_match(lst1: Vec<String>, lst2: Vec<String>) -> Vec<String> {\n    let c1: usize = lst1.iter().map(|s| s.chars().count()).sum();\n    let c2: usize = lst2.iter().map(|s| s.chars().count()).sum();\n    if c1 <= c2 {\n        lst1\n    } else {\n        lst2\n    }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 984,
+            "outcome": "solved",
+            "prompt": "Given two lists of strings, return the list whose strings have the smaller total number of characters (summed over all its strings). If both lists have the same total, return the first list.\n\nRequired signature:\n\n```\nfn total_match(lst1: Vec<String>, lst2: Vec<String>) -> Vec<String>\n```\n\nWrite the function `total_match` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 131,
+            "tokens_out": 94,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-076": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\nfn power_check(x: Int, n: Int) -> Bool\n{\n  return if x == 1 {\n    true\n  } else {\n    if x < 1 or n < 2 {\n      false\n    } else {\n      if x % n != 0 {\n        false\n      } else {\n        power_check(x / n, n)\n      }\n    }\n  }\n}\n\npub fn is_simple_power(x: Int, n: Int) -> Bool\n  ensures x != 1 or result\n  ensures n != 1 or x <= 1 or not result\n  examples\n    1, 4 => true\n    8, 2 => true\n    3, 2 => false\n    3, 1 => false\n    5, 3 => false\n    1, 1 => true\n    243, 3 => true\n  cost O(x)\n{\n  return power_check(x, n)\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 718,
+            "outcome": "solved",
+            "prompt": "Decide whether a positive integer x is a simple power of a positive integer n, meaning that x equals n raised to some non-negative integer power. Note that 1 is a simple power of every n.\n\nRequired signature:\n\n```\nfn is_simple_power(x: Int, n: Int) -> Bool\n```\n\nWrite one `pub fn is_simple_power` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2580,
+            "tokens_out": 210,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn is_simple_power(x: i64, n: i64) -> bool {\n    if x == 1 {\n        return true;\n    }\n    if n == 0 || n == 1 || n == -1 {\n        return false;\n    }\n    let target = x as i128;\n    let base = n as i128;\n    let mut p: i128 = 1;\n    loop {\n        p *= base;\n        if p == target {\n            return true;\n        }\n        if p.abs() > target.abs() {\n            return false;\n        }\n    }\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 718,
+            "outcome": "solved",
+            "prompt": "Decide whether a positive integer x is a simple power of a positive integer n, meaning that x equals n raised to some non-negative integer power. Note that 1 is a simple power of every n.\n\nRequired signature:\n\n```\nfn is_simple_power(x: i64, n: i64) -> bool\n```\n\nWrite the function `is_simple_power` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 133,
+            "tokens_out": 126,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-080": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn is_happy(s: String) -> Bool\n  ensures not result or s.chars().len() >= 3\n  examples\n    \"abc\" => true\n    \"aab\" => false\n    \"ab\" => false\n    \"abca\" => true\n    \"abba\" => false\n  cost O(s.len())\n{\n  let cs: List<String> = s.chars()\n  let n: Int = cs.len()\n  let m: Int = if n >= 3 { n - 2 } else { 0 }\n  let flags: List<Bool> = for i in 0..m {\n    cs[i] != cs[i + 1] and cs[i] != cs[i + 2] and cs[i + 1] != cs[i + 2]\n  }\n  return n >= 3 and flags.all(|b| b)\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 949,
+            "outcome": "solved",
+            "prompt": "A string is happy if it has at least 3 characters and every three consecutive characters are pairwise different. Decide whether the given string is happy.\n\nRequired signature:\n\n```\nfn is_happy(s: String) -> Bool\n```\n\nWrite one `pub fn is_happy` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2564,
+            "tokens_out": 195,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn is_happy(s: String) -> bool {\n    let c: Vec<char> = s.chars().collect();\n    if c.len() < 3 {\n        return false;\n    }\n    c.windows(3)\n        .all(|w| w[0] != w[1] && w[1] != w[2] && w[0] != w[2])\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 949,
+            "outcome": "solved",
+            "prompt": "A string is happy if it has at least 3 characters and every three consecutive characters are pairwise different. Decide whether the given string is happy.\n\nRequired signature:\n\n```\nfn is_happy(s: String) -> bool\n```\n\nWrite the function `is_happy` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 115,
+            "tokens_out": 87,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-086": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn anti_shuffle(s: String) -> String\n  ensures result.len() == s.len()\n  examples\n    \"Hello World!!!\" => \"Hello !!!Wdlor\"\n    \"hi\" => \"hi\"\n    \"\" => \"\"\n    \"cba  fed\" => \"abc  def\"\n  cost O(s.len() * s.len())\n{\n  let words: List<String> = s.split(\" \")\n  let sorted_words: List<String> = words.map(|w| w.chars().sort().join(\"\"))\n  return sorted_words.join(\" \")\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 942,
+            "outcome": "solved",
+            "prompt": "Return an ordered version of a string: every word (a maximal run of non-space characters) is replaced by a word with the same characters arranged in ascending order of their character codes. The order of the words and the spaces between them are preserved.\n\nRequired signature:\n\n```\nfn anti_shuffle(s: String) -> String\n```\n\nWrite one `pub fn anti_shuffle` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2582,
+            "tokens_out": 122,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn anti_shuffle(s: String) -> String {\n    let mut result = String::with_capacity(s.len());\n    let mut word: Vec<char> = Vec::new();\n    for c in s.chars() {\n        if c == ' ' {\n            if !word.is_empty() {\n                word.sort();\n                result.extend(word.iter());\n                word.clear();\n            }\n            result.push(c);\n        } else {\n            word.push(c);\n        }\n    }\n    if !word.is_empty() {\n        word.sort();\n        result.extend(word.iter());\n    }\n    result\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 942,
+            "outcome": "solved",
+            "prompt": "Return an ordered version of a string: every word (a maximal run of non-space characters) is replaced by a word with the same characters arranged in ascending order of their character codes. The order of the words and the spaces between them are preserved.\n\nRequired signature:\n\n```\nfn anti_shuffle(s: String) -> String\n```\n\nWrite the function `anti_shuffle` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 133,
+            "tokens_out": 122,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    },
+    "HE-120": {
+      "aval": {
+        "attempts": [
+          {
+            "answer": "```aval\nmodule solution\n\npub fn maximum(arr: List<Int>, k: Int) -> List<Int>\n  requires k >= 0 and k <= arr.len()\n  ensures result.len() == k\n  ensures result == result.sort()\n  examples\n    [3, 1, 2], 2 => [2, 3]\n    [5, 5, 1], 2 => [5, 5]\n    [4, 2], 0 => []\n    [-1, -3, 7, 0], 4 => [-3, -1, 0, 7]\n  cost O(arr.len() * arr.len())\n{\n  let s: List<Int> = arr.sort()\n  return s.skip(s.len() - k)\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1011,
+            "outcome": "solved",
+            "prompt": "Given a list of integers and a non-negative integer k that is at most the length of the list, return the k largest elements of the list as a list sorted in ascending order. Equal values count separately.\n\nRequired signature:\n\n```\nfn maximum(arr: List<Int>, k: Int) -> List<Int>\n```\n\nWrite one `pub fn maximum` with exactly this signature, with at least one `ensures` or `examples` clause and a `cost` clause. Start the file with `module solution`. Reply with the complete module in a single ```aval block.",
+            "reason": null,
+            "tokens_in": 2578,
+            "tokens_out": 164,
+            "tokens_source": "tiktoken",
+            "tokens_system": 2457,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      },
+      "rust": {
+        "attempts": [
+          {
+            "answer": "```rust\nfn maximum(arr: Vec<i64>, k: i64) -> Vec<i64> {\n    let mut v = arr;\n    v.sort();\n    let k = if k < 0 { 0 } else { k as usize };\n    let k = k.min(v.len());\n    v[v.len() - k..].to_vec()\n}\n```\n",
+            "attempt": 1,
+            "compile_ok": true,
+            "diagnostics": 0,
+            "failed_cases": [],
+            "fault_kinds": [],
+            "hidden_total": 1011,
+            "outcome": "solved",
+            "prompt": "Given a list of integers and a non-negative integer k that is at most the length of the list, return the k largest elements of the list as a list sorted in ascending order. Equal values count separately.\n\nRequired signature:\n\n```\nfn maximum(arr: Vec<i64>, k: i64) -> Vec<i64>\n```\n\nWrite the function `maximum` with exactly this signature (std only, no `main`, helper items allowed). Reply with the code in a single ```rust block.",
+            "reason": null,
+            "tokens_in": 132,
+            "tokens_out": 76,
+            "tokens_source": "tiktoken",
+            "tokens_system": 27,
+            "value_failures": 0
+          }
+        ],
+        "compile_at_1": true,
+        "failed_cases": [],
+        "outcome": "solved",
+        "pass_at_1": true,
+        "reason": null,
+        "resource_failure": false,
+        "solved": true,
+        "solved_at": 1
+      }
+    }
+  },
+  "tasks_done": 40,
+  "verdict": {
+    "aval_pass_at_1": 0.975,
+    "criterion": "Aval pass@1 >= 0.8 x Rust pass@1",
+    "degenerate": false,
+    "result": "PASS",
+    "rust_pass_at_1": 1.0,
+    "threshold": 0.8
+  }
+}

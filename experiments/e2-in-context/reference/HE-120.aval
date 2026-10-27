@@ -1,0 +1,15 @@
+```aval
+module solution
+
+pub fn maximum(arr: List<Int>, k: Int) -> List<Int>
+  requires k >= 0 and k <= arr.len()
+  ensures result.len() == k
+  examples
+    [-3, -4, 5], 3 => [-4, -3, 5]
+    [4, -4, 4], 2 => [4, 4]
+  cost O(arr.len() * log(arr.len()))
+{
+  let s: List<Int> = arr.sort()
+  return s.skip(s.len() - k)
+}
+```

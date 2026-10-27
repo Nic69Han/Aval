@@ -1,0 +1,6 @@
+# scenario: TYP-005
+module t
+fn f(xs: List<Float>) -> Float
+{
+  return xs.sum() / xs.len().float()
+}

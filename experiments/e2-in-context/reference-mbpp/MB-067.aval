@@ -1,0 +1,20 @@
+```aval
+module solution
+
+fn next_stirling(r: List<Int>) -> List<Int>
+{
+  return for k in 0..=r.len() {
+    (if k < r.len() { k * r[k] } else { 0 }) + (if k >= 1 { r[k - 1] } else { 0 })
+  }
+}
+
+pub fn bell_number(n: Int) -> Int
+  examples
+    2 => 2
+  cost O(n * n)
+{
+  let steps: List<Int> = for i in 0..n { i }
+  let start: List<Int> = [1]
+  return steps.fold(start, |r, i| next_stirling(r)).sum()
+}
+```

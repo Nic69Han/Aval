@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn count_divisors(n: Int) -> Bool
+  examples
+    10 => true
+  cost O(n)
+{
+  let ds: List<Int> = (for i in 1..=n { i }).filter(|i| n % i == 0)
+  return ds.len() % 2 == 0
+}
+```

@@ -1,0 +1,12 @@
+# scenario: CLI-007
+# cmd: test
+# exit: 1
+# expect: {"code":"T700","fn":"f","fault":"step_limit"}
+module t
+fn f(n: Int) -> Int
+  examples
+    5000000 => 0
+{
+  let xs: List<Int> = for i in 0..n { i }
+  return xs.fold(0, |a, b| a + b) * 0
+}

@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn move_zero(num_list: List<Int>) -> List<Int>
+  ensures result.len() == num_list.len()
+  examples
+    [1, 0, 2, 0, 3, 4] => [1, 2, 3, 4, 0, 0]
+  cost O(num_list.len())
+{
+  return num_list.filter(|x| x != 0).concat(num_list.filter(|x| x == 0))
+}
+```

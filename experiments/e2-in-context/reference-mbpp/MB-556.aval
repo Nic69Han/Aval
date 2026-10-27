@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn find_odd_pair(a: List<Int>, n: Int) -> Int
+  examples
+    [5, 4, 7, 2, 1], 5 => 6
+  cost O(a.len())
+{
+  let xs: List<Int> = a.take(n)
+  let odd: Int = xs.filter(|x| x % 2 != 0).len()
+  return odd * (xs.len() - odd)
+}
+```

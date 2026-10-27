@@ -1,0 +1,10 @@
+# scenario: STD-007
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(x: Float) -> Int
+  examples
+    10.0 => 14
+{
+  return x.sqrt().floor().int() + x.round().int()
+}

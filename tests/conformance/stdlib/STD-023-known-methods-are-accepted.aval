@@ -1,0 +1,7 @@
+# scenario: STD-023
+# cmd: check
+module t
+fn f(n: Int) -> Int
+{
+  return (0..n).fold(0, |acc, i| acc + i) + (0..n).sum() + (0..n).len() + (0..n).map(|i| i).len()
+}

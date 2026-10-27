@@ -1,0 +1,10 @@
+# scenario: TYP-028
+module t
+fn g(s: List<Int>) -> List<Int>
+{
+  return s
+}
+fn f(xs: List<Int>) -> List<Int>
+{
+  return xs.fold([], |acc, x| g(acc).push(x))
+}

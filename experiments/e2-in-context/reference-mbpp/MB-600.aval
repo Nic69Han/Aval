@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn is_even(n: Int) -> Bool
+  ensures result == (n % 2 == 0)
+  examples
+    1 => false
+  cost O(1)
+{
+  return n % 2 == 0
+}
+```

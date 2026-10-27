@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn count_binary_seq(n: Int) -> Float
+  examples
+    1 => 2.0
+  cost O(n)
+{
+  let steps: List<Int> = for r in 1..=n { r }
+  let start: List<Float> = [1.0, 1.0]
+  return steps.fold(start, |st, r| [st[0] * (n + 1 - r).float() / r.float(), st[1] + (st[0] * (n + 1 - r).float() / r.float()) * (st[0] * (n + 1 - r).float() / r.float())])[1]
+}
+```

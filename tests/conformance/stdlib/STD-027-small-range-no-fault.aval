@@ -1,0 +1,9 @@
+# scenario: STD-027
+# cmd: test
+module t
+fn f(a: Int, b: Int) -> Int
+  examples
+    -3, 3 => 24
+{
+  return ((a - 1)..=b).skip(0).len() + ((a - 1)..=b).map(|i| i).len() + ((a - 1)..=b).reverse().len()
+}

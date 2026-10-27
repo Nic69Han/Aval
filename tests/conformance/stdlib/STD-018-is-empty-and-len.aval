@@ -1,0 +1,12 @@
+# scenario: STD-018
+# cmd: test
+module t
+fn f(a: Int, b: Int, x: Int) -> Bool
+  examples
+    2, 5, 4 => true
+    2, 5, 5 => false
+    2, 6, 4 => false
+    5, 5, 5 => false
+{
+  return (a..b).len() == 3 and not (a..b).is_empty() and (a..b).contains(x)
+}

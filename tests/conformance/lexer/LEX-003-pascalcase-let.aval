@@ -1,0 +1,9 @@
+# scenario: LEX-003
+# expect: {"code":"E002","at":[7,7]}
+# stdout-contains: "ident"
+module t
+fn f() -> Int
+{
+  let Total: Int = 1
+  return 1
+}

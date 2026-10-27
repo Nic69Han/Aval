@@ -1,0 +1,8 @@
+# scenario: LCK-011
+module t
+pub fn a(x: Int) -> String
+  ensures result == "a"
+  cost O(1)
+{
+  return "a"
+}

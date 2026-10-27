@@ -1,0 +1,8 @@
+# scenario: SYN-015
+# expect: {"code":"E002"}
+module t
+type Point { x: Int, y: Int }
+fn f() -> Int
+{
+  return if Point { x: 1, y: 2 }.x > 0 { 1 } else { 0 }
+}

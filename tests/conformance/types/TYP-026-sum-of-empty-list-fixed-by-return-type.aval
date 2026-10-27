@@ -1,0 +1,6 @@
+# scenario: TYP-026
+module t
+fn f() -> Int
+{
+  return [].sum()
+}

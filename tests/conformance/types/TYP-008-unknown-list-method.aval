@@ -1,0 +1,11 @@
+# scenario: TYP-008
+# expect: {"code":"E204","on":"List<Float>"}
+# stdout-contains: "len"
+# stdout-contains: "sum"
+# stdout-contains: "min"
+# stdout-contains: "max"
+module t
+fn f(xs: List<Float>) -> Float
+{
+  return xs.average()
+}

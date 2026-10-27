@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn is_octagonal(n: Int) -> Int
+  examples
+    5 => 65
+  cost O(1)
+{
+  return n * (3 * n - 2)
+}
+```

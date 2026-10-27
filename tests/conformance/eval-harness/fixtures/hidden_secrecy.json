@@ -1,0 +1,8 @@
+{
+  "HE-025": {
+    "aval": [
+      "Here is my solution.\n\n```aval\nmodule solution\n\nfn factors_from(n: Int, d: Int) -> List<Int>\n{\n  return if n < 2 {\n    []\n  } else if d * d > n {\n    [n]\n  } else if n % d == 0 {\n    [d].concat(factors_from(n / d, d))\n  } else {\n    factors_from(n, d + 1)\n  }\n}\n\npub fn factorize(n: Int) -> List<Int>\n  requires n >= 2 and n < 100000\n  ensures result.product() == n\n  examples\n    8 => [2, 2, 2]\n    70 => [2, 5, 7]\n  cost O(n)\n{\n  return [n]\n}\n```\n",
+      "Here is my solution.\n\n```aval\nmodule solution\n\nfn factors_from(n: Int, d: Int) -> List<Int>\n{\n  return if n < 2 {\n    []\n  } else if d * d > n {\n    [n]\n  } else if n % d == 0 {\n    [d].concat(factors_from(n / d, d))\n  } else {\n    factors_from(n, d + 1)\n  }\n}\n\npub fn factorize(n: Int) -> List<Int>\n  requires n >= 2 and n < 100000\n  ensures result.product() == n\n  examples\n    8 => [2, 2, 2]\n    70 => [2, 5, 7]\n  cost O(n)\n{\n  return factors_from(n, 2)\n}\n```\n"
+    ]
+  }
+}

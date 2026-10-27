@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn number_of_substrings(str1: String) -> Int
+  examples
+    "abc" => 6
+  cost O(1)
+{
+  return str1.len() * (str1.len() + 1) / 2
+}
+```

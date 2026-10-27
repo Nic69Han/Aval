@@ -1,0 +1,5 @@
+# Locked specs and acceptance criteria require a human maintainer's approval.
+**/aval.lock            @Nic69Han
+/openspec/specs/        @Nic69Han
+/docs/spec/             @Nic69Han
+/tests/conformance/     @Nic69Han

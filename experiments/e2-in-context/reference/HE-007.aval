@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn filter_by_substring(strings: List<String>, substring: String) -> List<String>
+  ensures result.len() <= strings.len()
+  examples
+    [], "a" => []
+    ["abc", "bacd", "cde", "array"], "a" => ["abc", "bacd", "array"]
+  cost O(strings.len() * substring.len())
+{
+  return strings.filter(|s| s.contains(substring))
+}
+```

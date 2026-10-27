@@ -1,0 +1,6 @@
+# scenario: TYP-022
+module t
+fn f(x: Int) -> List<Int>
+{
+  return (if x > 0 { [] } else { [x] }).reverse()
+}

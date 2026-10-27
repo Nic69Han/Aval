@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn divisor(n: Int) -> Int
+  examples
+    15 => 4
+  cost O(n)
+{
+  return (for i in 1..=n { if n % i == 0 { 1 } else { 0 } }).sum()
+}
+```

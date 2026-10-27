@@ -1,0 +1,15 @@
+# scenario: TST-001
+# cmd: test
+# exit: 1
+# expect: {"code":"E301"}
+module t
+fn f() -> Int
+{
+  return 1.0
+}
+fn g(x: Int) -> Int
+  examples
+    1 => 2
+{
+  return x
+}

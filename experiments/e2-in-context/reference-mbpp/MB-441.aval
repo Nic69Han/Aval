@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn surfacearea_cube(l: Float) -> Float
+  examples
+    5.0 => 150.0
+  cost O(1)
+{
+  return 6.0 * l * l
+}
+```

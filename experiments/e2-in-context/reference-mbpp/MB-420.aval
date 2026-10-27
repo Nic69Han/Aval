@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn cube_sum(n: Int) -> Int
+  examples
+    2 => 72
+  cost O(1)
+{
+  let t: Int = n * (n + 1) / 2
+  return 8 * t * t
+}
+```

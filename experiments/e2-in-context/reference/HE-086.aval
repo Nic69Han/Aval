@@ -1,0 +1,15 @@
+```aval
+module solution
+
+pub fn anti_shuffle(s: String) -> String
+  ensures result.len() == s.len()
+  examples
+    "hello" => "ehllo"
+    "Hello World!!!" => "Hello !!!Wdlor"
+  cost O(s.len() * log(s.len()))
+{
+  let words: List<String> = s.split(" ")
+  let ordered: List<String> = words.map(|w| w.chars().sort().join(""))
+  return ordered.join(" ")
+}
+```

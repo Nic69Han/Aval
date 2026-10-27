@@ -1,0 +1,9 @@
+# scenario: LCK-013
+module t
+type P { v: Int }
+pub fn f(p: P) -> Int
+  ensures result >= 0
+  cost O(1)
+{
+  return 1
+}

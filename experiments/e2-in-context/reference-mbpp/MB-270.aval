@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn sum_even_and_even_index(arr: List<Int>) -> Int
+  examples
+    [5, 6, 12, 1, 18, 8] => 30
+  cost O(arr.len())
+{
+  return (for i in 0..arr.len() { if i % 2 == 0 and arr[i] % 2 == 0 { arr[i] } else { 0 } }).sum()
+}
+```

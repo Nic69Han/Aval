@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn replace_blank(str1: String, char: String) -> String
+  examples
+    "hello people", "@" => "hello@people"
+  cost O(str1.len())
+{
+  return str1.split(" ").join(char)
+}
+```

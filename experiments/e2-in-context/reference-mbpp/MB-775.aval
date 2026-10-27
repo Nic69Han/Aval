@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn odd_position(nums: List<Int>) -> Bool
+  examples
+    [2, 1, 4, 3, 6, 7, 6, 3] => true
+  cost O(nums.len())
+{
+  return (for i in 0..nums.len() { i }).all(|i| i % 2 == 0 or nums[i] % 2 != 0)
+}
+```

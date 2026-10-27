@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn word_len(s: String) -> Bool
+  examples
+    "Hadoop" => false
+  cost O(1)
+{
+  return s.len() % 2 == 1
+}
+```

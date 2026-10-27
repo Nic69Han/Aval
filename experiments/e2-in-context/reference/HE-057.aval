@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn monotonic(numbers: List<Int>) -> Bool
+  examples
+    [1, 2, 4, 20] => true
+    [1, 20, 4, 10] => false
+  cost O(numbers.len() * log(numbers.len()))
+{
+  let ascending: List<Int> = numbers.sort()
+  return numbers == ascending or numbers == ascending.reverse()
+}
+```

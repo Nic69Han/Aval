@@ -1,0 +1,10 @@
+# scenario: STD-008
+# cmd: test
+# expect: {"code":"T700","fn":"f","fault":"negative_exponent"}
+module t
+fn f(a: Int) -> Int
+  examples
+    2 => 0
+{
+  return a.pow(0 - 1)
+}

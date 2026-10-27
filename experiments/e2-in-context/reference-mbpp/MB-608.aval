@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn bell_number(n: Int) -> Int
+  examples
+    2 => 2
+  cost O(n * n)
+{
+  let steps: List<Int> = for i in 1..n { i }
+  let row0: List<Int> = [1]
+  let row: List<Int> = steps.fold(row0, |r, i| r.fold([r[r.len() - 1]], |acc, x| acc.push(acc[acc.len() - 1] + x)))
+  return row[row.len() - 1]
+}
+```

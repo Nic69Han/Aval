@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn square_sum(n: Int) -> Float
+  examples
+    2 => 10.0
+  cost O(1)
+{
+  return n.float() * (4.0 * n.float() * n.float() - 1.0) / 3.0
+}
+```

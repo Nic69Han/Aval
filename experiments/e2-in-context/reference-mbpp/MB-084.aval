@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn sequence(n: Int) -> Int
+  examples
+    10 => 6
+  cost O(n)
+{
+  let steps: List<Int> = for i in 3..=n { i }
+  let start: List<Int> = [0, 1, 1]
+  let seq: List<Int> = steps.fold(start, |s, i| s.push(s[s[i - 1]] + s[i - s[i - 1]]))
+  return if n < 3 { 1 } else { seq[n] }
+}
+```

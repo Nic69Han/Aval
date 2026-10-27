@@ -1,0 +1,8 @@
+# scenario: SPC-005
+# expect: {"code":"E106","at":[5,12]}
+module t
+fn f(x: Int) -> Int
+  requires result > 0
+{
+  return x
+}

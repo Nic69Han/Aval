@@ -1,0 +1,9 @@
+# scenario: TST-024
+# cmd: test
+# expect: {"code":"T700","fn":"f","fault":"index_out_of_bounds","counterexample":{"xs":[]}}
+module t
+fn f(xs: List<Int>) -> Int
+  ensures true
+{
+  return xs[0]
+}

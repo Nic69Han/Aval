@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn extract_string(str1: List<String>, l: Int) -> List<String>
+  ensures result.all(|s| s.len() == l)
+  examples
+    ["Python", "list", "exercises", "practice", "solution"], 8 => ["practice", "solution"]
+  cost O(str1.len())
+{
+  return str1.filter(|s| s.len() == l)
+}
+```

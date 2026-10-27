@@ -1,0 +1,11 @@
+# scenario: STD-018
+# cmd: test
+module t
+fn f(a: Int, b: Int) -> Int
+  examples
+    2, 5 => 4
+    5, 5 => 1
+    6, 5 => 0
+{
+  return (a..=b).len()
+}

@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn area_tetrahedron(side: Float) -> Float
+  examples
+    3.0 => 15.588457268119894
+  cost O(1)
+{
+  return 3.0.sqrt() * (side * side)
+}
+```

@@ -1,0 +1,9 @@
+# scenario: SPC-011
+# expect: {"code":"E101","name":"x"}
+module t
+fn f(x: Int) -> Int
+  examples
+    x => 99
+{
+  return x
+}

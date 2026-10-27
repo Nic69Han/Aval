@@ -1,0 +1,7 @@
+# scenario: TYP-004
+# expect: {"code":"E301"}
+module t
+fn f(x: Int, y: Float) -> Float
+{
+  return x + y
+}

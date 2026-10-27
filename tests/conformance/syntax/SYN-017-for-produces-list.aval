@@ -1,0 +1,9 @@
+# scenario: SYN-017
+# cmd: test
+module t
+fn f(xs: List<Int>) -> List<Int>
+  examples
+    [1, 2] => [2, 4]
+{
+  return for x in xs { x * 2 }
+}

@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn odd_num_sum(n: Int) -> Int
+  examples
+    2 => 82
+  cost O(n)
+{
+  return (for i in 1..=n { (2 * i - 1).pow(4) }).sum()
+}
+```

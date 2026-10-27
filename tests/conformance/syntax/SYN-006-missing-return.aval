@@ -1,0 +1,8 @@
+# scenario: SYN-006
+# expect: {"code":"E002"}
+# stdout-contains: "return"
+module t
+fn f() -> Int
+{
+  let y: Int = 1
+}

@@ -1,0 +1,7 @@
+# scenario: STD-013
+# expect: {"code":"E301"}
+module t
+fn f(n: Int) -> String
+{
+  return n + "n"
+}

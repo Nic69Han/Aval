@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn hexagonal_num(n: Int) -> Int
+  examples
+    10 => 190
+  cost O(1)
+{
+  return n * (2 * n - 1)
+}
+```

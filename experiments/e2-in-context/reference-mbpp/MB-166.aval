@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn find_even_pair(a: List<Int>) -> Int
+  examples
+    [5, 4, 7, 2, 1] => 4
+  cost O(a.len())
+{
+  let evens: Int = a.filter(|x| x % 2 == 0).len()
+  let odds: Int = a.len() - evens
+  return evens * (evens - 1) / 2 + odds * (odds - 1) / 2
+}
+```

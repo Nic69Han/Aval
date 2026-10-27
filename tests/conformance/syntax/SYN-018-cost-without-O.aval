@@ -1,0 +1,9 @@
+# scenario: SYN-018
+# expect: {"code":"E002"}
+# stdout-contains: "O"
+module t
+fn f(xs: List<Int>) -> Int
+  cost xs.len()
+{
+  return 1
+}

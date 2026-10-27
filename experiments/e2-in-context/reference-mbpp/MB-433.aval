@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn check_greater(arr: List<Float>, number: Int) -> Bool
+  examples
+    [1.0, 2.0, 3.0, 4.0, 5.0], 4 => false
+  cost O(arr.len())
+{
+  return arr.all(|v| v < number.float())
+}
+```

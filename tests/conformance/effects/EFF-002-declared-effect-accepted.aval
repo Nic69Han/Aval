@@ -1,0 +1,7 @@
+# scenario: EFF-002
+module t
+fn greet() -> Bool
+  effects io.stdout
+{
+  return print("hi")
+}

@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn sum_in_range(l: Int, r: Int) -> Int
+  examples
+    2, 5 => 8
+  cost O(r - l + 1)
+{
+  return (for i in l..=r { i }).filter(|i| i % 2 != 0).sum()
+}
+```

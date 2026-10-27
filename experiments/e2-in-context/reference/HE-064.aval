@@ -1,0 +1,16 @@
+```aval
+module solution
+
+pub fn vowels_count(s: String) -> Int
+  ensures result >= 0 and result <= s.len()
+  examples
+    "abcde" => 2
+    "ACEDY" => 3
+  cost O(s.len())
+{
+  let cs: List<String> = s.to_lowercase().chars()
+  let plain: Int = cs.filter(|c| "aeiou".contains(c)).len()
+  let tail: Int = if cs.reverse().take(1) == ["y"] { 1 } else { 0 }
+  return plain + tail
+}
+```

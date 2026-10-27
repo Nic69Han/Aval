@@ -1,0 +1,11 @@
+# scenario: TST-014
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(x: Int) -> Int
+  examples
+    1 => 2
+    2 => 3
+{
+  return x
+}

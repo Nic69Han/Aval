@@ -1,0 +1,9 @@
+# scenario: STD-002
+# cmd: test
+module t
+fn f(xs: List<Int>) -> List<Int>
+  examples
+    [1, 2, 3] => [2, 3]
+{
+  return xs.take(10).skip(1)
+}

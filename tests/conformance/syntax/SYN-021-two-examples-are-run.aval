@@ -1,0 +1,11 @@
+# scenario: SYN-021
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(xs: List<Int>) -> Int
+  examples
+    [0] => 0
+    [1, 2] => 4
+{
+  return xs.sum()
+}

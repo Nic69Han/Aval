@@ -1,0 +1,7 @@
+# scenario: SYN-023
+# expect: {"code":"E204"}
+module t
+fn f(s: String) -> String
+{
+  return s[0..1]
+}

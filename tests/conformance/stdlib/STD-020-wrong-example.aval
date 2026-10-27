@@ -1,0 +1,11 @@
+# scenario: STD-020
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(n: Int) -> Int
+  requires n >= 1 and n <= 15
+  examples
+    5 => 127
+{
+  return (1..=n).product() + (if (1..=n).any(|i| i > 3) { 1 } else { 0 }) + (if (1..=n).all(|i| i > 0) { 1 } else { 0 }) + (1..=n).count(2) + (1..=n).reverse()[0]
+}

@@ -1,0 +1,15 @@
+# scenario: LEX-004
+module t
+# a comment line before the first function
+fn f() -> Int
+{
+  let a: Int = 1 # trailing comment after a let
+  return a
+}
+
+# a comment line between two functions
+
+fn g() -> Int
+{
+  return 2 # trailing comment after return
+}

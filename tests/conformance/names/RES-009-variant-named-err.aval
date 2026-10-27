@@ -1,0 +1,4 @@
+# scenario: RES-009
+# expect: {"code":"E102"}
+module t
+enum Bad { Err(Int), Fine }

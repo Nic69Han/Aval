@@ -1,0 +1,7 @@
+# scenario: TYP-003
+# expect: {"code":"E301","expected":"Bool"}
+module t
+fn f() -> Int
+{
+  return if 1 { 2 } else { 3 }
+}

@@ -1,0 +1,21 @@
+```aval
+module solution
+
+fn next_row(c: List<List<Int>>, p: List<Int>, i: Int) -> List<Int>
+{
+  let start: List<Int> = []
+  let cols: List<Int> = for j in 0..c.len() { j }
+  return cols.fold(start, |row, j| row.push(c[i][j] + (if i == 0 { if j == 0 { 0 } else { row[j - 1] } } else if j == 0 { p[0] } else { p[j].max(row[j - 1]) })))
+}
+
+pub fn max_average_of_path(cost_: List<List<Int>>) -> Float
+  examples
+    [[1, 2, 3], [6, 5, 4], [7, 3, 9]] => 5.2
+  cost O(cost_.len() * cost_.len())
+{
+  let start: List<Int> = []
+  let rows: List<Int> = for i in 0..cost_.len() { i }
+  let last: List<Int> = rows.fold(start, |p, i| next_row(cost_, p, i))
+  return last[last.len() - 1].float() / (2 * cost_.len() - 1).float()
+}
+```

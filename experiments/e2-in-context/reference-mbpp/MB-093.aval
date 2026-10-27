@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn power(a: Int, b: Int) -> Float
+  examples
+    3, 4 => 81.0
+  cost O(b)
+{
+  let steps: List<Int> = for i in 0..b.abs() { i }
+  let p: Float = steps.fold(1.0, |acc, i| acc * a.float())
+  return if b >= 0 { p } else { 1.0 / p }
+}
+```

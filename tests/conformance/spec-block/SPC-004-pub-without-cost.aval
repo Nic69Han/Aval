@@ -1,0 +1,8 @@
+# scenario: SPC-004
+# expect: {"code":"E511","fn":"f"}
+module t
+pub fn f(x: Int) -> Int
+  ensures result == x
+{
+  return x
+}

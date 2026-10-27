@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn volume_cube(l: Float) -> Float
+  examples
+    3.0 => 27.0
+  cost O(1)
+{
+  return l * l * l
+}
+```

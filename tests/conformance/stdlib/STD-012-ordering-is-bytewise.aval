@@ -1,0 +1,34 @@
+# scenario: STD-012
+# cmd: test
+module t
+fn f(a: String, b: String) -> Bool
+  examples
+    "Z", "a" => true
+    "a", "Z" => false
+    "ab", "abc" => true
+    "b", "b" => false
+{
+  return a < b
+}
+fn g(a: String, b: String) -> Bool
+  examples
+    "b", "b" => true
+    "a", "b" => true
+    "c", "b" => false
+{
+  return a <= b
+}
+fn h(a: String, b: String) -> Bool
+  examples
+    "b", "a" => true
+    "a", "a" => false
+{
+  return a > b
+}
+fn k(a: String, b: String) -> Bool
+  examples
+    "a", "a" => true
+    "a", "b" => false
+{
+  return a >= b
+}

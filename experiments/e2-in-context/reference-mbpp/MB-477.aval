@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn is_lower(string: String) -> String
+  ensures result == string.to_lowercase()
+  examples
+    "InValid" => "invalid"
+  cost O(string.len())
+{
+  return string.to_lowercase()
+}
+```

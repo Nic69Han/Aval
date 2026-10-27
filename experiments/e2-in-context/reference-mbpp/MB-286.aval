@@ -1,0 +1,21 @@
+```aval
+module solution
+
+fn kadane_step(st: List<Int>, x: Int) -> List<Int>
+{
+  let pre: Int = (st[0] + x).max(x)
+  return [pre, st[1].max(pre)]
+}
+
+pub fn max_sub_array_sum_repeated(a: List<Int>, n: Int, k: Int) -> Int
+  requires a.len() > 0 and k > 0
+  examples
+    [10, 20, (0 - 30), (0 - 1)], 4, 3 => 30
+  cost O(a.len() * k)
+{
+  let empty: List<Int> = []
+  let repeated: List<Int> = (for t in 0..k { t }).fold(empty, |acc, t| acc.concat(a))
+  let start: List<Int> = [0, repeated[0]]
+  return repeated.fold(start, |st, x| kadane_step(st, x))[1]
+}
+```

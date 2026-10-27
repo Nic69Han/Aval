@@ -1,0 +1,11 @@
+# scenario: SYN-024
+# cmd: test
+module t
+fn f(xs: List<Int>) -> Bool
+  examples
+    [0] => false
+    [1, -2] => true
+{
+  let r: Bool = xs.all(|x| x > 0)
+  return r == not xs.any(|x| x < 0)
+}
