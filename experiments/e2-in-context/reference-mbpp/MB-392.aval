@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn get_max_sum(n: Int) -> Int
+  examples
+    60 => 106
+  cost O(n)
+{
+  return if n < 1 { 0 } else { (get_max_sum(n / 2) + get_max_sum(n / 3) + get_max_sum(n / 4) + get_max_sum(n / 5)).max(n) }
+}
+```

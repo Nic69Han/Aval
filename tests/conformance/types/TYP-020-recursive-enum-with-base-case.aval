@@ -1,0 +1,8 @@
+# scenario: TYP-020
+module t
+type T { l: L }
+enum L { Cons(T), Nil }
+fn f(t: T) -> Int
+{
+  return 1
+}

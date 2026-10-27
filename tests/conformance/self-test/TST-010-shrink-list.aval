@@ -1,0 +1,9 @@
+# scenario: TST-010
+# cmd: test
+# expect: {"code":"T200","fn":"f","violated":"result != 7","counterexample":{"xs":[0,0,0,0,0,0,0]}}
+module t
+fn f(xs: List<Int>) -> Int
+  ensures result != 7
+{
+  return xs.len()
+}

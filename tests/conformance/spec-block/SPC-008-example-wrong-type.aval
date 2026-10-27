@@ -1,0 +1,9 @@
+# scenario: SPC-008
+# expect: {"code":"E301"}
+module t
+fn f(x: Int) -> Int
+  examples
+    1.0 => 1
+{
+  return x
+}

@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn remove_vowels(text: String) -> String
+  ensures result.len() <= text.len()
+  examples
+    "abcdef" => "bcdf"
+  cost O(text.len())
+{
+  let vowels: List<String> = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
+  let kept: List<String> = text.chars().filter(|c| not vowels.contains(c))
+  return kept.join("")
+}
+```

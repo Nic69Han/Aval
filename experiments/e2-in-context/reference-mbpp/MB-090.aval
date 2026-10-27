@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn len_log(list1: List<String>) -> Int
+  requires list1.len() > 0
+  examples
+    ["python", "PHP", "bigdata"] => 7
+  cost O(list1.len())
+{
+  return list1.map(|w| w.len()).max()
+}
+```

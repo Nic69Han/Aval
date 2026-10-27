@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn sum_of_product(n: Int) -> Int
+  examples
+    3 => 15
+  cost O(n)
+{
+  let steps: List<Int> = for k in 0..n - 1 { k }
+  return steps.fold(1, |c, k| c * (2 * n - k) / (k + 1))
+}
+```

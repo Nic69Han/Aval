@@ -1,0 +1,9 @@
+# scenario: TST-024
+# cmd: test
+module t
+fn f(xs: List<Int>) -> Int
+  requires xs.len() > 0
+  ensures result == xs[0]
+{
+  return xs[0]
+}

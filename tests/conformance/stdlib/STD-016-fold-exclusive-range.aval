@@ -1,0 +1,11 @@
+# scenario: STD-016
+# cmd: test
+module t
+fn f(n: Int) -> Int
+  requires n >= 0 and n <= 1000
+  examples
+    5 => 10
+    0 => 0
+{
+  return (0..n).fold(0, |acc, i| acc + i)
+}

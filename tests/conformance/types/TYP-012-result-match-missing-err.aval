@@ -1,0 +1,9 @@
+# scenario: TYP-012
+# expect: {"code":"E310","missing":["Err"]}
+module t
+fn f(r: Result<Int, String>) -> Int
+{
+  return match r {
+    Ok(v) => v
+  }
+}

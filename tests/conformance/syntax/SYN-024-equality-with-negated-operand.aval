@@ -1,0 +1,10 @@
+# scenario: SYN-024
+# cmd: test
+module t
+fn f(a: Bool, b: Bool) -> Bool
+  examples
+    true, false => true
+    true, true => false
+{
+  return a == not b
+}

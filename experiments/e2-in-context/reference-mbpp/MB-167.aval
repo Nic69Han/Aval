@@ -1,0 +1,16 @@
+```aval
+module solution
+
+fn pow2_from(p: Int, n: Int) -> Int
+{
+  return if p >= n { p } else { pow2_from(p * 2, n) }
+}
+
+pub fn next_power_of_2(n: Int) -> Int
+  examples
+    0 => 1
+  cost O(log(n + 1))
+{
+  return pow2_from(1, n)
+}
+```

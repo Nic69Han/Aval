@@ -1,0 +1,12 @@
+# scenario: EFF-003
+# expect: {"code":"E420","fn":"b","effect":"io.stdout"}
+module t
+fn a() -> Bool
+  effects io.stdout
+{
+  return print("hi")
+}
+fn b() -> Bool
+{
+  return a()
+}

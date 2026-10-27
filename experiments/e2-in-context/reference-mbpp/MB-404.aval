@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn minimum(a: Float, b: Float) -> Float
+  examples
+    1.0, 2.0 => 1.0
+  cost O(1)
+{
+  return a.min(b)
+}
+```

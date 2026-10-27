@@ -1,0 +1,7 @@
+# scenario: TYP-017
+# expect: {"code":"E301"}
+module t
+fn f(xs: List<Int>) -> List<String>
+{
+  return xs.fold([], |acc, x| acc.push(x))
+}

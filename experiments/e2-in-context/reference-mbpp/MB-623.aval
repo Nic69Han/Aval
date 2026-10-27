@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn nth_nums(nums: List<Float>, n: Int) -> List<Float>
+  examples
+    [1.0, 2.0, 3.0], 2 => [1.0, 4.0, 9.0]
+  cost O(nums.len() * n.abs())
+{
+  let steps: List<Int> = for i in 0..n.abs() { i }
+  return nums.map(|x| if n < 0 { 1.0 / steps.fold(1.0, |acc, i| acc * x) } else { steps.fold(1.0, |acc, i| acc * x) })
+}
+```

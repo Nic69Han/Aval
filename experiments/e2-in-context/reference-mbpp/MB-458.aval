@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn rectangle_area(l: Float, b: Float) -> Float
+  examples
+    10.0, 20.0 => 200.0
+  cost O(1)
+{
+  return l * b
+}
+```

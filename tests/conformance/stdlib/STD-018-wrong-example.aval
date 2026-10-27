@@ -1,0 +1,10 @@
+# scenario: STD-018
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(a: Int, b: Int, x: Int) -> Bool
+  examples
+    2, 5, 5 => true
+{
+  return (a..b).len() == 3 and not (a..b).is_empty() and (a..b).contains(x)
+}

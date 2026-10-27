@@ -1,0 +1,19 @@
+```aval
+module solution
+
+fn is_vowel(c: String) -> Bool
+{
+  return "aeiouAEIOU".contains(c)
+}
+
+pub fn reverse_vowels(str1: String) -> String
+  examples
+    "Python" => "Python"
+  cost O(str1.len() * str1.len())
+{
+  let cs: List<String> = str1.chars()
+  let vs: List<String> = cs.filter(|c| is_vowel(c)).reverse()
+  let out: List<String> = for i in 0..cs.len() { if is_vowel(cs[i]) { vs[cs.take(i).filter(|c| is_vowel(c)).len()] } else { cs[i] } }
+  return out.join("")
+}
+```

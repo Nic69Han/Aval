@@ -1,0 +1,11 @@
+# scenario: TST-023
+# cmd: test
+# exit: 1
+# expect: {"code":"T210","fn":"f"}
+module t
+fn f() -> Int
+  requires false
+  ensures result == 1
+{
+  return 2
+}

@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn replace_specialchar(text: String) -> String
+  examples
+    "Python language, Programming language." => "Python:language::Programming:language:"
+  cost O(text.len())
+{
+  let out: List<String> = text.chars().map(|c| if c == " " or c == "," or c == "." { ":" } else { c })
+  return out.join("")
+}
+```

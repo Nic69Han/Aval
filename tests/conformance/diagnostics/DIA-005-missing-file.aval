@@ -1,0 +1,5 @@
+# scenario: DIA-005
+# cmd: check does/not/exist.aval
+# exit: 2
+# no-file: true
+module t

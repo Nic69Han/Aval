@@ -1,0 +1,15 @@
+# scenario: LEX-002
+module t
+fn f() -> Int
+{
+  let while: Int = 1
+  return while
+}
+fn g() -> Int
+{
+  let null: Int = 1
+  let class: Int = 2
+  let var: Int = 3
+  let goto: Int = 4
+  return null + class + var + goto
+}

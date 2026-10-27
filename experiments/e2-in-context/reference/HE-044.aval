@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn change_base(x: Int, base: Int) -> String
+  requires x >= 0 and base >= 2 and base < 10
+  examples
+    8, 3 => "22"
+    7, 2 => "111"
+  cost O(log(x + 1))
+{
+  return if x < base { x.to_string() } else { change_base(x / base, base) + (x % base).to_string() }
+}
+```

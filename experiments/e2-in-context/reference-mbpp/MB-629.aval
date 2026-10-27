@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn split(l: List<Int>) -> List<Int>
+  ensures result.all(|x| x % 2 == 0)
+  examples
+    [1, 2, 3, 4, 5] => [2, 4]
+  cost O(l.len())
+{
+  return l.filter(|x| x % 2 == 0)
+}
+```

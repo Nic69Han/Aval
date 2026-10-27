@@ -1,0 +1,9 @@
+# scenario: TST-003
+# cmd: test
+module t
+fn third() -> Float
+  examples
+    => 0.3333333333333333
+{
+  return 1.0 / 3.0
+}

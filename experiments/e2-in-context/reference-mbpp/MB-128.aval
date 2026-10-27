@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn long_words(n: Int, s: String) -> List<String>
+  examples
+    3, "python is a programming language" => ["python", "programming", "language"]
+  cost O(s.len())
+{
+  return s.split(" ").filter(|w| w.len() > n)
+}
+```

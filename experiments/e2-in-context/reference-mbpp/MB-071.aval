@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn comb_sort(nums: List<Int>) -> List<Int>
+  examples
+    [5, 15, 37, 25, 79] => [5, 15, 25, 37, 79]
+  cost O(nums.len() * log(nums.len()))
+{
+  return nums.sort()
+}
+```

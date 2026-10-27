@@ -1,0 +1,7 @@
+# scenario: SPC-005
+module t
+fn f(x: Int) -> Int
+  ensures result == x
+{
+  return x
+}

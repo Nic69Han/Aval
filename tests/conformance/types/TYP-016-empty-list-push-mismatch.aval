@@ -1,0 +1,7 @@
+# scenario: TYP-016
+# expect: {"code":"E301"}
+module t
+fn f(x: Int) -> List<String>
+{
+  return [].push(x)
+}

@@ -1,0 +1,24 @@
+# scenario: STD-012
+# cmd: test
+module t
+fn f(a: String, t: String) -> Bool
+  examples
+    "hello", "ell" => true
+    "hello", "xyz" => false
+{
+  return a.contains(t)
+}
+fn g(a: String, t: String) -> Bool
+  examples
+    "hello", "he" => true
+    "hello", "lo" => false
+{
+  return a.starts_with(t)
+}
+fn h(a: String, t: String) -> Bool
+  examples
+    "hello", "lo" => true
+    "hello", "he" => false
+{
+  return a.ends_with(t)
+}

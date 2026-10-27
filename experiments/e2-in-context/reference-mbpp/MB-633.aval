@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn pair_xor_sum(arr: List<Int>, n: Int) -> Int
+  examples
+    [5, 9, 7, 6], 4 => 47
+  cost O(arr.len() * 62)
+{
+  let xs: List<Int> = arr.take(n)
+  let bits: List<Int> = for k in 0..62 { k }
+  let per_bit: List<Int> = bits.map(|k| xs.filter(|x| x / 2.pow(k) % 2 == 1).len() * (xs.len() - xs.filter(|x| x / 2.pow(k) % 2 == 1).len()) * 2.pow(k))
+  return per_bit.sum()
+}
+```

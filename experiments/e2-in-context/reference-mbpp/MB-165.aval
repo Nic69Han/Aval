@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn count_char_position(str1: String) -> Int
+  examples
+    "xbcefg" => 2
+  cost O(str1.len())
+{
+  let cs: List<String> = str1.chars()
+  let alpha: List<String> = "abcdefghijklmnopqrstuvwxyz{|}~".chars()
+  return (for i in 0..cs.len() { if i < alpha.len() and alpha[i] == cs[i].to_lowercase() { 1 } else { 0 } }).sum()
+}
+```

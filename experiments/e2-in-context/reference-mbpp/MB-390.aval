@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn add_string(list_: List<Int>, string: String) -> List<String>
+  examples
+    [1, 2, 3, 4], "temp{0}" => ["temp1", "temp2", "temp3", "temp4"]
+  cost O(list_.len() * string.len())
+{
+  return list_.map(|v| string.split("{0}").join(v.to_string()))
+}
+```

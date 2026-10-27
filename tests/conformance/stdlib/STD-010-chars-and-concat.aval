@@ -1,0 +1,9 @@
+# scenario: STD-010
+# cmd: test
+module t
+fn f(s: String) -> String
+  examples
+    "ab" => "ba!"
+{
+  return s.chars().reverse().join("") + "!"
+}

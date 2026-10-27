@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn truncate_number(number: Float) -> Float
+  requires number >= 0.0
+  ensures result >= 0.0 and result < 1.0
+  examples
+    3.5 => 0.5
+  cost O(1)
+{
+  return number - number.floor()
+}
+```

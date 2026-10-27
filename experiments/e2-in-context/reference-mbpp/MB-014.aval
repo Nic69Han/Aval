@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn find_volume(l: Float, b: Float, h: Float) -> Float
+  examples
+    10.0, 8.0, 6.0 => 240.0
+  cost O(1)
+{
+  return l * b * h / 2.0
+}
+```

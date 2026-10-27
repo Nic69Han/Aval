@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn second_smallest(numbers: List<Float>) -> Int
+  examples
+    [1.0, 2.0, -8.0, -2.0, 0.0, -2.0] => -2
+  cost O(numbers.len() * log(numbers.len() + 1))
+{
+  return numbers.sort().dedup()[1].int()
+}
+```

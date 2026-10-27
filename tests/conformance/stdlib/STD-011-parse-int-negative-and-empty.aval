@@ -1,0 +1,18 @@
+# scenario: STD-011
+# cmd: test
+module t
+fn f(s: String) -> Result<Int, String>
+  examples
+    "-17" => Ok(0 - 17)
+    "007" => Ok(7)
+{
+  return s.parse_int()
+}
+fn g(s: String) -> Bool
+  examples
+    "" => true
+    "1x" => true
+    "12" => false
+{
+  return s.parse_int().is_err()
+}

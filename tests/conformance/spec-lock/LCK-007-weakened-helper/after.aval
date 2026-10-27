@@ -1,0 +1,15 @@
+# scenario: LCK-007
+# cmd: check
+# exit: 1
+# expect: {"code":"E900","fn":"a"}
+module t
+pub fn a(x: Int) -> Int
+  ensures ok(x, result)
+  cost O(1)
+{
+  return x + 1
+}
+fn ok(x: Int, r: Int) -> Bool
+{
+  return true
+}

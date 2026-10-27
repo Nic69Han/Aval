@@ -1,0 +1,11 @@
+# scenario: STD-021
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(a: Int, b: Int) -> Int
+  requires a >= b
+  examples
+    5, 2 => 0
+{
+  return (a..b).sum() + (a..b).product() + (a..b).len()
+}

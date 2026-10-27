@@ -1,0 +1,7 @@
+# scenario: TYP-001
+# expect: {"code":"E301","expected":"Int","found":"Float"}
+module t
+fn f() -> Int
+{
+  return 1.0
+}

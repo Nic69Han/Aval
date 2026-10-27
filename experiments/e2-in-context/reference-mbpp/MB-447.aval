@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn cube_nums(nums: List<Float>) -> List<Float>
+  ensures result.len() == nums.len()
+  examples
+    [1.0, 2.0, 3.0] => [1.0, 8.0, 27.0]
+  cost O(nums.len())
+{
+  return nums.map(|x| x * x * x)
+}
+```

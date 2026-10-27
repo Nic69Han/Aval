@@ -1,0 +1,11 @@
+# scenario: STD-017
+# cmd: test
+module t
+fn f(n: Int) -> Int
+  requires n >= 0 and n <= 1000
+  examples
+    4 => 10
+    0 => 0
+{
+  return (1..=n).sum()
+}

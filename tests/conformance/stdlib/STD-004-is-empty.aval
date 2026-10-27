@@ -1,0 +1,10 @@
+# scenario: STD-004
+# cmd: test
+module t
+fn f(xs: List<Int>) -> Bool
+  examples
+    [] => true
+    [0] => false
+{
+  return xs.is_empty()
+}

@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn last_digit(n: Int) -> Int
+  ensures result >= 0 and result < 10
+  examples
+    123 => 3
+  cost O(1)
+{
+  return (n % 10).abs()
+}
+```

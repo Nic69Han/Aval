@@ -1,0 +1,7 @@
+# scenario: SPC-010
+module t
+fn f() -> Float
+  ensures approx(result, 1.0)
+{
+  return 1.0
+}

@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = ["crates/aval-syntax", "crates/aval-check", "crates/aval-eval", "crates/aval-cli"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "Apache-2.0"
+repository = "https://github.com/Nic69Han/Aval"
+rust-version = "1.75"
+
+[workspace.dependencies]
+serde_json = { version = "1", features = ["preserve_order"] }
+sha2 = "0.10"
+aval-syntax = { path = "crates/aval-syntax" }
+aval-check = { path = "crates/aval-check" }
+aval-eval = { path = "crates/aval-eval" }

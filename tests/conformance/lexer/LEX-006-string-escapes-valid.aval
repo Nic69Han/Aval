@@ -1,0 +1,6 @@
+# scenario: LEX-006
+module t
+fn f() -> String
+{
+  return "a\"b\\c\nd\te"
+}

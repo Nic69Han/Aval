@@ -1,0 +1,14 @@
+Here is my solution.
+
+```rust
+fn below_zero(operations: Vec<i64>) -> bool {
+    let mut balance: i64 = 0;
+    for op in operations {
+        balance += op;
+        if balance < 0 {
+            return true;
+        }
+    }
+    false
+}
+```

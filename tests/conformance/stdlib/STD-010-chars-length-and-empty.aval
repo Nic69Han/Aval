@@ -1,0 +1,10 @@
+# scenario: STD-010
+# cmd: test
+module t
+fn f(s: String) -> Int
+  examples
+    "hello" => 5
+    "" => 0
+{
+  return s.chars().len()
+}

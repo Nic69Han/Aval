@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn shell_sort(my_list: List<Int>) -> List<Int>
+  ensures result.len() == my_list.len()
+  examples
+    [12, 23, 4, 5, 3, 2, 12, 81, 56, 95] => [2, 3, 4, 5, 12, 12, 23, 56, 81, 95]
+  cost O(my_list.len() * log(my_list.len()))
+{
+  return my_list.sort()
+}
+```

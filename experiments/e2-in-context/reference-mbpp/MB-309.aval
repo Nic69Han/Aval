@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn maximum(a: Float, b: Float) -> Float
+  examples
+    5.0, 10.0 => 10.0
+  cost O(1)
+{
+  return a.max(b)
+}
+```

@@ -1,0 +1,10 @@
+# scenario: TST-024
+# cmd: test
+# expect: {"code":"T700","fn":"f","fault":"index_out_of_bounds"}
+module t
+fn f(xs: List<Int>) -> Int
+  examples
+    [1, 2] => 1
+{
+  return xs[xs.len() - 3]
+}

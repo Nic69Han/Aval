@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn sum_series(n: Int) -> Int
+  examples
+    0 => 0
+  cost O(n)
+{
+  return if n <= 0 { 0 } else { (for i in 0..=n / 2 { n - 2 * i }).sum() }
+}
+```

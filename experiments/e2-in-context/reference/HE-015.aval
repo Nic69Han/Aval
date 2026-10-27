@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn string_sequence(n: Int) -> String
+  requires n >= 0
+  examples
+    0 => "0"
+    5 => "0 1 2 3 4 5"
+  cost O(n)
+{
+  let parts: List<String> = for i in 0..=n { i.to_string() }
+  return parts.join(" ")
+}
+```

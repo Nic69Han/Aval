@@ -1,0 +1,13 @@
+# scenario: TST-016
+# cmd: test
+# exit: 1
+# expect: {"code":"T210","fn":"f"}
+# stdout-contains: "accepted":
+# stdout-contains: "requested":
+module t
+fn f(x: Int) -> Int
+  requires x == 4242
+  ensures result == x
+{
+  return x
+}

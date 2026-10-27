@@ -1,0 +1,8 @@
+# scenario: SPC-007
+# expect: {"code":"E301"}
+module t
+fn f(x: Int) -> Int
+  requires x + 1
+{
+  return x
+}

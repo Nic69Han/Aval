@@ -1,0 +1,8 @@
+# scenario: EFF-005
+# expect: {"code":"E421"}
+module t
+fn f(xs: List<Int>) -> List<Bool>
+  effects io.stdout
+{
+  return par for x in xs { print("x") }
+}

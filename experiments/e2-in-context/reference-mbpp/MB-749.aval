@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn sort_numeric_strings(nums_str: List<String>) -> List<Int>
+  examples
+    ["4", "12", "45", "7", "0", "100", "200", "-12", "-500"] => [-500, -12, 0, 4, 7, 12, 45, 100, 200]
+  cost O(nums_str.len() * log(nums_str.len()))
+{
+  return nums_str.map(|s| s.trim().parse_int().unwrap()).sort()
+}
+```

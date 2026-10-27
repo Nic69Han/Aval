@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn count_reverse_pairs(test_list: List<String>) -> Int
+  examples
+    ["julia", "best", "tseb", "for", "ailuj"] => 2
+  cost O(test_list.len() * test_list.len())
+{
+  let n: Int = test_list.len()
+  let per: List<Int> = for i in 0..n { test_list.skip(i + 1).filter(|t| t == test_list[i].chars().reverse().join("")).len() }
+  return per.sum()
+}
+```

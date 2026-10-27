@@ -1,0 +1,10 @@
+# scenario: STD-011
+# cmd: test
+module t
+fn f(s: String) -> Result<Int, String>
+  examples
+    " 42 " => Ok(42)
+    "x" => Err("invalid digit")
+{
+  return s.trim().parse_int()
+}

@@ -1,0 +1,7 @@
+# scenario: TYP-007
+# expect: {"code":"E302"}
+module t
+fn f() -> Byte
+{
+  return 256
+}

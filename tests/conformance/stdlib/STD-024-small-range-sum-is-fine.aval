@@ -1,0 +1,9 @@
+# scenario: STD-024
+# cmd: test
+module t
+fn f(n: Int) -> Int
+  examples
+    1000 => 499500
+{
+  return (0..n).sum()
+}

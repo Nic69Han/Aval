@@ -1,0 +1,24 @@
+```aval
+module solution
+
+fn next_row(prev: List<Int>, a: List<Int>, i: Int, n: Int) -> List<Int>
+{
+  return for j in 0..n {
+    if a[j] > a[i] and j > i {
+      if prev[i] + a[j] > prev[j] { prev[i] + a[j] } else { prev[j] }
+    } else {
+      prev[j]
+    }
+  }
+}
+
+pub fn max_sum_increasing_subseq(a: List<Int>, n: Int, index: Int, k: Int) -> Int
+  examples
+    [1, 101, 2, 3, 100, 4, 5], 7, 4, 6 => 11
+  cost O(n * n)
+{
+  let row0: List<Int> = for j in 0..n { if a[j] > a[0] { a[j] + a[0] } else { a[j] } }
+  let steps: List<Int> = for i in 1..=index { i }
+  return steps.fold(row0, |prev, i| next_row(prev, a, i, n))[k]
+}
+```

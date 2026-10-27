@@ -1,0 +1,11 @@
+# scenario: STD-020
+# cmd: test
+module t
+fn f(a: Int, b: Int) -> Int
+  requires a <= b
+  examples
+    3, 7 => 307
+    4, 4 => 404
+{
+  return (a..=b).min() * 100 + (a..=b).max()
+}

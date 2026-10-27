@@ -1,0 +1,3 @@
+# scenario: RES-009
+module t
+type Okay { v: Int }

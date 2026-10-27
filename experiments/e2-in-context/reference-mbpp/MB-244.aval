@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn next_perfect_square(n: Float) -> Int
+  examples
+    35.0 => 36
+  cost O(1)
+{
+  return if n < 0.0 { 0 } else {
+    let k: Int = n.sqrt().floor().int() + 1
+    k * k
+  }
+}
+```

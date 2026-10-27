@@ -1,0 +1,9 @@
+# scenario: DIA-006
+# exit: 0
+# expect: {"code":"W210"}
+module t
+fn f() -> Float
+  ensures result == 2.0
+{
+  return 2.0
+}

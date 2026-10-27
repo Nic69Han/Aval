@@ -1,0 +1,17 @@
+```aval
+module solution
+
+fn sieve(l: List<Int>) -> List<Int>
+{
+  return if l.is_empty() { [] } else { [l[0]].concat(sieve((for i in 0..l.len() { if i % l[0] == 0 { 0 } else { l[i] } }).filter(|x| x != 0))) }
+}
+
+pub fn get_ludic(n: Int) -> List<Int>
+  examples
+    10 => [1, 2, 3, 5, 7]
+  cost O(n * n)
+{
+  let rest: List<Int> = for i in 2..=n { i }
+  return [1].concat(sieve(rest))
+}
+```

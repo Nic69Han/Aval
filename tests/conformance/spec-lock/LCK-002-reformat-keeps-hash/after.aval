@@ -1,0 +1,9 @@
+# scenario: LCK-002
+# cmd: check
+module t
+pub fn a(x: Int)   ->   Int
+  ensures   result   >   x   # a comment that was not there before
+  cost O(1)
+{
+  return x + 1
+}

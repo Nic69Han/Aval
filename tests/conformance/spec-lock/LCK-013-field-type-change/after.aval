@@ -1,0 +1,12 @@
+# scenario: LCK-013
+# cmd: check
+# exit: 1
+# expect: {"code":"E900","fn":"f"}
+module t
+type P { v: Byte }
+pub fn f(p: P) -> Int
+  ensures result >= 0
+  cost O(1)
+{
+  return 1
+}

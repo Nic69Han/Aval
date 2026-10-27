@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn is_monotonic(a: List<Float>) -> Bool
+  examples
+    [6.0, 5.0, 4.0, 4.0] => true
+  cost O(a.len() * log(a.len()))
+{
+  let up: List<Float> = a.sort()
+  return a == up or a == up.reverse()
+}
+```

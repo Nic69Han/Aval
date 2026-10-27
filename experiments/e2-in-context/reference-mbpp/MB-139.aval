@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn circle_circumference(r: Int) -> Float
+  examples
+    10 => 62.83185307179586
+  cost O(1)
+{
+  return 2.0 * 3.141592653589793 * r.float()
+}
+```

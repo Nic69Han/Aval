@@ -1,0 +1,10 @@
+# scenario: CLI-006
+# cmd: test $FILE --cases 0
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(x: Int) -> Int
+  examples
+    1 => 2
+{
+  return x
+}

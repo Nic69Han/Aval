@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn tetrahedral_number(n: Int) -> Float
+  examples
+    5 => 35.0
+  cost O(1)
+{
+  return (n * (n + 1) * (n + 2)).float() / 6.0
+}
+```

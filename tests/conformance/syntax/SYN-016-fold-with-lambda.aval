@@ -1,0 +1,9 @@
+# scenario: SYN-016
+# cmd: test
+module t
+fn f(xs: List<Int>) -> Int
+  examples
+    [1, 2, 3] => 6
+{
+  return xs.fold(0, |acc, x| acc + x)
+}

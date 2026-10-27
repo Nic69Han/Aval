@@ -1,0 +1,11 @@
+# scenario: TYP-012
+# expect: {"code":"E310","missing":["Blue"]}
+module t
+enum Color { Red, Green, Blue }
+fn f(c: Color) -> Int
+{
+  return match c {
+    Red => 1
+    Green => 2
+  }
+}

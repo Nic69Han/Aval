@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn volume_cylinder(r: Float, h: Float) -> Float
+  examples
+    10.0, 5.0 => 1570.7963267948967
+  cost O(1)
+{
+  return 3.141592653589793 * r * r * h
+}
+```

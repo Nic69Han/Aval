@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn remove_lowercase(str1: String) -> String
+  examples
+    "PYTHon" => "PYTH"
+  cost O(str1.len())
+{
+  let kept: List<String> = str1.chars().filter(|c| not (c >= "a" and c <= "z"))
+  return kept.join("")
+}
+```

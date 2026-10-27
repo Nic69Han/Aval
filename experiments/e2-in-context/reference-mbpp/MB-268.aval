@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn find_star_num(n: Int) -> Int
+  examples
+    3 => 37
+  cost O(1)
+{
+  return 6 * n * (n - 1) + 1
+}
+```

@@ -1,0 +1,12 @@
+# scenario: SPC-009
+# expect: {"code":"E301"}
+module t
+fn f(x: Int) -> Int
+  oracle g
+{
+  return x
+}
+fn g(x: Float) -> Int
+{
+  return 0
+}

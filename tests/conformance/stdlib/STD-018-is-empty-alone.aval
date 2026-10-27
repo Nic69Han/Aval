@@ -1,0 +1,11 @@
+# scenario: STD-018
+# cmd: test
+module t
+fn f(a: Int, b: Int) -> Bool
+  examples
+    5, 5 => true
+    5, 6 => false
+    6, 5 => true
+{
+  return (a..b).is_empty()
+}

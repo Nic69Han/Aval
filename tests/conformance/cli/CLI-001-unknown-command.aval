@@ -1,0 +1,6 @@
+# scenario: CLI-001
+# cmd: frobnicate
+# exit: 2
+# no-file: true
+# stderr-contains: check
+module t

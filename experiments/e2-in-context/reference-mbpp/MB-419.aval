@@ -1,0 +1,18 @@
+```aval
+module solution
+
+fn py_round(x: Float) -> Int
+{
+  let f: Float = x.floor()
+  let diff: Float = x - f
+  return if diff < 0.5 { f.int() } else if diff > 0.5 { f.int() + 1 } else if f.int() % 2 == 0 { f.int() } else { f.int() + 1 }
+}
+
+pub fn round_and_sum(list1: List<Float>) -> Int
+  examples
+    [22.4, 4.0, (0.0 - 16.22), (0.0 - 9.1), 11.0, (0.0 - 12.22), 14.2, (0.0 - 5.2), 17.5] => 243
+  cost O(list1.len())
+{
+  return list1.map(|x| py_round(x)).sum() * list1.len()
+}
+```

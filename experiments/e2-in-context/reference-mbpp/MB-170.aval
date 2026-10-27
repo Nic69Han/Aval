@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn sum_range_list(list1: List<Int>, m: Int, n: Int) -> Int
+  requires m >= 0
+  examples
+    [2, 1, 5, 6, 8, 3, 4, 9, 10, 11, 8, 12], 8, 10 => 29
+  cost O(list1.len())
+{
+  return list1.skip(m).take((n + 1 - m).max(0)).sum()
+}
+```

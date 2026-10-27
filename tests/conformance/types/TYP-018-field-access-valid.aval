@@ -1,0 +1,7 @@
+# scenario: TYP-018
+module t
+type Point { x: Int, y: Int }
+fn f(p: Point) -> Int
+{
+  return p.x
+}

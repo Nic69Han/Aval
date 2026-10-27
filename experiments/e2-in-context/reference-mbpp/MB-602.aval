@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn first_repeated_char(str1: String) -> String
+  examples
+    "abcabc" => "a"
+  cost O(str1.len() * str1.len())
+{
+  let cs: List<String> = str1.chars()
+  let rep: List<String> = (for i in 0..cs.len() { i }).filter(|i| cs.take(i).contains(cs[i])).map(|i| cs[i])
+  return rep[0]
+}
+```

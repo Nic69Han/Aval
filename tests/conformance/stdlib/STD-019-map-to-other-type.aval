@@ -1,0 +1,10 @@
+# scenario: STD-019
+# cmd: test
+module t
+fn f(n: Int) -> List<String>
+  requires n >= 0 and n <= 1000
+  examples
+    3 => ["0", "1", "2"]
+{
+  return (0..n).map(|i| i.to_string())
+}

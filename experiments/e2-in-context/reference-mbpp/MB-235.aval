@@ -1,0 +1,16 @@
+```aval
+module solution
+
+fn set_even_bits(n: Int, mask: Int) -> Int
+{
+  return if mask < n { set_even_bits(if (n / mask) % 2 == 1 { n } else { n + mask }, mask * 4) } else { n }
+}
+
+pub fn even_bit_set_number(n: Int) -> Int
+  examples
+    10 => 10
+  cost O(log(n + 1))
+{
+  return set_even_bits(n, 2)
+}
+```

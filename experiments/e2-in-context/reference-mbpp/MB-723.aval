@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn count_same_pair(nums1: List<Int>, nums2: List<Int>) -> Int
+  examples
+    [1, 2, 3, 4, 5, 6, 7, 8], [2, 2, 3, 1, 2, 6, 7, 9] => 4
+  cost O(nums1.len())
+{
+  let m: Int = nums1.len().min(nums2.len())
+  let hits: List<Int> = for i in 0..m { if nums1[i] == nums2[i] { 1 } else { 0 } }
+  return hits.sum()
+}
+```

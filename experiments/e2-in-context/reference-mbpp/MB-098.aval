@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn multiply_num(numbers: List<Float>) -> Float
+  examples
+    [8.0, 2.0, 3.0, (0.0 - 1.0), 7.0] => (0.0 - 67.2)
+  cost O(numbers.len())
+{
+  return numbers.product() / numbers.len().float()
+}
+```

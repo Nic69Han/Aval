@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn left_rotate(n: Int, d: Int) -> Int
+  examples
+    16, 2 => 64
+  cost O(1)
+{
+  return n * 2.pow(d) + n / 2.pow(32 - d)
+}
+```

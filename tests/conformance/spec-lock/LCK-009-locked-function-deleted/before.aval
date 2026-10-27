@@ -1,0 +1,14 @@
+# scenario: LCK-009
+module t
+pub fn a(x: Int) -> Int
+  ensures result > x
+  cost O(1)
+{
+  return x + 1
+}
+pub fn b(x: Int) -> Int
+  ensures result == x
+  cost O(1)
+{
+  return x
+}

@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn replace_spaces(text: String) -> String
+  examples
+    "Jumanji The Jungle" => "Jumanji_The_Jungle"
+    "a_b c" => "a b_c"
+  cost O(text.len())
+{
+  let out: List<String> = text.chars().map(|c| if c == " " { "_" } else if c == "_" { " " } else { c })
+  return out.join("")
+}
+```

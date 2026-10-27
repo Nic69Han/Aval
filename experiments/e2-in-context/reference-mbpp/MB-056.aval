@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn check(n: Int) -> Bool
+  examples
+    70 => false
+  cost O(n)
+{
+  let rev: Int = n.to_string().chars().reverse().join("").parse_int().unwrap()
+  return n == 2 * rev - 1
+}
+```

@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn list_split(s: List<String>, step: Int) -> List<List<String>>
+  examples
+    ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"], 3 => [["a", "d", "g", "j", "m"], ["b", "e", "h", "k", "n"], ["c", "f", "i", "l"]]
+  cost O(s.len() * step)
+{
+  return for i in 0..step {
+    (for k in 0..s.len() { k }).filter(|k| k >= i and (k - i) % step == 0).map(|k| s[k])
+  }
+}
+```

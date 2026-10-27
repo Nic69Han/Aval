@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn sum_list(lst1: List<Int>, lst2: List<Int>) -> List<Int>
+  examples
+    [10, 20, 30], [15, 25, 35] => [25, 45, 65]
+  cost O(lst1.len())
+{
+  let m: Int = lst1.len().min(lst2.len())
+  return for i in 0..m { lst1[i] + lst2[i] }
+}
+```

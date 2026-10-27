@@ -1,0 +1,17 @@
+```aval
+module solution
+
+fn div_sum(num: Int) -> Int
+{
+  let limit: Int = num.float().sqrt().floor().int()
+  return 1 + (for i in 2..=limit { if num % i == 0 { i + (if i * i != num { num / i } else { 0 }) } else { 0 } }).sum()
+}
+
+pub fn amicable_numbers_sum(limit: Int) -> Int
+  examples
+    999 => 504
+  cost O(limit * limit)
+{
+  return (for i in 2..=limit { if div_sum(div_sum(i)) == i and div_sum(i) != i { i } else { 0 } }).sum()
+}
+```

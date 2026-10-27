@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn noprofit_noloss(actual_cost: Int, sale_amount: Int) -> Bool
+  ensures result == (actual_cost == sale_amount)
+  examples
+    1500, 1200 => false
+  cost O(1)
+{
+  return actual_cost == sale_amount
+}
+```

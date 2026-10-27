@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn right_insertion(a: List<Float>, x: Int) -> Int
+  examples
+    [1.0, 2.0, 4.0, 5.0], 6 => 4
+  cost O(log(a.len() + 1))
+{
+  let rounds: List<Int> = for k in 0..64 { k }
+  let st: List<Int> = rounds.fold([0, a.len()], |s, k| if s[0] < s[1] { if x.float() < a[(s[0] + s[1]) / 2] { [s[0], (s[0] + s[1]) / 2] } else { [(s[0] + s[1]) / 2 + 1, s[1]] } } else { s })
+  return st[0]
+}
+```

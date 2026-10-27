@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn find_max_num(arr: List<Int>) -> Int
+  examples
+    [1, 2, 3] => 321
+  cost O(arr.len() * log(arr.len()))
+{
+  return arr.sort().reverse().fold(0, |acc, d| acc * 10 + d)
+}
+```

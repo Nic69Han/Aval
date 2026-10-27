@@ -1,0 +1,12 @@
+# scenario: DIA-004
+# expect: {"code":"E101","fn":"f","name":"y"}
+# expect: {"code":"E101","fn":"g","name":"z"}
+module t
+fn f(x: Int) -> Int
+{
+  return y
+}
+fn g(x: Int) -> Int
+{
+  return z
+}

@@ -1,0 +1,10 @@
+# scenario: TST-003
+# cmd: test
+# expect: {"code":"T100","fn":"third","expected":0.5}
+module t
+fn third() -> Float
+  examples
+    => 0.5
+{
+  return 1.0 / 3.0
+}

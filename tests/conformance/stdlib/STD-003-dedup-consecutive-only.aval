@@ -1,0 +1,9 @@
+# scenario: STD-003
+# cmd: test
+module t
+fn f(xs: List<Int>) -> List<Int>
+  examples
+    [1, 1, 2, 1] => [1, 2, 1]
+{
+  return xs.dedup()
+}

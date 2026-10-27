@@ -1,0 +1,11 @@
+# scenario: STD-001
+# cmd: test
+module t
+fn f(xs: List<Int>) -> Bool
+  examples
+    [] => true
+    [3, 4] => false
+    [1] => false
+{
+  return xs.all(|x| x > 2) and not xs.any(|x| x > 2)
+}

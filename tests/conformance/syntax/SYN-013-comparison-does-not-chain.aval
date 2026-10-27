@@ -1,0 +1,7 @@
+# scenario: SYN-013
+# expect: {"code":"E002"}
+module t
+fn f() -> Bool
+{
+  return 1 < 2 < 3
+}

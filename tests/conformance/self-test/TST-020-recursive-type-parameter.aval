@@ -1,0 +1,11 @@
+# scenario: TST-020
+# cmd: test
+# exit: 0
+module t
+type T { l: L }
+enum L { Cons(T), Nil }
+fn f(t: T) -> Bool
+  ensures result
+{
+  return true
+}

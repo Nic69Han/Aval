@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn count_pairs(arr: List<Int>, n: Int) -> Int
+  examples
+    [1, 2, 1], 3 => 2
+  cost O(arr.len() * arr.len())
+{
+  let xs: List<Int> = arr.take(n)
+  let per: List<Int> = for i in 0..xs.len() { xs.skip(i + 1).filter(|y| y != xs[i]).len() }
+  return per.sum()
+}
+```

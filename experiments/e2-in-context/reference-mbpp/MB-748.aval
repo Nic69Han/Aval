@@ -1,0 +1,22 @@
+```aval
+module solution
+
+fn is_word(c: String) -> Bool
+{
+  return (c >= "a" and c <= "z") or (c >= "A" and c <= "Z") or (c >= "0" and c <= "9") or c == "_"
+}
+
+pub fn capital_words_spaces(str1: String) -> String
+  examples
+    "Python" => "Python"
+    "PythonProgramExamples" => "Python Program Examples"
+  cost O(str1.len())
+{
+  let cs: List<String> = str1.chars()
+  let start: List<Int> = []
+  let idx: List<Int> = for i in 0..cs.len() { i }
+  let flags: List<Int> = idx.fold(start, |f, i| f.push(if i > 0 and cs[i] >= "A" and cs[i] <= "Z" and is_word(cs[i - 1]) and f[i - 1] == 0 { 1 } else { 0 }))
+  let out: List<String> = for i in 0..cs.len() { if flags[i] == 1 { " " + cs[i] } else { cs[i] } }
+  return out.join("")
+}
+```

@@ -1,0 +1,9 @@
+# scenario: SYN-019
+# cmd: test
+module t
+fn f(xs: List<Int>) -> Int
+  examples
+    [5, 6, 7] => 6
+{
+  return xs[1]
+}

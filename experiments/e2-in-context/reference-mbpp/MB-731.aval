@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn lateralsurface_cone(r: Float, h: Float) -> Float
+  examples
+    5.0, 12.0 => 204.20352248333654
+  cost O(1)
+{
+  return 3.141592653589793 * r * (r * r + h * h).sqrt()
+}
+```

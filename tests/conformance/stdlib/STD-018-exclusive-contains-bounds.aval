@@ -1,0 +1,13 @@
+# scenario: STD-018
+# cmd: test
+module t
+fn f(a: Int, b: Int, x: Int) -> Bool
+  examples
+    2, 5, 2 => true
+    2, 5, 4 => true
+    2, 5, 5 => false
+    2, 5, 1 => false
+    5, 2, 3 => false
+{
+  return (a..b).contains(x)
+}

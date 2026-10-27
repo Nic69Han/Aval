@@ -1,0 +1,7 @@
+# scenario: SYN-022
+# expect: {"code":"E301"}
+module t
+fn f(xs: List<Int>) -> List<Int>
+{
+  return xs[0.0..2]
+}

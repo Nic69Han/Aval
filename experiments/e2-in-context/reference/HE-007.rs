@@ -1,0 +1,8 @@
+```rust
+fn filter_by_substring(strings: Vec<String>, substring: String) -> Vec<String> {
+    strings
+        .into_iter()
+        .filter(|s| s.contains(substring.as_str()))
+        .collect()
+}
+```

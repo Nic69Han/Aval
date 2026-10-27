@@ -1,0 +1,12 @@
+# scenario: LCK-007
+module t
+pub fn a(x: Int) -> Int
+  ensures ok(x, result)
+  cost O(1)
+{
+  return x + 1
+}
+fn ok(x: Int, r: Int) -> Bool
+{
+  return r > x
+}

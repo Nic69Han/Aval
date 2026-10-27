@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn max_abs_diff(arr: List<Int>) -> Float
+  requires arr.len() > 0
+  examples
+    [2, 1, 5, 3] => 4.0
+  cost O(arr.len())
+{
+  return (arr.max() - arr.min()).float()
+}
+```

@@ -1,0 +1,19 @@
+```aval
+module solution
+
+pub fn circular_shift(x: Int, shift: Int) -> String
+  requires x >= 0 and shift >= 0
+  examples
+    12, 1 => "21"
+    100, 2 => "001"
+  cost O(x.to_string().len())
+{
+  let digits: List<String> = x.to_string().chars()
+  let n: Int = digits.len()
+  return if shift > n {
+    digits.reverse().join("")
+  } else {
+    digits.skip(n - shift).concat(digits.take(n - shift)).join("")
+  }
+}
+```

@@ -1,0 +1,7 @@
+# scenario: CLI-002
+# cmd: --version
+# exit: 0
+# no-file: true
+# stdout-contains: aval 0.1.
+# skip-output-count: true
+module t

@@ -1,0 +1,8 @@
+# scenario: TYP-018
+# expect: {"code":"E204","found":"p.x"}
+module t
+type Point { x: Int, y: Int }
+fn f(p: Point) -> Int
+{
+  return p.x()
+}

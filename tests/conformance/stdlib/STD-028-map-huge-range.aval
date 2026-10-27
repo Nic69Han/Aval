@@ -1,0 +1,11 @@
+# scenario: STD-028
+# cmd: test
+# exit: 1
+# expect: {"code":"T700","fn":"f","fault":"memory_limit"}
+module t
+fn f(n: Int) -> Int
+  examples
+    1000000000 => 0
+{
+  return (0..n).map(|i| i).len()
+}

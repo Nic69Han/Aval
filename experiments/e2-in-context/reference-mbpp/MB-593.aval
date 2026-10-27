@@ -1,0 +1,18 @@
+```aval
+module solution
+
+fn strip_zeros(s: String) -> String
+{
+  return if s.starts_with("0") { strip_zeros(s.chars().skip(1).join("")) } else { s }
+}
+
+pub fn removezero_ip(ip: String) -> String
+  examples
+    "216.08.094.196" => "216.8.94.196"
+  cost O(ip.len())
+{
+  let parts: List<String> = ip.split(".")
+  let fixed: List<String> = for i in 0..parts.len() { if i == 0 { parts[i] } else { strip_zeros(parts[i]) } }
+  return fixed.join(".")
+}
+```

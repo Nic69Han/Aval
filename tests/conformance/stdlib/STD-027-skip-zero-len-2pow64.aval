@@ -1,0 +1,11 @@
+# scenario: STD-027
+# cmd: test
+# exit: 1
+# expect: {"code":"T700","fn":"f","fault":"memory_limit"}
+module t
+fn f(a: Int, b: Int) -> Int
+  examples
+    -9223372036854775807, 9223372036854775807 => 0
+{
+  return ((a - 1)..=b).skip(0).len()
+}

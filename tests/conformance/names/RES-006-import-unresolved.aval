@@ -1,0 +1,8 @@
+# scenario: RES-006
+# expect: {"code":"E103","module":"vision.camera"}
+module t
+import vision.camera { Camera }
+fn f() -> Int
+{
+  return 1
+}

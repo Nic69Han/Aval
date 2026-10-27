@@ -1,0 +1,15 @@
+```aval
+module solution
+
+pub fn get_total_number_of_sequences(m: Int, n: Int) -> Int
+  examples
+    10, 4 => 4
+  cost O(m * n)
+{
+  let rows_idx: List<Int> = for i in 1..=m { i }
+  let zero: List<Int> = for j in 0..=n { 0 }
+  let start: List<List<Int>> = [zero]
+  let rows: List<List<Int>> = rows_idx.fold(start, |acc, i| acc.push(for j in 0..=n { if j == 0 or i < j { 0 } else if j == 1 { i } else { acc[i - 1][j] + acc[i / 2][j - 1] } }))
+  return rows[m][n]
+}
+```

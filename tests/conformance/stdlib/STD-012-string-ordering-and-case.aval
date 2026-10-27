@@ -1,0 +1,9 @@
+# scenario: STD-012
+# cmd: test
+module t
+fn f(a: String, b: String) -> Bool
+  examples
+    "Abc", "abd" => true
+{
+  return a.to_lowercase() < b.to_uppercase().to_lowercase()
+}

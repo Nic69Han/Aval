@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn unique_element(arr: List<Int>) -> Bool
+  examples
+    [1, 1, 1] => true
+    [1, 2, 1] => false
+  cost O(arr.len())
+{
+  return not arr.is_empty() and arr.all(|x| x == arr[0])
+}
+```

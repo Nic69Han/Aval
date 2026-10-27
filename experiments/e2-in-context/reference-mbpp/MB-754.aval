@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn extract_index_list(l1: List<Int>, l2: List<Int>, l3: List<Int>) -> List<Float>
+  examples
+    [1, 1, 3, 4, 5, 6, 7], [0, 1, 2, 3, 4, 5, 7], [0, 1, 2, 3, 4, 5, 7] => [1.0, 7.0]
+  cost O(l1.len())
+{
+  let m: Int = l1.len().min(l2.len()).min(l3.len())
+  let hits: List<Int> = (for i in 0..m { i }).filter(|i| l1[i] == l2[i] and l2[i] == l3[i])
+  return hits.map(|i| l1[i].float())
+}
+```

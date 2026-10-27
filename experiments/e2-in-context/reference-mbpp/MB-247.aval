@@ -1,0 +1,22 @@
+```aval
+module solution
+
+fn lcs_row(prev: List<Int>, a: String, b: List<String>) -> List<Int>
+{
+  let idx: List<Int> = for j in 1..=b.len() { j }
+  let start: List<Int> = [0]
+  return idx.fold(start, |cur, j| cur.push(if b[j - 1] == a { prev[j - 1] + 1 } else { prev[j].max(cur[j - 1]) }))
+}
+
+pub fn lps(str1: String) -> Int
+  examples
+    "TENS FOR TENS" => 5
+  cost O(str1.len() * str1.len())
+{
+  let a: List<String> = str1.chars()
+  let b: List<String> = a.reverse()
+  let zero: List<Int> = for j in 0..=b.len() { 0 }
+  let last: List<Int> = a.fold(zero, |prev, x| lcs_row(prev, x, b))
+  return last[b.len()]
+}
+```

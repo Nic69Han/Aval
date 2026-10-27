@@ -1,0 +1,6 @@
+# scenario: STD-013
+module t
+fn f(a: String) -> String
+{
+  return "n=" + a
+}

@@ -1,0 +1,11 @@
+# scenario: STD-016
+# cmd: test
+module t
+fn f(n: Int) -> List<Int>
+  requires n >= 0 and n <= 1000
+  examples
+    3 => [0, 1, 2]
+    0 => []
+{
+  return (0..n).fold([], |acc, i| acc.push(i))
+}

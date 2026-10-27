@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn derivative(xs: List<Int>) -> List<Int>
+  examples
+    [3, 1, 2, 4, 5] => [1, 4, 12, 20]
+    [1, 2, 3] => [2, 6]
+  cost O(xs.len())
+{
+  return for i in 1..xs.len() { xs[i] * i }
+}
+```

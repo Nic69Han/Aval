@@ -1,0 +1,17 @@
+```aval
+module solution
+
+fn highest_pow(p: Int, n: Int) -> Int
+{
+  return if p * 2 > n { p } else { highest_pow(p * 2, n) }
+}
+
+pub fn highest_power_of_2(n: Int) -> Int
+  requires n >= 1
+  examples
+    10 => 8
+  cost O(log(n + 1))
+{
+  return highest_pow(1, n)
+}
+```

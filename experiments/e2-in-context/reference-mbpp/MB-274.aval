@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn even_binomial_coeff_sum(n: Int) -> Int
+  examples
+    4 => 8
+  cost O(log(n + 1))
+{
+  let base: Int = 2
+  return base.pow((n - 1).max(0))
+}
+```

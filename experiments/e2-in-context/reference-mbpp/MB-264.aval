@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn dog_age(h_age: Int) -> Float
+  examples
+    12 => 61.0
+  cost O(1)
+{
+  return if h_age <= 2 { h_age.float() * 10.5 } else { (21 + (h_age - 2) * 4).float() }
+}
+```

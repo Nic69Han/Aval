@@ -1,0 +1,12 @@
+# scenario: STD-019
+# cmd: test
+module t
+fn f(n: Int) -> List<Int>
+  requires n >= 0 and n <= 1000
+  examples
+    6 => [4, 16, 36]
+    1 => []
+    0 => []
+{
+  return (1..=n).filter(|i| i % 2 == 0).map(|i| i * i)
+}

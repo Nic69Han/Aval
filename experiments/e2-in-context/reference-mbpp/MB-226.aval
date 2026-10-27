@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn odd_values_string(str1: String) -> String
+  examples
+    "abcdef" => "ace"
+  cost O(str1.len())
+{
+  let cs: List<String> = str1.chars()
+  let kept: List<String> = for i in 0..cs.len() { if i % 2 == 0 { cs[i] } else { "" } }
+  return kept.join("")
+}
+```

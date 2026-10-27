@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn remove_dirty_chars(string: String, second_string: String) -> String
+  examples
+    "probasscurve", "pros" => "bacuve"
+  cost O(string.len() * second_string.len())
+{
+  let kept: List<String> = string.chars().filter(|c| not second_string.contains(c))
+  return kept.join("")
+}
+```

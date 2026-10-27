@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn is_majority(arr: List<Int>, n: Int, x: Int) -> Bool
+  examples
+    [1, 2, 3, 3, 3, 3, 10], 7, 3 => true
+  cost O(arr.len())
+{
+  return if not arr.contains(x) { false } else { arr.count(x).float() > n.float() / 2.0 }
+}
+```

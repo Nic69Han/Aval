@@ -1,0 +1,11 @@
+# scenario: CLI-006
+# cmd: test $FILE --cases 10 --seed 5
+# exit: 0
+module t
+fn f(x: Int) -> Int
+  ensures result == x
+  examples
+    1 => 1
+{
+  return x
+}

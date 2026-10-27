@@ -1,0 +1,9 @@
+# scenario: SPC-010
+# exit: 0
+# expect: {"code":"W210"}
+module t
+fn f() -> Float
+  ensures result == 1.0
+{
+  return 1.0
+}

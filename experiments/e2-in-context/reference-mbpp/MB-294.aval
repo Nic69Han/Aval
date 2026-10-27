@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn max_val(listval: List<Int>) -> Int
+  requires listval.len() > 0
+  examples
+    [1, 2, 3] => 3
+  cost O(listval.len())
+{
+  return listval.max()
+}
+```

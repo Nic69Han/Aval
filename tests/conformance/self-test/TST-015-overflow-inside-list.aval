@@ -1,0 +1,9 @@
+# scenario: TST-015
+# cmd: test
+# expect: {"code":"T700","fn":"f","fault":"overflow"}
+module t
+fn f(xs: List<Int>) -> List<Int>
+  ensures result.len() == xs.len()
+{
+  return xs.map(|x| x.abs())
+}

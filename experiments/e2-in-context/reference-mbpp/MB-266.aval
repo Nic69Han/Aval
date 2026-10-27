@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn lateralsurface_cube(l: Float) -> Float
+  examples
+    5.0 => 100.0
+  cost O(1)
+{
+  return 4.0 * l * l
+}
+```

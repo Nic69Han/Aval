@@ -1,0 +1,7 @@
+# scenario: SYN-009
+# expect: {"code":"E002","at":[6,21]}
+module t
+fn f(x: Int) -> Int
+{
+  return if x > 0 { return 1 } else { 0 }
+}

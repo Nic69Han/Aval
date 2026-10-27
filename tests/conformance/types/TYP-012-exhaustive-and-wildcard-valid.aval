@@ -1,0 +1,18 @@
+# scenario: TYP-012
+module t
+enum Color { Red, Green, Blue }
+fn f(c: Color) -> Int
+{
+  return match c {
+    Red => 1
+    Green => 2
+    Blue => 3
+  }
+}
+fn g(c: Color) -> Int
+{
+  return match c {
+    Red => 1
+    _ => 0
+  }
+}

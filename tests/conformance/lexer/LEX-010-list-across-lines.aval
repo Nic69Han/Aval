@@ -1,0 +1,10 @@
+# scenario: LEX-010
+module t
+fn f(xs: List<Int>) -> Int
+  examples
+    [1,
+     2,
+     3] => 6
+{
+  return xs.sum()
+}

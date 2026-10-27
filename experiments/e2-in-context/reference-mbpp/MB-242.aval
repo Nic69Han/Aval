@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn count_charac(str1: String) -> Int
+  examples
+    "python programming" => 18
+  cost O(1)
+{
+  return str1.len()
+}
+```

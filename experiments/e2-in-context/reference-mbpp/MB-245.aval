@@ -1,0 +1,26 @@
+```aval
+module solution
+
+fn best_before(acc: List<Int>, arr: List<Int>, i: Int) -> Int
+{
+  return (for j in 0..i { if arr[j] < arr[i] { acc[j] } else { 0 } }).concat([0]).max()
+}
+
+fn msibs(arr: List<Int>) -> List<Int>
+{
+  let idx: List<Int> = for i in 0..arr.len() { i }
+  let start: List<Int> = []
+  return idx.fold(start, |acc, i| acc.push(arr[i] + best_before(acc, arr, i)))
+}
+
+pub fn max_sum(arr: List<Int>) -> Int
+  requires arr.len() > 0
+  examples
+    [1, 15, 51, 45, 33, 100, 12, 18, 9] => 194
+  cost O(arr.len() * arr.len())
+{
+  let inc: List<Int> = msibs(arr)
+  let dec: List<Int> = msibs(arr.reverse()).reverse()
+  return (for i in 0..arr.len() { inc[i] + dec[i] - arr[i] }).max()
+}
+```

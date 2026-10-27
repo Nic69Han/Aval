@@ -1,0 +1,7 @@
+# scenario: STD-026
+# cmd: check
+module t
+fn f(n: Int) -> Bool
+{
+  return (0..n).contains(3)
+}

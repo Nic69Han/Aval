@@ -1,0 +1,10 @@
+# scenario: RES-003
+module t
+fn a() -> Int
+{
+  return b()
+}
+fn b() -> Int
+{
+  return 1
+}

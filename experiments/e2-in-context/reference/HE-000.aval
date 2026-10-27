@@ -1,0 +1,16 @@
+```aval
+module solution
+
+pub fn has_close_elements(numbers: List<Float>, threshold: Float) -> Bool
+  examples
+    [1.0, 2.0, 3.0], 0.5 => false
+    [1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3 => true
+  cost O(numbers.len() * numbers.len())
+{
+  let n: Int = numbers.len()
+  let close: List<Bool> = for i in 0..n {
+    numbers.skip(i + 1).any(|y| (numbers[i] - y).abs() < threshold)
+  }
+  return close.any(|b| b)
+}
+```

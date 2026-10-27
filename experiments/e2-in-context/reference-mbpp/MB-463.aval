@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn max_subarray_product(arr: List<Int>) -> Int
+  examples
+    [1, -2, -3, 0, 7, -8, -2] => 112
+  cost O(arr.len())
+{
+  let st: List<Int> = arr.skip(1).fold([arr[0], arr[0], arr[0]], |s, x| [s[0].max((s[1] * x).max((s[2] * x).max(x))), (s[1] * x).max((s[2] * x).max(x)), (s[1] * x).min((s[2] * x).min(x))])
+  return st[0]
+}
+```

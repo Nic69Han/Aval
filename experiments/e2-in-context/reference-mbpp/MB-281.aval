@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn all_unique(test_list: List<Int>) -> Bool
+  examples
+    [1, 2, 3] => true
+  cost O(test_list.len() * log(test_list.len()))
+{
+  return test_list.sort().dedup().len() == test_list.len()
+}
+```

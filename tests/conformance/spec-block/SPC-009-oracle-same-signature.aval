@@ -1,0 +1,11 @@
+# scenario: SPC-009
+module t
+fn f(x: Int) -> Int
+  oracle g
+{
+  return x
+}
+fn g(x: Int) -> Int
+{
+  return x
+}

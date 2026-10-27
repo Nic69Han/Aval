@@ -1,0 +1,10 @@
+# scenario: STD-006
+# cmd: test
+# expect: {"code":"T700","fn":"f","fault":"overflow"}
+module t
+fn f(a: Int) -> Int
+  examples
+    10 => 0
+{
+  return a.pow(30)
+}

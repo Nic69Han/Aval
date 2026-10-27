@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn all_prefixes(string: String) -> List<String>
+  ensures result.len() == string.len()
+  examples
+    "abc" => ["a", "ab", "abc"]
+    "" => []
+  cost O(string.len() * string.len())
+{
+  let cs: List<String> = string.chars()
+  return for i in 1..=cs.len() { cs.take(i).join("") }
+}
+```

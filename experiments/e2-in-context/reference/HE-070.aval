@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn strange_sort_list(lst: List<Int>) -> List<Int>
+  ensures result.len() == lst.len()
+  examples
+    [1, 2, 3, 4] => [1, 4, 2, 3]
+  cost O(lst.len() * log(lst.len()))
+{
+  let s: List<Int> = lst.sort()
+  let n: Int = s.len()
+  return for i in 0..n { if i % 2 == 0 { s[i / 2] } else { s[n - 1 - i / 2] } }
+}
+```

@@ -1,0 +1,43 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.97.0
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all --check
+      - run: cargo clippy --workspace --all-targets -- -D warnings
+      - run: cargo test --workspace
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/aval-e2-cache
+          key: e2-datasets-mbppplus-dc20030b-humanevalplus-908377f1
+      - name: Python conformance tests (skill budget, skill examples)
+        env:
+          AVAL_E2_CACHE: ${{ runner.temp }}/aval-e2-cache
+        run: |
+          pip install tiktoken==0.14.0 pyarrow==26.0.0
+          cargo build -q --release -p aval-cli
+          export AVAL_BIN="$PWD/target/release/aval"
+          for t in $(find tests/conformance -name '*.py' -not -name '_*' -not -path '*/fixtures/*' | sort); do echo "== $t"; python3 "$t"; done
+  specs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install -g @fission-ai/openspec@1.15.0
+      - run: openspec validate --all --strict --no-interactive
+      - run: python3 scripts/trace.py

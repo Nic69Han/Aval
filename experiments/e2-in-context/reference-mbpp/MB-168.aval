@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn frequency(a: List<Float>, x: Int) -> Int
+  examples
+    [1.0, 2.0, 3.0], 4 => 0
+  cost O(a.len())
+{
+  return a.filter(|v| v == x.float()).len()
+}
+```

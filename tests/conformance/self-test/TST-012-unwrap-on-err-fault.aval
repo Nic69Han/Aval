@@ -1,0 +1,10 @@
+# scenario: TST-012
+# cmd: test
+# expect: {"code":"T700","fn":"f","fault":"unwrap_on_err"}
+module t
+fn f(x: Int) -> Int
+  ensures true
+{
+  let r: Result<Int, String> = if x > 0 { Ok(x) } else { Err("neg") }
+  return r.unwrap()
+}

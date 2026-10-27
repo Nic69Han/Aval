@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn interleave_lists(list1: List<Int>, list2: List<Int>, list3: List<Int>) -> List<Int>
+  examples
+    [1, 2], [10, 20], [100, 200] => [1, 10, 100, 2, 20, 200]
+  cost O(list1.len())
+{
+  let m: Int = list1.len().min(list2.len()).min(list3.len())
+  let start: List<Int> = []
+  let rows: List<List<Int>> = for i in 0..m { [list1[i], list2[i], list3[i]] }
+  return rows.fold(start, |acc, r| acc.concat(r))
+}
+```

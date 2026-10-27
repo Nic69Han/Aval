@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn sort_sublists(list1: List<List<String>>) -> List<List<String>>
+  ensures result.len() == list1.len()
+  examples
+    [["green", "orange"], ["white", "black"]] => [["green", "orange"], ["black", "white"]]
+  cost O(list1.len() * 8)
+{
+  return list1.map(|s| s.sort())
+}
+```

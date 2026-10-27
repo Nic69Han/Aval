@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn count_distinct_characters(string: String) -> Int
+  ensures result <= string.len()
+  examples
+    "xyzXYZ" => 3
+    "Jerry" => 4
+  cost O(string.len() * log(string.len()))
+{
+  return string.to_lowercase().chars().sort().dedup().len()
+}
+```

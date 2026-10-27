@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn number_ctr(s: String) -> Int
+  examples
+    "program2bedone" => 1
+  cost O(s.len())
+{
+  return s.chars().filter(|c| c >= "0" and c <= "9").len()
+}
+```

@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn remove_odd(str1: String) -> String
+  examples
+    "python" => "yhn"
+  cost O(str1.len())
+{
+  let cs: List<String> = str1.chars()
+  let kept: List<String> = for i in 0..cs.len() { if i % 2 == 1 { cs[i] } else { "" } }
+  return kept.join("")
+}
+```

@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn sum_of_digits(nums: List<Int>) -> Int
+  examples
+    [10, 2, 56] => 14
+  cost O(nums.len())
+{
+  return nums.map(|x| x.abs().to_string().chars().map(|c| c.parse_int().unwrap()).sum()).sum()
+}
+```

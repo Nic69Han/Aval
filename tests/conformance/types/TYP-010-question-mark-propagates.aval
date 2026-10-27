@@ -1,0 +1,17 @@
+# scenario: TYP-010
+# cmd: test
+module t
+fn half(x: Int) -> Result<Int, String>
+  examples
+    4 => Ok(2)
+    3 => Err("odd")
+{
+  return if x % 2 == 0 { Ok(x / 2) } else { Err("odd") }
+}
+fn quarter(x: Int) -> Result<Int, String>
+  examples
+    8 => Ok(2)
+    6 => Err("odd")
+{
+  return Ok(half(half(x)?)?)
+}

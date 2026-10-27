@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn split(word: String) -> List<String>
+  ensures result.join("") == word
+  examples
+    "python" => ["p", "y", "t", "h", "o", "n"]
+  cost O(word.len())
+{
+  return word.chars()
+}
+```

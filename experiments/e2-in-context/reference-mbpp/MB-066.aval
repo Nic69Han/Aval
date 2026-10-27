@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn pos_count(l: List<Float>) -> Int
+  examples
+    [1.0, (0.0 - 2.0), 3.0, (0.0 - 4.0)] => 2
+  cost O(l.len())
+{
+  return l.filter(|x| x > 0.0).len()
+}
+```

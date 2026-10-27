@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn jacobsthal_num(n: Int) -> Int
+  examples
+    5 => 11
+  cost O(n)
+{
+  let steps: List<Int> = for i in 2..=n { i }
+  let js: List<Int> = steps.fold([0, 1], |l, i| l.push(l[i - 1] + 2 * l[i - 2]))
+  return js[n]
+}
+```

@@ -1,0 +1,6 @@
+# scenario: RES-008
+module t
+fn approx_equal(a: Float, b: Float) -> Bool
+{
+  return true
+}

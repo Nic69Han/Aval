@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn min_of_three(a: Float, b: Float, c: Float) -> Float
+  examples
+    10.0, 20.0, 0.0 => 0.0
+  cost O(1)
+{
+  return a.min(b).min(c)
+}
+```

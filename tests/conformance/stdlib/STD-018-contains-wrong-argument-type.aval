@@ -1,0 +1,8 @@
+# scenario: STD-018
+# cmd: check
+# expect: {"code":"E301","fn":"f"}
+module t
+fn f(a: Int, b: Int) -> Bool
+{
+  return (a..b).contains(true)
+}

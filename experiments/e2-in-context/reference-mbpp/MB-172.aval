@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn count_occurance(s: String) -> Int
+  examples
+    "letstdlenstdporstd" => 3
+  cost O(s.len())
+{
+  let cs: List<String> = s.chars()
+  return (for i in 0..cs.len() { if cs.skip(i).take(3).join("") == "std" { 1 } else { 0 } }).sum()
+}
+```

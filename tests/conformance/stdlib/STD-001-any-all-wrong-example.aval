@@ -1,0 +1,10 @@
+# scenario: STD-001
+# cmd: test
+# expect: {"code":"T100","fn":"f"}
+module t
+fn f(xs: List<Int>) -> Bool
+  examples
+    [1, 3] => false
+{
+  return xs.any(|x| x > 2) and not xs.all(|x| x > 2)
+}

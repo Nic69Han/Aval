@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn find_lucas(n: Int) -> Int
+  examples
+    9 => 76
+  cost O(n)
+{
+  let steps: List<Int> = for i in 0..n { i }
+  let start: List<Int> = [2, 1]
+  return steps.fold(start, |s, i| [s[1], s[0] + s[1]])[0]
+}
+```

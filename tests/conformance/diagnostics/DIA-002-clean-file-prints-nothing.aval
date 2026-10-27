@@ -1,0 +1,12 @@
+# scenario: DIA-002
+# exit: 0
+module t
+pub fn mean(xs: List<Float>) -> Float
+  requires xs.len() > 0
+  ensures approx(result * xs.len().float(), xs.sum())
+  examples
+    [1.0, 2.0, 3.0] => 2.0
+  cost O(xs.len())
+{
+  return xs.sum() / xs.len().float()
+}

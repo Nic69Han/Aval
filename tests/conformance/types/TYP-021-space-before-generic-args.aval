@@ -1,0 +1,6 @@
+# scenario: TYP-021
+module t
+fn f(xs: List <Int>) -> Int
+{
+  return xs.len()
+}

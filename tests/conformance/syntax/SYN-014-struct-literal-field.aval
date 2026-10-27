@@ -1,0 +1,10 @@
+# scenario: SYN-014
+# cmd: test
+module t
+type Point { x: Int, y: Int }
+fn f() -> Int
+  examples
+    => 2
+{
+  return Point { x: 1, y: 2 }.y
+}

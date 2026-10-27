@@ -1,0 +1,6 @@
+# scenario: SYN-022
+module t
+fn f(xs: List<Int>) -> Int
+{
+  return xs[1]
+}

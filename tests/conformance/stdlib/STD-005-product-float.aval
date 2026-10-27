@@ -1,0 +1,10 @@
+# scenario: STD-005
+# cmd: test
+module t
+fn f(xs: List<Float>) -> Float
+  examples
+    [1.5, 2.0] => 3.0
+    [] => 1.0
+{
+  return xs.product()
+}

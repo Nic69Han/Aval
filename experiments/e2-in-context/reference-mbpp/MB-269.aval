@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn ascii_value(k: String) -> Int
+  examples
+    "A" => 65
+  cost O(1)
+{
+  let table: String = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+  let tc: List<String> = table.chars()
+  let hits: List<Int> = (for i in 0..tc.len() { i }).filter(|i| tc[i] == k)
+  return if k == "\n" { 10 } else if k == "\t" { 9 } else { hits[0] + 32 }
+}
+```

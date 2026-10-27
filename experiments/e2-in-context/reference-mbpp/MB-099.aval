@@ -1,0 +1,16 @@
+```aval
+module solution
+
+fn to_bin(n: Int) -> String
+{
+  return if n < 0 { "-" + to_bin(0 - n) } else if n < 2 { n.to_string() } else { to_bin(n / 2) + (n % 2).to_string() }
+}
+
+pub fn decimal_to_binary(n: Int) -> String
+  examples
+    8 => "1000"
+  cost O(log(n.abs() + 1))
+{
+  return to_bin(n)
+}
+```

@@ -1,0 +1,10 @@
+# scenario: LCK-003
+# cmd: check
+module t
+pub fn a(x: Int) -> Int
+  ensures result > x
+  cost O(1)
+{
+  let y: Int = x + 2
+  return y - 1
+}

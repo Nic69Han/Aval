@@ -1,0 +1,6 @@
+# scenario: TYP-025
+module t
+fn f(xs: List <Int>) -> List <Int>
+{
+  return xs
+}

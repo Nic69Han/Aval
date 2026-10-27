@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn square_perimeter(a: Float) -> Float
+  examples
+    10.0 => 40.0
+  cost O(1)
+{
+  return 4.0 * a
+}
+```

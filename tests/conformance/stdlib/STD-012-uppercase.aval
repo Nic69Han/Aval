@@ -1,0 +1,9 @@
+# scenario: STD-012
+# cmd: test
+module t
+fn f(a: String) -> String
+  examples
+    "Abc d" => "ABC D"
+{
+  return a.to_uppercase()
+}

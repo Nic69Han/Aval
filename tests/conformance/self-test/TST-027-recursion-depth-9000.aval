@@ -1,0 +1,9 @@
+# scenario: TST-027
+# cmd: test
+module t
+fn count(n: Int) -> Int
+  examples
+    9000 => 9000
+{
+  return if n == 0 { 0 } else { count(n - 1) + 1 }
+}

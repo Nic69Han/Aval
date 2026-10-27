@@ -1,0 +1,15 @@
+```aval
+module solution
+
+pub fn fib4(n: Int) -> Int
+  requires n >= 0 and n < 60
+  examples
+    5 => 4
+    6 => 8
+  cost O(n)
+{
+  let steps: List<Int> = for i in 0..n - 3 { i }
+  let state: List<Int> = steps.fold([0, 0, 2, 0], |s, i| [s[1], s[2], s[3], s[0] + s[1] + s[2] + s[3]])
+  return if n < 4 { [0, 0, 2, 0][n] } else { state[3] }
+}
+```

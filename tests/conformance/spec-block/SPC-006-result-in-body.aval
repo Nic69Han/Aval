@@ -1,0 +1,7 @@
+# scenario: SPC-006
+# expect: {"code":"E106","at":[6,10]}
+module t
+fn f(x: Int) -> Int
+{
+  return result
+}

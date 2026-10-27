@@ -1,0 +1,11 @@
+# scenario: LCK-011
+# cmd: check
+# exit: 1
+# expect: {"code":"E900","fn":"a"}
+module t
+pub fn a(x: Int) -> String
+  ensures result == "a\" or true or \"b"
+  cost O(1)
+{
+  return "a"
+}

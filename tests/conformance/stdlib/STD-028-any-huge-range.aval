@@ -1,0 +1,11 @@
+# scenario: STD-028
+# cmd: test
+# exit: 1
+# expect: {"code":"T700","fn":"f","fault":"step_limit"}
+module t
+fn f(n: Int) -> Bool
+  examples
+    1000000000 => false
+{
+  return (0..n).any(|i| i < 0)
+}

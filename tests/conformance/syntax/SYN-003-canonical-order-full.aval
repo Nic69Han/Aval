@@ -1,0 +1,21 @@
+# scenario: SYN-003
+module t
+fn f(x: Int) -> Int
+  requires x > 0
+  requires x < 100
+  ensures result > 0
+  ensures result < 100
+  examples
+    1 => 1
+  oracle g
+  effects none
+  alloc none
+  cost O(1)
+  latency < 2ms
+{
+  return x
+}
+fn g(x: Int) -> Int
+{
+  return x
+}

@@ -1,0 +1,11 @@
+# scenario: STD-003
+# cmd: test
+module t
+fn f(xs: List<Int>) -> List<Int>
+  examples
+    [7, 7, 7, 7] => [7]
+    [] => []
+    [1, 2, 3] => [1, 2, 3]
+{
+  return xs.dedup()
+}

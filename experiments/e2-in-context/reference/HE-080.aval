@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn is_happy(s: String) -> Bool
+  examples
+    "abcd" => true
+    "aabb" => false
+  cost O(s.len())
+{
+  let cs: List<String> = s.chars()
+  let idx: List<Int> = for p in 0..cs.len() - 2 { p }
+  return cs.len() >= 3 and idx.all(|i| cs[i] != cs[i + 1] and cs[i] != cs[i + 2] and cs[i + 1] != cs[i + 2])
+}
+```

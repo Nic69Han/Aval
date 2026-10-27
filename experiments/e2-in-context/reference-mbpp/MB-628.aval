@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn replace_spaces(string: String) -> String
+  examples
+    "My Name is Dawood" => "My%20Name%20is%20Dawood"
+  cost O(string.len())
+{
+  return string.split(" ").join("%20")
+}
+```

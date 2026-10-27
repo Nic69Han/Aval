@@ -1,0 +1,16 @@
+```aval
+module solution
+
+pub fn how_many_times(string: String, substring: String) -> Int
+  requires substring.len() > 0
+  ensures result <= string.len()
+  examples
+    "aaaa", "aa" => 3
+  cost O(string.len() * substring.len())
+{
+  let cs: List<String> = string.chars()
+  let width: Int = substring.chars().len()
+  let hits: List<Bool> = for i in 0..cs.len() { cs.skip(i).take(width).join("") == substring }
+  return hits.count(true)
+}
+```

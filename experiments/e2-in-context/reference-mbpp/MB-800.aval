@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn remove_all_spaces(text: String) -> String
+  examples
+    "python  program" => "pythonprogram"
+  cost O(text.len())
+{
+  return text.split(" ").join("")
+}
+```

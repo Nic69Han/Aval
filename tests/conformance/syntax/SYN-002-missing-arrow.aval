@@ -1,0 +1,8 @@
+# scenario: SYN-002
+# expect: {"code":"E002"}
+# stdout-contains: "->"
+module t
+fn f(x: Int) Int
+{
+  return x
+}

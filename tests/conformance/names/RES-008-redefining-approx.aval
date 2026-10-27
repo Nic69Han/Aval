@@ -1,0 +1,7 @@
+# scenario: RES-008
+# expect: {"code":"E102"}
+module t
+fn approx(a: Float, b: Float) -> Bool
+{
+  return true
+}

@@ -1,0 +1,11 @@
+# scenario: LCK-004
+# cmd: check
+# exit: 1
+# expect: {"code":"E900","fn":"a"}
+module t
+pub fn a(x: Int, y: Int) -> Int
+  ensures result > x
+  cost O(1)
+{
+  return x + 1
+}

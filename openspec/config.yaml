@@ -1,0 +1,29 @@
+schema: spec-driven
+
+context: |
+  Aval is a programming language designed to be written by AI agents and verified by its compiler.
+  The human-readable reference is docs/spec/aval-spec-v0.1.md; OpenSpec specs hold the testable
+  acceptance criteria; executable tests live in tests/conformance/. Keep the three layers separate.
+  All artifacts, code, comments and commit messages are written in English.
+  Every scenario title starts with a stable ID: <PREFIX>-<NNN> (e.g. "SYN-004 Clause order is fixed").
+  Prefixes: LEX lexer, SYN syntax, RES names, TYP types, EFF effects, SPC spec-block, LCK spec-lock,
+  DIA diagnostics, TST self-test, CLI command line. IDs are never reused or renumbered.
+  Every scenario must be covered by at least one conformance test whose file name starts with its ID.
+  The MVP is a reference interpreter and checker in Rust (workspace under crates/).
+
+rules:
+  proposal:
+    - State what is out of scope.
+    - Mention related prior art and whether it is reused or adapted.
+  specs:
+    - One observable behavior per requirement; examples go in scenarios.
+    - Scenarios give exact inputs and the exact expected diagnostic code or output.
+  tasks:
+    - Each task names the scenario IDs it satisfies.
+    - Tasks end with verification steps (fmt, clippy, tests, traceability).
+
+operations:
+  apply:
+    guidance:
+      - Conformance tests are derived from scenarios, never adjusted to fit the implementation.
+      - A change is done only after review and a green CI.

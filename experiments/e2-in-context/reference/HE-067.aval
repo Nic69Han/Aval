@@ -1,0 +1,15 @@
+```aval
+module solution
+
+pub fn fruit_distribution(s: String, n: Int) -> Int
+  examples
+    "5 apples and 6 oranges", 19 => 8
+    "0 apples and 1 oranges", 3 => 2
+  cost O(s.len())
+{
+  let words: List<String> = s.split(" ")
+  let apples: Int = words[0].parse_int().unwrap()
+  let oranges: Int = words[3].parse_int().unwrap()
+  return n - apples - oranges
+}
+```

@@ -1,0 +1,10 @@
+# scenario: TST-007
+# cmd: test
+# exit: 0
+module t
+fn inv(x: Int) -> Int
+  requires x != 0
+  ensures result == 100 / x
+{
+  return 100 / x
+}

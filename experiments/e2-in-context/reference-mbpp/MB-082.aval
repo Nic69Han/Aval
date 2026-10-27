@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn volume_sphere(r: Float) -> Float
+  examples
+    10.0 => 4188.790204786391
+  cost O(1)
+{
+  return 4.0 / 3.0 * 3.141592653589793 * r * r * r
+}
+```

@@ -1,0 +1,10 @@
+# scenario: STD-005
+# cmd: test
+module t
+fn f(xs: List<Int>) -> Int
+  examples
+    [2, 3, 4] => 24
+    [] => 1
+{
+  return xs.product()
+}

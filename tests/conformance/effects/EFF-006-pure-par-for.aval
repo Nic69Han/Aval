@@ -1,0 +1,9 @@
+# scenario: EFF-006
+# cmd: test
+module t
+fn f(xs: List<Int>) -> List<Int>
+  examples
+    [1, 2] => [2, 4]
+{
+  return par for x in xs { x * 2 }
+}

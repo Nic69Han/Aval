@@ -1,0 +1,11 @@
+# scenario: RES-002
+module t
+fn f(x: Int) -> Int
+{
+  return if x > 0 {
+    let y: Int = 1
+    y
+  } else {
+    0
+  }
+}

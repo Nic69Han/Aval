@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn pancake_sort(nums: List<Int>) -> List<Int>
+  examples
+    [15, 79, 25, 38, 69] => [15, 25, 38, 69, 79]
+  cost O(nums.len() * log(nums.len()))
+{
+  return nums.sort()
+}
+```

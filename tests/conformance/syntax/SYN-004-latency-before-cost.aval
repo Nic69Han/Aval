@@ -1,0 +1,9 @@
+# scenario: SYN-004
+# expect: {"code":"E002","at":[6,3]}
+module t
+fn f(x: Int) -> Int
+  latency < 2ms
+  cost O(1)
+{
+  return x
+}

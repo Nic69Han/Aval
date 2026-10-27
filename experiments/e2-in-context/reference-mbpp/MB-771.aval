@@ -1,0 +1,13 @@
+```aval
+module solution
+
+pub fn check_expression(exp: String) -> Bool
+  examples
+    "{()}[{}]" => true
+    "{()}[{]" => false
+  cost O(exp.len())
+{
+  let st: List<String> = exp.chars().fold(["x"].skip(1), |s, c| if c == "(" or c == "{" or c == "[" { s.push(c) } else if c == ")" or c == "}" or c == "]" { if s.is_empty() { ["!"] } else if (s[s.len() - 1] == "(" and c == ")") or (s[s.len() - 1] == "{" and c == "}") or (s[s.len() - 1] == "[" and c == "]") { s.take(s.len() - 1) } else { ["!"] } } else { s })
+  return not exp.is_empty() and st.is_empty()
+}
+```

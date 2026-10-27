@@ -1,0 +1,11 @@
+# scenario: TST-004
+# cmd: test
+# expect: {"code":"T200","fn":"f","violated":"result > 10","counterexample":{"x":5}}
+module t
+fn f(x: Int) -> Int
+  ensures result > 10
+  examples
+    5 => 5
+{
+  return x
+}

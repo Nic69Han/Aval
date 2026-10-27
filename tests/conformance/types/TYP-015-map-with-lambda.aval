@@ -1,0 +1,6 @@
+# scenario: TYP-015
+module t
+fn f(xs: List<Int>) -> List<Bool>
+{
+  return xs.map(|x| x > 0)
+}

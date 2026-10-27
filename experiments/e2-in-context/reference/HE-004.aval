@@ -1,0 +1,15 @@
+```aval
+module solution
+
+pub fn mean_absolute_deviation(numbers: List<Float>) -> Float
+  requires numbers.len() > 0
+  ensures result >= 0.0
+  examples
+    [1.0, 2.0, 3.0, 4.0] => 1.0
+  cost O(numbers.len())
+{
+  let count: Float = numbers.len().float()
+  let center: Float = numbers.sum() / count
+  return numbers.map(|x| (x - center).abs()).sum() / count
+}
+```

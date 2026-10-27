@@ -1,0 +1,21 @@
+```aval
+module solution
+
+fn next_euler(prev: List<Int>, k: Int) -> List<Int>
+{
+  return for j in 0..k {
+    if j == 0 { 1 } else { (k - j) * prev[j - 1] + (j + 1) * (if j < prev.len() { prev[j] } else { 0 }) }
+  }
+}
+
+pub fn eulerian_num(n: Int, m: Int) -> Int
+  examples
+    3, 1 => 4
+  cost O(n * n)
+{
+  let steps: List<Int> = for k in 2..=n { k }
+  let first: List<Int> = [1]
+  let row: List<Int> = steps.fold(first, |r, k| next_euler(r, k))
+  return if n <= 0 or m < 0 or m >= n { 0 } else { row[m] }
+}
+```

@@ -1,0 +1,8 @@
+# scenario: SPC-012
+# expect: {"code":"E107"}
+module t
+fn f(x: Int) -> Int
+  oracle f
+{
+  return x
+}

@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn is_samepatterns(colors: List<String>, patterns: List<String>) -> Bool
+  examples
+    ["red", "green", "green"], ["a", "b", "b"] => true
+  cost O(colors.len() * colors.len())
+{
+  let idx: List<Int> = for p in 0..colors.len() { p }
+  return colors.len() == patterns.len() and idx.all(|i| idx.all(|j| patterns[i] != patterns[j] or colors[i] == colors[j]))
+}
+```

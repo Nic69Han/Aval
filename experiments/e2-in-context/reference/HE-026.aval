@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn remove_duplicates(numbers: List<Int>) -> List<Int>
+  ensures result.len() <= numbers.len()
+  examples
+    [1, 2, 3, 2, 4] => [1, 3, 4]
+  cost O(numbers.len() * numbers.len())
+{
+  return numbers.filter(|x| numbers.count(x) == 1)
+}
+```

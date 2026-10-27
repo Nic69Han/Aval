@@ -1,0 +1,8 @@
+# scenario: RES-005
+# expect: {"code":"E102"}
+module t
+fn f(x: Int) -> Int
+{
+  let x: Int = 1
+  return x
+}

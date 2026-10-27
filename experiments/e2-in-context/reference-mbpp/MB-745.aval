@@ -1,0 +1,16 @@
+```aval
+module solution
+
+fn all_digits_divide(n: Int, m: Int) -> Bool
+{
+  return if m == 0 { true } else { (m % 10 != 0 and n % (m % 10) == 0) and all_digits_divide(n, m / 10) }
+}
+
+pub fn divisible_by_digits(startnum: Int, endnum: Int) -> List<Int>
+  examples
+    1, 15 => [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15]
+  cost O(endnum - startnum + 1)
+{
+  return (for i in startnum..=endnum { i }).filter(|i| i > 0 and all_digits_divide(i, i))
+}
+```

@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn is_diff(n: Int) -> Bool
+  examples
+    12345 => false
+  cost O(1)
+{
+  return n % 11 == 0
+}
+```

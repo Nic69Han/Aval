@@ -1,0 +1,10 @@
+# scenario: TST-017
+# cmd: test
+# exit: 0
+module t
+fn f(xs: List<Int>) -> Int
+  requires xs.len() > 8
+  ensures result == xs.len()
+{
+  return xs.len()
+}

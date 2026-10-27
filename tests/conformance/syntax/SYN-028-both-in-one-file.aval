@@ -1,0 +1,13 @@
+# scenario: SYN-028
+# cmd: check
+# expect: {"code":"E002"}
+# expect: {"code":"E002"}
+module t
+fn f(a: Bool, b: Bool) -> Bool
+{
+  return a == not not b
+}
+fn g(a: Bool, b: Bool, c: Bool) -> Bool
+{
+  return a == not b == c
+}

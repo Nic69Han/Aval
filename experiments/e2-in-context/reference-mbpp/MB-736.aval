@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn left_insertion(a: List<Int>, x: Int) -> Int
+  examples
+    [1, 2, 4, 5], 6 => 4
+    [1, 2, 4, 5], 3 => 2
+  cost O(log(a.len() + 1))
+{
+  let rounds: List<Int> = for k in 0..64 { k }
+  let st: List<Int> = rounds.fold([0, a.len()], |s, k| if s[0] < s[1] { if a[(s[0] + s[1]) / 2] < x { [(s[0] + s[1]) / 2 + 1, s[1]] } else { [s[0], (s[0] + s[1]) / 2] } } else { s })
+  return st[0]
+}
+```

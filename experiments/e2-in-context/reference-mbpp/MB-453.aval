@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn sumof_factors(n: Int) -> Int
+  examples
+    18 => 26
+  cost O(n)
+{
+  let ds: List<Int> = for i in 1..=n { if n % i == 0 and i % 2 == 0 { i } else { 0 } }
+  return ds.sum()
+}
+```

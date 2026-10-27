@@ -1,0 +1,6 @@
+# scenario: SPC-002
+module t
+fn f(x: Int) -> Int
+{
+  return x
+}

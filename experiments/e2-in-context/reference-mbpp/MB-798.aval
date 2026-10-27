@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn _sum(arr: List<Int>) -> Int
+  examples
+    [1, 2, 3] => 6
+  cost O(arr.len())
+{
+  return arr.sum()
+}
+```

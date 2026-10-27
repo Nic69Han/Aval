@@ -1,0 +1,13 @@
+# scenario: SYN-003
+module t
+fn f(x: Int) -> Int
+  requires x > 0
+  ensures result > 0
+  examples
+    1 => 1
+  effects none
+  cost O(1)
+  latency < 2ms
+{
+  return x
+}

@@ -1,0 +1,16 @@
+```aval
+module solution
+
+fn pop_count(n: Int) -> Int
+{
+  return if n == 0 { 0 } else { n % 2 + pop_count(n / 2) }
+}
+
+pub fn count_set_bits(n: Int) -> Int
+  examples
+    2 => 1
+  cost O(log(n.abs() + 1))
+{
+  return pop_count(n.abs())
+}
+```

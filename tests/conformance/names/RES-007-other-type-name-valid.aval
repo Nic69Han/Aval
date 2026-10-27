@@ -1,0 +1,7 @@
+# scenario: RES-007
+module t
+type P { v: Int }
+fn f() -> P
+{
+  return P { v: 1 }
+}

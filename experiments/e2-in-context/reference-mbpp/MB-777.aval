@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn find_sum(arr: List<Int>) -> Int
+  examples
+    [1, 2, 3, 1, 1, 4, 5, 6] => 21
+  cost O(arr.len() * log(arr.len() + 1))
+{
+  return arr.sort().dedup().sum()
+}
+```

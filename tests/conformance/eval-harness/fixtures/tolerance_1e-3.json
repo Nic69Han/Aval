@@ -1,0 +1,10 @@
+{
+  "HE-002": {
+    "aval": [
+      "Here is my solution.\n\n```aval\nmodule solution\n\npub fn truncate_number(number: Float) -> Float\n  requires number >= 0.0\n  ensures result >= 0.0\n  cost O(1)\n{\n  return number - number.floor() + 0.001\n}\n```\n"
+    ],
+    "rust": [
+      "Here is my solution.\n\n```rust\nfn truncate_number(number: f64) -> f64 {\n    number - number.floor() + 1e-3\n}\n```\n"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+# scenario: LEX-006
+# expect: {"code":"E001","at":[6,10]}
+module t
+fn f() -> String
+{
+  return "abc
+}

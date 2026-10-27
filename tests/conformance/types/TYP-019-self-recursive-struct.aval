@@ -1,0 +1,8 @@
+# scenario: TYP-019
+# expect: {"code":"E312"}
+module t
+type N { n: N }
+fn f() -> Int
+{
+  return 1
+}

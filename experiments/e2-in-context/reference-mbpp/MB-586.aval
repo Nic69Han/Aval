@@ -1,0 +1,12 @@
+```aval
+module solution
+
+pub fn split_arr(l: List<Int>, n: Int) -> List<Int>
+  ensures result.len() == l.len()
+  examples
+    [12, 10, 5, 6, 52, 36], 2 => [5, 6, 52, 36, 12, 10]
+  cost O(l.len())
+{
+  return l.skip(n).concat(l.take(n))
+}
+```

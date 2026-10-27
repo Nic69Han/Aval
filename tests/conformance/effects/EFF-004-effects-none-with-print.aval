@@ -1,0 +1,8 @@
+# scenario: EFF-004
+# expect: {"code":"E420","effect":"io.stdout"}
+module t
+fn f() -> Bool
+  effects none
+{
+  return print("x")
+}

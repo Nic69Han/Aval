@@ -1,0 +1,11 @@
+```aval
+module solution
+
+pub fn string_to_list(string: String) -> List<String>
+  examples
+    "python programming" => ["python", "programming"]
+  cost O(string.len())
+{
+  return string.split(" ")
+}
+```

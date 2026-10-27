@@ -1,0 +1,14 @@
+```aval
+module solution
+
+pub fn largest_divisor(n: Int) -> Int
+  requires n >= 2 and n < 2000
+  ensures result < n and n % result == 0
+  examples
+    15 => 5
+  cost O(n)
+{
+  let divisors: List<Int> = for i in 1..n { if n % i == 0 { i } else { 0 } }
+  return divisors.max()
+}
+```

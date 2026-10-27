@@ -1,0 +1,16 @@
+Here is my solution.
+
+```aval
+module solution
+
+pub fn below_zero(operations: List<Int>) -> Bool
+  examples
+    [] => false
+    [1, 2, -4, 5] => true
+  cost O(operations.len() * operations.len())
+{
+  let n: Int = operations.len()
+  let balances: List<Int> = for i in 0..n { operations.take(i + 1).sum() }
+  return balances.any(|b| b < 0)
+}
+```
